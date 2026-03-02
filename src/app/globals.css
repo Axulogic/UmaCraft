@@ -182,66 +182,45 @@
 }
 
 @keyframes umacraft-toast-expire {
-  from {
+  0% {
     transform: scaleX(1);
+    opacity: 0.75;
   }
-
-  to {
+  100% {
     transform: scaleX(0);
+    opacity: 0.3;
   }
 }
 
 @keyframes umacraft-toast-enter {
   0% {
     opacity: 0;
-    filter: blur(12px);
-    transform: var(--y) translate3d(24px, 24px, 0) scale(0.85) rotateX(12deg) rotateY(8deg);
   }
-
-  58% {
-    opacity: 1;
-    filter: blur(0);
-    transform: var(--y) translate3d(-2px, -4px, 0) scale(1.02) rotateX(-2deg) rotateY(0deg);
-  }
-
   100% {
     opacity: 1;
-    filter: blur(0);
-    transform: var(--y) translate3d(0, 0, 0) scale(1) rotateX(0deg);
   }
 }
 
 @keyframes umacraft-toast-exit {
   0% {
     opacity: 1;
-    filter: blur(0);
-    transform: var(--y) translate3d(0, 0, 0) scale(1) rotateX(0deg);
   }
-
   100% {
     opacity: 0;
-    filter: blur(8px);
-    transform: var(--y) translate3d(16px, 12px, 0) scale(0.92) rotateX(-6deg) rotateY(4deg);
   }
 }
 
 .umacraft-toaster [data-sonner-toast].umacraft-toast {
-  transform-origin: right bottom;
-  backface-visibility: hidden;
-  transition:
-    transform 560ms cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 440ms cubic-bezier(0.16, 1, 0.3, 1),
-    filter 560ms cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 220ms ease;
-  will-change: transform, opacity, filter;
+  transform-origin: center !important;
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 .umacraft-toaster [data-sonner-toast].umacraft-toast[data-mounted="true"] {
-  animation: umacraft-toast-enter 680ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation: umacraft-toast-enter 400ms cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
 }
 
 .umacraft-toaster [data-sonner-toast].umacraft-toast[data-removed="true"] {
-  animation: umacraft-toast-exit 380ms cubic-bezier(0.4, 0, 1, 1) both;
+  animation: umacraft-toast-exit 300ms cubic-bezier(0.4, 0, 1, 1) forwards !important;
 }
 
 .umacraft-toaster [data-sonner-toast].umacraft-toast::before {
@@ -250,39 +229,137 @@
   left: 0;
   right: 0;
   bottom: 0;
-  height: 2px;
+  height: 3px;
   z-index: 1;
   pointer-events: none;
   background: color-mix(in srgb, var(--line) 75%, var(--paper) 25%);
-  opacity: 0.55;
+  opacity: 0.45;
+  transition: opacity 200ms ease;
 }
 
 .umacraft-toaster [data-sonner-toast].umacraft-toast::after {
   content: "";
   position: absolute;
-  left: 0 !important;
-  right: 0 !important;
-  top: auto !important;
-  bottom: 0 !important;
-  width: 100% !important;
-  height: 2px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
   z-index: 2;
   pointer-events: none;
-  border-radius: 0 0 var(--radius) var(--radius);
-  transform-origin: left;
+  transform-origin: left center;
   background: linear-gradient(
     90deg,
-    color-mix(in srgb, var(--brand) 82%, white 18%) 0%,
-    color-mix(in srgb, var(--brand) 52%, var(--line) 48%) 100%
+    color-mix(in srgb, var(--brand) 88%, white 12%) 0%,
+    color-mix(in srgb, var(--brand) 65%, var(--line) 35%) 100%
   );
-  opacity: 0.65;
+  opacity: 0.85;
   animation: umacraft-toast-expire var(--toast-expire-duration, 4200ms) linear forwards;
+  transition: opacity 200ms ease;
+}
+
+.umacraft-toaster [data-sonner-toast].umacraft-toast:hover::before {
+  opacity: 0.55;
 }
 
 .umacraft-toaster [data-sonner-toast].umacraft-toast:hover::after {
   animation-play-state: paused;
-  opacity: 0.82;
+  opacity: 0.95;
 }
+
+/* Smooth stacking on hover */
+.umacraft-toaster:hover [data-sonner-toast].umacraft-toast {
+  transition: all 350ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Ensure toasts container allows stacking */
+[data-sonner-toaster] ol,
+[data-sonner-toaster] ul {
+  position: relative !important;
+}
+
+[data-sonner-toaster] ol li,
+[data-sonner-toaster] ul li {
+  position: relative !important;
+  transition: all 320ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Stacking behavior for collapsed toasts */
+.umacraft-toaster [data-sonner-toast].umacraft-toast[data-expanded="false"] {
+  transition: all 320ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.umacraft-toaster [data-sonner-toast].umacraft-toast[data-expanded="true"] {
+  transition: all 320ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Stack effect - show cards behind the first one */
+[data-sonner-toaster] [data-sonner-toast]:nth-child(2) {
+  transform: translateY(-8px) scale(0.97) !important;
+  opacity: 0.85 !important;
+}
+
+[data-sonner-toaster] [data-sonner-toast]:nth-child(3) {
+  transform: translateY(-16px) scale(0.94) !important;
+  opacity: 0.7 !important;
+}
+
+[data-sonner-toaster] [data-sonner-toast]:nth-child(4) {
+  transform: translateY(-24px) scale(0.91) !important;
+  opacity: 0.55 !important;
+}
+
+[data-sonner-toaster] [data-sonner-toast]:nth-child(n+5) {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* On hover, expand all toasts */
+[data-sonner-toaster]:hover [data-sonner-toast]:nth-child(n) {
+  transform: translateY(0) scale(1) !important;
+  opacity: 1 !important;
+}
+
+/* Also target with class selectors */
+.umacraft-toaster .umacraft-toast:nth-child(2) {
+  transform: translateY(-8px) scale(0.97) !important;
+  opacity: 0.85 !important;
+}
+
+.umacraft-toaster .umacraft-toast:nth-child(3) {
+  transform: translateY(-16px) scale(0.94) !important;
+  opacity: 0.7 !important;
+}
+
+.umacraft-toaster .umacraft-toast:nth-child(4) {
+  transform: translateY(-24px) scale(0.91) !important;
+  opacity: 0.55 !important;
+}
+
+.umacraft-toaster .umacraft-toast:nth-child(n+5) {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.umacraft-toaster:hover .umacraft-toast:nth-child(n) {
+  transform: translateY(0) scale(1) !important;
+  opacity: 1 !important;
+}
+
+/* Force progress bar animation */
+[data-sonner-toaster][data-theme] [data-sonner-toast]::after,
+[data-sonner-toaster].umacraft-toaster [data-sonner-toast].umacraft-toast::after {
+  animation: umacraft-toast-expire var(--toast-expire-duration, 4200ms) linear forwards !important;
+}
+
+[data-sonner-toaster][data-theme] [data-sonner-toast]:hover::after,
+[data-sonner-toaster].umacraft-toaster [data-sonner-toast].umacraft-toast:hover::after {
+  animation-play-state: paused !important;
+}
+
+[data-sonner-toaster].umacraft-toaster [data-sonner-toast].umacraft-toast[data-swiping="true"] {
+  transition: transform 200ms ease-out !important;
+}
+
 
 @media (prefers-reduced-motion: reduce) {
   .umacraft-toaster [data-sonner-toast].umacraft-toast,

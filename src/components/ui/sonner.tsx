@@ -17,6 +17,13 @@ function Toaster(props: ToasterProps) {
     <Sonner
       theme="light"
       className="toaster umacraft-toaster"
+      gap={8}
+      expand={false}
+      visibleToasts={4}
+      position="bottom-right"
+      offset={20}
+      closeButton={false}
+      richColors={false}
       icons={{
         success: <CircleCheckIcon className="size-4" />,
         info: <InfoIcon className="size-4" />,
@@ -36,15 +43,16 @@ function Toaster(props: ToasterProps) {
       }
       toastOptions={{
         duration: TOAST_DURATION_MS,
+        unstyled: false,
         classNames: {
           toast:
             "umacraft-toast group pointer-events-auto relative overflow-hidden rounded-2xl border border-[var(--line)] bg-[var(--paper)] text-[var(--ink)] shadow-[0_16px_34px_-12px_rgba(25,25,25,0.26)]",
           title: "text-sm font-semibold tracking-tight text-[var(--ink)]",
           description: "text-xs text-[var(--ink)]/72",
           actionButton:
-            "rounded-lg border border-[var(--line)] bg-[var(--paper)] text-[var(--ink)] hover:bg-[var(--mist)]",
+            "rounded-lg border border-[var(--line)] bg-[var(--paper)] text-[var(--ink)] hover:bg-[var(--mist)] transition-colors",
           cancelButton:
-            "rounded-lg border border-[var(--line)] bg-[var(--paper)] text-[var(--ink)] hover:bg-[var(--mist)]",
+            "rounded-lg border border-[var(--line)] bg-[var(--paper)] text-[var(--ink)] hover:bg-[var(--mist)] transition-colors",
           success: "border-emerald-200/80",
           info: "border-sky-200/80",
           warning: "border-amber-200/80",

@@ -345,6 +345,7 @@ export interface LocaleSchema {
     joinPrompt: string;
     copyCta: string;
     creditsLine: string;
+    cookiePreferencesLabel: string;
     links: {
       credits: string;
       terms: string;
@@ -361,6 +362,22 @@ export interface LocaleSchema {
     rightsSecondaryPattern: string;
     poweredByLabel: string;
     infrastructureProvider: string;
+  };
+  cookieConsent: {
+    title: string;
+    description: string;
+    policyCta: string;
+    policyHref: string;
+    manageTitle: string;
+    strictlyNecessaryLabel: string;
+    alwaysActiveLabel: string;
+    functionalLabel: string;
+    performanceLabel: string;
+    targetingLabel: string;
+    rejectAllCta: string;
+    confirmChoicesCta: string;
+    closeAriaLabel: string;
+    poweredByLabel: string;
   };
   legal: {
     backHome: string;

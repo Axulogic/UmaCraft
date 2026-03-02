@@ -3,9 +3,10 @@
 import Link from "next/link";
 import { motion } from "motion/react";
 import { Cloud, Copyright, FileText, Server } from "lucide-react";
-import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
+import { CookiePreferences } from "@/components/privacy/cookie-preferences";
+import { appToast } from "@/lib/toast";
 import { useLocale } from "@/lib/use-locale";
 
 async function copyToClipboard(value: string): Promise<void> {
@@ -46,9 +47,9 @@ export function SiteFooter() {
   async function handleCopyAddress() {
     try {
       await copyToClipboard(locale.brand.serverAddress);
-      toast.success(locale.hero.copySuccess);
+      appToast.success(locale.hero.copySuccess, { id: "footer-copy-success" });
     } catch {
-      toast.error(locale.hero.copyError);
+      appToast.error(locale.hero.copyError, { id: "footer-copy-error" });
     }
   }
 
@@ -133,6 +134,7 @@ export function SiteFooter() {
             <FileText className="size-3.5" />
             {locale.footer.links.changelog}
           </Link>
+          <CookiePreferences />
         </div>
 
         <div className="flex flex-col gap-2 border-t border-[color:rgba(255,255,255,0.14)] pt-4 text-xs text-[var(--paper)]/62 sm:flex-row sm:items-center sm:justify-between">

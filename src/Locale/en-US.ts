@@ -15,7 +15,7 @@ export const enUSLocale: LocaleSchema = {
     description:
       "Official UmaCraft website with direct access to the public Paper 1.21+ server at play.umacraft.xyz.",
     keywords: ["UmaCraft", "Minecraft server", "Paper 1.21+", "play.umacraft.xyz", "umacraft.xyz"],
-    openGraphTitle: "UmaCraft | Official Server",
+    openGraphTitle: "UmaCraft | Umamusume Minecraft Server",
     openGraphDescription:
       "Join the official UmaCraft Paper 1.21+ server at play.umacraft.xyz and start your journey with the community.",
   },
@@ -820,6 +820,7 @@ export const enUSLocale: LocaleSchema = {
     joinPrompt: "Ready to join?",
     copyCta: "Copy server IP",
     creditsLine: "Community credits and third-party acknowledgements.",
+    cookiePreferencesLabel: "Cookie Preferences",
     links: {
       credits: "Credits",
       terms: "Terms",
@@ -836,6 +837,23 @@ export const enUSLocale: LocaleSchema = {
     rightsSecondaryPattern: "Umamusume Pretty Derby and official assets are owned by Cygames, Inc.",
     poweredByLabel: "Powered by",
     infrastructureProvider: "Cloudflare",
+  },
+  cookieConsent: {
+    title: "Your Cookie Options",
+    description:
+      "We use cookie categories to keep the website secure, functional and continuously improved. You can choose which categories to allow.",
+    policyCta: "Cookie and Privacy Policy",
+    policyHref: "/privacy",
+    manageTitle: "Manage Consent Preferences",
+    strictlyNecessaryLabel: "Strictly Necessary Cookies",
+    alwaysActiveLabel: "Always Active",
+    functionalLabel: "Functional Cookies",
+    performanceLabel: "Performance Cookies",
+    targetingLabel: "Targeting Cookies",
+    rejectAllCta: "Reject Optional",
+    confirmChoicesCta: "Confirm My Choices",
+    closeAriaLabel: "Close cookie preferences",
+    poweredByLabel: "Powered by UmaCraft",
   },
   legal: {
     backHome: "Back to home",

@@ -19,7 +19,6 @@ import {
   Leaf,
   Check,
 } from "lucide-react";
-import { toast } from "sonner";
 
 import { useSiteAudio } from "@/components/providers/site-audio-provider";
 import { Button } from "@/components/ui/button";
@@ -33,6 +32,7 @@ import {
   getCurrentClientLocaleLang,
   setClientLocaleLang,
 } from "@/lib/client-locale";
+import { appToast } from "@/lib/toast";
 import { useLocale } from "@/lib/use-locale";
 
 const DEFAULT_ACTIVE_VOLUME = 0.35;
@@ -100,9 +100,9 @@ export function Topbar() {
       copyFeedbackTimeoutRef.current = setTimeout(() => {
         setIsCopyFeedbackVisible(false);
       }, 1300);
-      toast.success(locale.topbar.serverCopied);
+      appToast.success(locale.topbar.serverCopied, { id: "server-copy-success" });
     } catch {
-      toast.error(locale.topbar.serverCopyError);
+      appToast.error(locale.topbar.serverCopyError, { id: "server-copy-error" });
     }
   }
 

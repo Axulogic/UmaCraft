@@ -926,6 +926,7 @@ export const ptBRLocale: LocaleSchema = {
     joinPrompt: "Pronto para entrar?",
     copyCta: "Copiar IP do servidor",
     creditsLine: "Créditos comunitários e reconhecimentos de terceiros.",
+    cookiePreferencesLabel: "Preferências de Cookies",
     links: {
       credits: "Créditos",
       terms: "Termos",
@@ -942,6 +943,23 @@ export const ptBRLocale: LocaleSchema = {
     rightsSecondaryPattern: "Umamusume Pretty Derby e os assets oficiais pertencem à Cygames, Inc.",
     poweredByLabel: "Powered by",
     infrastructureProvider: "Cloudflare",
+  },
+  cookieConsent: {
+    title: "Suas opções de cookies",
+    description:
+      "Utilizamos categorias de cookies para manter o site seguro, funcional e em melhoria contínua. Você pode escolher quais categorias deseja permitir.",
+    policyCta: "Política de Cookies e Privacidade",
+    policyHref: "/privacy",
+    manageTitle: "Gerenciar preferências de consentimento",
+    strictlyNecessaryLabel: "Cookies estritamente necessários",
+    alwaysActiveLabel: "Sempre ativo",
+    functionalLabel: "Cookies funcionais",
+    performanceLabel: "Cookies de performance",
+    targetingLabel: "Cookies de segmentação",
+    rejectAllCta: "Rejeitar opcionais",
+    confirmChoicesCta: "Confirmar minhas escolhas",
+    closeAriaLabel: "Fechar preferências de cookies",
+    poweredByLabel: "Powered by UmaCraft",
   },
   legal: {
     backHome: "Voltar ao início",
