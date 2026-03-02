@@ -1,7 +1,5 @@
-# wrangler.toml
-name = 'umacraft'
-compatibility_date = "2026-03-02"
-pages_build_output_dir = "out"
+name = "umacraft"
+compatibility_date = "2026-03-01"
 
-[observability]
-enabled = true
+[assets]
+directory = "./out"
