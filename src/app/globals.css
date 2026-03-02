@@ -1,0 +1,325 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme inline {
+  --font-sans: var(--font-body);
+  --font-mono: "JetBrains Mono", "SFMono-Regular", ui-monospace, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 0.25rem);
+  --radius-md: calc(var(--radius) - 0.125rem);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 0.125rem);
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+
+    to {
+      height: 0;
+    }
+  }
+}
+
+:root {
+  --radius: 1rem;
+  --brand: #f15025;
+  --paper: #ffffff;
+  --mist: #e6e8e6;
+  --line: #ced0ce;
+  --ink: #191919;
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: var(--paper);
+  --card-foreground: var(--ink);
+  --popover: var(--paper);
+  --popover-foreground: var(--ink);
+  --primary: var(--brand);
+  --primary-foreground: var(--paper);
+  --secondary: var(--mist);
+  --secondary-foreground: var(--ink);
+  --muted: #f3f4f3;
+  --muted-foreground: #5f615f;
+  --accent: var(--mist);
+  --accent-foreground: var(--ink);
+  --destructive: #b42318;
+  --border: var(--line);
+  --input: var(--line);
+  --ring: var(--brand);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/40;
+  }
+
+  html,
+  body {
+    min-height: 100%;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable;
+    background: var(--mist);
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body * {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  input,
+  textarea,
+  [contenteditable="true"] {
+    -webkit-user-select: text;
+    user-select: text;
+  }
+
+  img {
+    -webkit-user-drag: none;
+    user-drag: none;
+  }
+
+  ::selection {
+    color: var(--paper);
+    background: var(--brand);
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in srgb, var(--brand) 78%, var(--ink) 22%)
+      transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: var(--mist);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    min-height: 56px;
+    border: 3px solid transparent;
+    border-radius: 999px;
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--brand) 86%, white 14%) 0%,
+      color-mix(in srgb, var(--brand) 82%, var(--ink) 18%) 100%
+    );
+    background-clip: padding-box;
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ink) 14%, transparent);
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--brand) 92%, white 8%) 0%,
+      color-mix(in srgb, var(--brand) 84%, var(--ink) 16%) 100%
+    );
+  }
+}
+
+@layer utilities {
+  .heading-font {
+    font-family: var(--font-heading), "Avenir Next", "Segoe UI", sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  .body-font {
+    font-family: var(--font-body), "Avenir Next", "Segoe UI", sans-serif;
+  }
+
+  .brand-font {
+    font-family: var(--font-brand), var(--font-heading), "Avenir Next", "Segoe UI",
+      sans-serif;
+    letter-spacing: 0.015em;
+    text-transform: uppercase;
+  }
+
+  .surface-card {
+    @apply border-[var(--line)] bg-[var(--paper)];
+  }
+}
+
+@keyframes umacraft-toast-expire {
+  from {
+    transform: scaleX(1);
+  }
+
+  to {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes umacraft-toast-enter {
+  0% {
+    opacity: 0;
+    filter: blur(12px);
+    transform: var(--y) translate3d(24px, 24px, 0) scale(0.85) rotateX(12deg) rotateY(8deg);
+  }
+
+  58% {
+    opacity: 1;
+    filter: blur(0);
+    transform: var(--y) translate3d(-2px, -4px, 0) scale(1.02) rotateX(-2deg) rotateY(0deg);
+  }
+
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: var(--y) translate3d(0, 0, 0) scale(1) rotateX(0deg);
+  }
+}
+
+@keyframes umacraft-toast-exit {
+  0% {
+    opacity: 1;
+    filter: blur(0);
+    transform: var(--y) translate3d(0, 0, 0) scale(1) rotateX(0deg);
+  }
+
+  100% {
+    opacity: 0;
+    filter: blur(8px);
+    transform: var(--y) translate3d(16px, 12px, 0) scale(0.92) rotateX(-6deg) rotateY(4deg);
+  }
+}
+
+.umacraft-toaster [data-sonner-toast].umacraft-toast {
+  transform-origin: right bottom;
+  backface-visibility: hidden;
+  transition:
+    transform 560ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 440ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 560ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 220ms ease;
+  will-change: transform, opacity, filter;
+}
+
+.umacraft-toaster [data-sonner-toast].umacraft-toast[data-mounted="true"] {
+  animation: umacraft-toast-enter 680ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.umacraft-toaster [data-sonner-toast].umacraft-toast[data-removed="true"] {
+  animation: umacraft-toast-exit 380ms cubic-bezier(0.4, 0, 1, 1) both;
+}
+
+.umacraft-toaster [data-sonner-toast].umacraft-toast::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  z-index: 1;
+  pointer-events: none;
+  background: color-mix(in srgb, var(--line) 75%, var(--paper) 25%);
+  opacity: 0.55;
+}
+
+.umacraft-toaster [data-sonner-toast].umacraft-toast::after {
+  content: "";
+  position: absolute;
+  left: 0 !important;
+  right: 0 !important;
+  top: auto !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  height: 2px;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: 0 0 var(--radius) var(--radius);
+  transform-origin: left;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--brand) 82%, white 18%) 0%,
+    color-mix(in srgb, var(--brand) 52%, var(--line) 48%) 100%
+  );
+  opacity: 0.65;
+  animation: umacraft-toast-expire var(--toast-expire-duration, 4200ms) linear forwards;
+}
+
+.umacraft-toaster [data-sonner-toast].umacraft-toast:hover::after {
+  animation-play-state: paused;
+  opacity: 0.82;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .umacraft-toaster [data-sonner-toast].umacraft-toast,
+  .umacraft-toaster [data-sonner-toast].umacraft-toast[data-mounted="true"],
+  .umacraft-toaster [data-sonner-toast].umacraft-toast[data-removed="true"] {
+    animation: none !important;
+    transition: none !important;
+    filter: none !important;
+  }
+
+  .umacraft-toaster [data-sonner-toast].umacraft-toast::after {
+    animation: none !important;
+  }
+}
+
+.dark {
+  --brand: #f15025;
+  --paper: #1a1a1a;
+  --mist: #2a2a2a;
+  --line: #404040;
+  --ink: #ffffff;
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: var(--paper);
+  --card-foreground: var(--ink);
+  --popover: var(--paper);
+  --popover-foreground: var(--ink);
+  --primary: var(--brand);
+  --primary-foreground: var(--paper);
+  --secondary: var(--mist);
+  --secondary-foreground: var(--ink);
+  --muted: #3a3a3a;
+  --muted-foreground: #cccccc;
+  --accent: var(--mist);
+  --accent-foreground: var(--ink);
+  --destructive: #b42318;
+  --border: var(--line);
+  --input: var(--line);
+  --ring: var(--brand);
+}

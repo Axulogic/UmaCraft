@@ -1,0 +1,154 @@
+{
+  "character": "Agnes Tachyon",
+  "version": "runner-selection-v1",
+  "generatedAt": "2026-03-01T12:16:22-03:00",
+  "profile": "smooth",
+  "reaction": "wave_happy",
+  "basePath": "/assets/uma/pixel/Characters/agnestachyon",
+  "availableFrames": 283,
+  "selectedFrames": 51,
+  "framesNotSelected": 232,
+  "selectedActions": {
+    "idle": "agnes_tachyon_idle_breathe_long_agtc600",
+    "walk": "agnes_tachyon_run_pump_agtc700",
+    "run": "agnes_tachyon_sprint_dash_agtc701",
+    "interactIntro": "agnes_tachyon_idle_wave_agtc540",
+    "interactLoop": "agnes_tachyon_idle_happy_agtc520",
+    "transitions": [
+      "agnes_tachyon_idle_shift_agtc101",
+      "agnes_tachyon_run_start_agtc160",
+      "agnes_tachyon_dash_stop_agtc163",
+      "agnes_tachyon_sprint_settle_b_agtc704",
+      "agnes_tachyon_sprint_settle_a_agtc703",
+      "agnes_tachyon_turn_back_agtc550"
+    ]
+  },
+  "selectedFramesByAction": {
+    "agnes_tachyon_idle_breathe_long_agtc600": [
+      "agnes_tachyon_idle_breathe_long_agtc600_f00.png",
+      "agnes_tachyon_idle_breathe_long_agtc600_f01.png",
+      "agnes_tachyon_idle_breathe_long_agtc600_f02.png",
+      "agnes_tachyon_idle_breathe_long_agtc600_f03.png",
+      "agnes_tachyon_idle_breathe_long_agtc600_f04.png",
+      "agnes_tachyon_idle_breathe_long_agtc600_f05.png",
+      "agnes_tachyon_idle_breathe_long_agtc600_f06.png",
+      "agnes_tachyon_idle_breathe_long_agtc600_f07.png"
+    ],
+    "agnes_tachyon_run_pump_agtc700": [
+      "agnes_tachyon_run_pump_agtc700_f00.png",
+      "agnes_tachyon_run_pump_agtc700_f01.png",
+      "agnes_tachyon_run_pump_agtc700_f02.png",
+      "agnes_tachyon_run_pump_agtc700_f03.png",
+      "agnes_tachyon_run_pump_agtc700_f04.png",
+      "agnes_tachyon_run_pump_agtc700_f05.png"
+    ],
+    "agnes_tachyon_sprint_dash_agtc701": [
+      "agnes_tachyon_sprint_dash_agtc701_f00.png",
+      "agnes_tachyon_sprint_dash_agtc701_f01.png",
+      "agnes_tachyon_sprint_dash_agtc701_f02.png",
+      "agnes_tachyon_sprint_dash_agtc701_f03.png",
+      "agnes_tachyon_sprint_dash_agtc701_f04.png",
+      "agnes_tachyon_sprint_dash_agtc701_f05.png",
+      "agnes_tachyon_sprint_dash_agtc701_f06.png",
+      "agnes_tachyon_sprint_dash_agtc701_f07.png"
+    ],
+    "agnes_tachyon_idle_wave_agtc540": [
+      "agnes_tachyon_idle_wave_agtc540_f00.png",
+      "agnes_tachyon_idle_wave_agtc540_f01.png"
+    ],
+    "agnes_tachyon_idle_happy_agtc520": [
+      "agnes_tachyon_idle_happy_agtc520_f00.png",
+      "agnes_tachyon_idle_happy_agtc520_f01.png",
+      "agnes_tachyon_idle_happy_agtc520_f02.png"
+    ],
+    "agnes_tachyon_idle_shift_agtc101": [
+      "agnes_tachyon_idle_shift_agtc101_f00.png",
+      "agnes_tachyon_idle_shift_agtc101_f01.png",
+      "agnes_tachyon_idle_shift_agtc101_f02.png",
+      "agnes_tachyon_idle_shift_agtc101_f03.png",
+      "agnes_tachyon_idle_shift_agtc101_f04.png",
+      "agnes_tachyon_idle_shift_agtc101_f05.png"
+    ],
+    "agnes_tachyon_run_start_agtc160": [
+      "agnes_tachyon_run_start_agtc160_f00.png",
+      "agnes_tachyon_run_start_agtc160_f01.png",
+      "agnes_tachyon_run_start_agtc160_f02.png",
+      "agnes_tachyon_run_start_agtc160_f03.png"
+    ],
+    "agnes_tachyon_dash_stop_agtc163": [
+      "agnes_tachyon_dash_stop_agtc163_f00.png",
+      "agnes_tachyon_dash_stop_agtc163_f01.png",
+      "agnes_tachyon_dash_stop_agtc163_f02.png",
+      "agnes_tachyon_dash_stop_agtc163_f03.png"
+    ],
+    "agnes_tachyon_sprint_settle_b_agtc704": [
+      "agnes_tachyon_sprint_settle_b_agtc704_f00.png",
+      "agnes_tachyon_sprint_settle_b_agtc704_f01.png",
+      "agnes_tachyon_sprint_settle_b_agtc704_f02.png"
+    ],
+    "agnes_tachyon_sprint_settle_a_agtc703": [
+      "agnes_tachyon_sprint_settle_a_agtc703_f00.png",
+      "agnes_tachyon_sprint_settle_a_agtc703_f01.png",
+      "agnes_tachyon_sprint_settle_a_agtc703_f02.png"
+    ],
+    "agnes_tachyon_turn_back_agtc550": [
+      "agnes_tachyon_turn_back_agtc550_f00.png",
+      "agnes_tachyon_turn_back_agtc550_f01.png",
+      "agnes_tachyon_turn_back_agtc550_f02.png",
+      "agnes_tachyon_turn_back_agtc550_f03.png"
+    ]
+  },
+  "selectedFrameFiles": [
+    "agnes_tachyon_idle_breathe_long_agtc600_f00.png",
+    "agnes_tachyon_idle_breathe_long_agtc600_f01.png",
+    "agnes_tachyon_idle_breathe_long_agtc600_f02.png",
+    "agnes_tachyon_idle_breathe_long_agtc600_f03.png",
+    "agnes_tachyon_idle_breathe_long_agtc600_f04.png",
+    "agnes_tachyon_idle_breathe_long_agtc600_f05.png",
+    "agnes_tachyon_idle_breathe_long_agtc600_f06.png",
+    "agnes_tachyon_idle_breathe_long_agtc600_f07.png",
+    "agnes_tachyon_run_pump_agtc700_f00.png",
+    "agnes_tachyon_run_pump_agtc700_f01.png",
+    "agnes_tachyon_run_pump_agtc700_f02.png",
+    "agnes_tachyon_run_pump_agtc700_f03.png",
+    "agnes_tachyon_run_pump_agtc700_f04.png",
+    "agnes_tachyon_run_pump_agtc700_f05.png",
+    "agnes_tachyon_sprint_dash_agtc701_f00.png",
+    "agnes_tachyon_sprint_dash_agtc701_f01.png",
+    "agnes_tachyon_sprint_dash_agtc701_f02.png",
+    "agnes_tachyon_sprint_dash_agtc701_f03.png",
+    "agnes_tachyon_sprint_dash_agtc701_f04.png",
+    "agnes_tachyon_sprint_dash_agtc701_f05.png",
+    "agnes_tachyon_sprint_dash_agtc701_f06.png",
+    "agnes_tachyon_sprint_dash_agtc701_f07.png",
+    "agnes_tachyon_idle_wave_agtc540_f00.png",
+    "agnes_tachyon_idle_wave_agtc540_f01.png",
+    "agnes_tachyon_idle_happy_agtc520_f00.png",
+    "agnes_tachyon_idle_happy_agtc520_f01.png",
+    "agnes_tachyon_idle_happy_agtc520_f02.png",
+    "agnes_tachyon_idle_shift_agtc101_f00.png",
+    "agnes_tachyon_idle_shift_agtc101_f01.png",
+    "agnes_tachyon_idle_shift_agtc101_f02.png",
+    "agnes_tachyon_idle_shift_agtc101_f03.png",
+    "agnes_tachyon_idle_shift_agtc101_f04.png",
+    "agnes_tachyon_idle_shift_agtc101_f05.png",
+    "agnes_tachyon_run_start_agtc160_f00.png",
+    "agnes_tachyon_run_start_agtc160_f01.png",
+    "agnes_tachyon_run_start_agtc160_f02.png",
+    "agnes_tachyon_run_start_agtc160_f03.png",
+    "agnes_tachyon_dash_stop_agtc163_f00.png",
+    "agnes_tachyon_dash_stop_agtc163_f01.png",
+    "agnes_tachyon_dash_stop_agtc163_f02.png",
+    "agnes_tachyon_dash_stop_agtc163_f03.png",
+    "agnes_tachyon_sprint_settle_b_agtc704_f00.png",
+    "agnes_tachyon_sprint_settle_b_agtc704_f01.png",
+    "agnes_tachyon_sprint_settle_b_agtc704_f02.png",
+    "agnes_tachyon_sprint_settle_a_agtc703_f00.png",
+    "agnes_tachyon_sprint_settle_a_agtc703_f01.png",
+    "agnes_tachyon_sprint_settle_a_agtc703_f02.png",
+    "agnes_tachyon_turn_back_agtc550_f00.png",
+    "agnes_tachyon_turn_back_agtc550_f01.png",
+    "agnes_tachyon_turn_back_agtc550_f02.png",
+    "agnes_tachyon_turn_back_agtc550_f03.png"
+  ]
+}
