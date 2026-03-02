@@ -25,6 +25,7 @@ const brandFont = Bebas_Neue({
 });
 
 const locale = getLocale();
+const socialImagePath = "/assets/icons/logo_and_watermarks/Umacraft_Logo_Orange.png";
 
 export const metadata: Metadata = {
   metadataBase: new URL(`https://${locale.brand.websiteDomain}`),
@@ -49,11 +50,18 @@ export const metadata: Metadata = {
     siteName: locale.brand.projectName,
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: socialImagePath,
+        alt: `${locale.brand.projectName} logo`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: locale.meta.openGraphTitle,
     description: locale.meta.openGraphDescription,
+    images: [socialImagePath],
   },
 };
 

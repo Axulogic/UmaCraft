@@ -11,11 +11,13 @@ export const enUSLocale: LocaleSchema = {
     secondaryOrganization: "Nomaryth",
   },
   meta: {
-    title: "UmaCraft | Official Paper 1.21+ Server",
-    description: "Official UmaCraft website and Java server access at play.umacraft.xyz.",
+    title: "UmaCraft | Official Minecraft Server (Paper 1.21+)",
+    description:
+      "Official UmaCraft website with direct access to the public Paper 1.21+ server at play.umacraft.xyz.",
     keywords: ["UmaCraft", "Minecraft server", "Paper 1.21+", "play.umacraft.xyz", "umacraft.xyz"],
-    openGraphTitle: "Official UmaCraft Server",
-    openGraphDescription: "Connect to play.umacraft.xyz and join the official Paper 1.21+ world.",
+    openGraphTitle: "UmaCraft | Official Server",
+    openGraphDescription:
+      "Join the official UmaCraft Paper 1.21+ server at play.umacraft.xyz and start your journey with the community.",
   },
   splash: {
     loadingLabel: "Initializing",

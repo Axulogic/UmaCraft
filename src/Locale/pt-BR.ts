@@ -11,9 +11,9 @@ export const ptBRLocale: LocaleSchema = {
     secondaryOrganization: "Nomaryth",
   },
   meta: {
-    title: "UmaCraft | Servidor Oficial Paper 1.21+",
+    title: "UmaCraft | Servidor Oficial de Minecraft (Paper 1.21+)",
     description:
-      "Site oficial do UmaCraft e acesso ao servidor Java em play.umacraft.xyz.",
+      "Site oficial do UmaCraft com acesso direto ao servidor público Paper 1.21+ em play.umacraft.xyz.",
     keywords: [
       "UmaCraft",
       "servidor Minecraft",
@@ -21,9 +21,9 @@ export const ptBRLocale: LocaleSchema = {
       "play.umacraft.xyz",
       "umacraft.xyz",
     ],
-    openGraphTitle: "Servidor Oficial UmaCraft",
+    openGraphTitle: "UmaCraft | Servidor Oficial",
     openGraphDescription:
-      "Conecte-se a play.umacraft.xyz e junte-se ao mundo oficial Paper 1.21+.",
+      "Entre no servidor oficial Paper 1.21+ do UmaCraft em play.umacraft.xyz e comece sua jornada com a comunidade.",
   },
   splash: {
     loadingLabel: "Inicializando",
