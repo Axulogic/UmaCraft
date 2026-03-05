@@ -542,49 +542,57 @@ export const enUSLocale: LocaleSchema = {
     },
     faq: {
       title: "Frequently asked questions",
-      intro: "Updated answers for the current project scope.",
+      intro: "Everything below reflects the current live environment and official support flow.",
       items: [
         {
           question: "What is UmaCraft today?",
           answer:
-            "UmaCraft is a Umamusume-themed Minecraft server focused on community, progression and custom spawn systems.",
+            "UmaCraft is a live Umamusume-themed Minecraft server focused on long-term progression, community events, and quality-of-life systems. The current production environment is Vanilla+Plugins, with crossplay and regular balancing updates.",
         },
         {
           question: "Do I need a modpack to play?",
-          answer: "No. Current main entry does not require a mandatory modpack.",
+          answer:
+            "No for the current main server. You can join without a mandatory modpack. If optional packages are released later, they will be listed in the official Download page with full instructions.",
         },
         {
           question: "Can Java and Bedrock play together?",
-          answer: "Yes. The server is configured for Java and Bedrock crossplay.",
+          answer:
+            "Yes. Java and Bedrock are configured for crossplay in the same public environment. Some UI features can differ by platform, but progression and core gameplay remain shared.",
         },
         {
           question: "What version is recommended?",
-          answer: "For Java, 1.21.4 or newer. For Bedrock, use the latest available version.",
+          answer:
+            "For Java, use 1.21.4 or newer (1.21.4 to 1.21.8 is currently the most stable range). For Bedrock, keep your client updated to the latest available version.",
         },
         {
           question: "Can original and non-original launchers connect?",
-          answer: "Yes. Both can connect normally as long as server rules are followed.",
+          answer:
+            "Yes. Both can connect as long as server rules and verification/security requirements are respected. Any abuse, impersonation or bypass attempts may result in moderation action.",
         },
         {
           question: "How do I connect quickly?",
-          answer: "Click Play and choose platform. IP is play.umacraft.xyz. Bedrock port is 19132.",
+          answer:
+            "Use the Play flow on the home page, choose your platform, then add the server address `play.umacraft.xyz`. For Bedrock, include port `19132`.",
         },
         {
           question: "Are downloads available now?",
           answer:
-            "Not yet. Download area is under construction and official packages are published after final validation.",
+            "Not fully yet. The Download area may show preparation status while packages go through final stability, integrity and compatibility validation before release.",
         },
         {
           question: "Is there an active exclusive jukebox mod right now?",
-          answer: "Not in current production scope. Current focus is the server and published website features.",
+          answer:
+            "Not in current production scope. The active priority is a stable live server with complete website/documentation flow. Any exclusive content rollout will be announced through official channels.",
         },
         {
           question: "Where do I get support?",
-          answer: "Discord is the primary support channel. Include context and repro steps when reporting bugs.",
+          answer:
+            "Official Discord is the primary support channel. For faster handling, include your username, platform/version, what happened, and reproduction steps (plus screenshots if available).",
         },
       ],
       stillNeedHelpTitle: "Still have questions?",
-      stillNeedHelpDescription: "Our staff and community reply quickly in the official Discord.",
+      stillNeedHelpDescription:
+        "Our staff and community respond through the official Discord. Open a support request with clear details so we can resolve it quickly.",
       discordCta: "Join Discord",
       aboutCta: "About project",
     },

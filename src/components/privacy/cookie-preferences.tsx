@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Plus, X } from "lucide-react";
+import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "motion/react";
 
 import { COOKIE_CONSENT_KEY } from "@/lib/storage-keys";
@@ -22,6 +23,7 @@ export function CookiePreferences() {
   const locale = useLocale();
   const copy = locale.cookieConsent;
   const [isOpen, setIsOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const [consent, setConsent] = useState<CookieConsentState>(DEFAULT_COOKIE_CONSENT);
   const [expandedKey, setExpandedKey] = useState<keyof CookieConsentState | null>(null);
 
@@ -30,6 +32,25 @@ export function CookiePreferences() {
 
     setConsent(parseCookieConsent(window.localStorage.getItem(COOKIE_CONSENT_KEY)));
   }, []);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const previousBodyOverflow = document.body.style.overflow;
+    const previousHtmlOverflow = document.documentElement.style.overflow;
+
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = previousBodyOverflow;
+      document.documentElement.style.overflow = previousHtmlOverflow;
+    };
+  }, [isOpen]);
 
   const rows = useMemo(
     () => [
@@ -103,27 +124,29 @@ export function CookiePreferences() {
         <span>{locale.footer.cookiePreferencesLabel}</span>
       </button>
 
-      <AnimatePresence>
-        {isOpen ? (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.18 }}
-            className="fixed inset-0 z-[220] bg-black/45 p-4 backdrop-blur-sm"
-            onClick={() => setIsOpen(false)}
-          >
-            <motion.div
-              initial={{ y: 24, opacity: 0, scale: 0.96 }}
-              animate={{ y: 0, opacity: 1, scale: 1 }}
-              exit={{ y: 18, opacity: 0, scale: 0.96 }}
-              transition={{ 
-                duration: 0.28, 
-                ease: [0.16, 1, 0.3, 1]
-              }}
-              className="mx-auto w-full max-w-[680px] overflow-hidden rounded-2xl border border-[var(--line)] bg-[var(--paper)] text-[var(--ink)] shadow-[0_34px_88px_-30px_rgba(0,0,0,0.55)] max-h-[90vh] overflow-y-auto"
-              onClick={(event) => event.stopPropagation()}
-            >
+      {isMounted
+        ? createPortal(
+            <AnimatePresence>
+              {isOpen ? (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.18 }}
+                  className="fixed inset-0 z-[520] flex items-center justify-center bg-black/40 p-4 backdrop-blur-[3px]"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <motion.div
+                    initial={{ y: 18, opacity: 0, scale: 0.96 }}
+                    animate={{ y: 0, opacity: 1, scale: 1 }}
+                    exit={{ y: 14, opacity: 0, scale: 0.96 }}
+                    transition={{
+                      duration: 0.24,
+                      ease: [0.16, 1, 0.3, 1]
+                    }}
+                    className="max-h-[90vh] w-full max-w-[680px] overflow-y-auto rounded-2xl border border-[var(--line)] bg-[var(--paper)] text-[var(--ink)] shadow-[0_34px_88px_-30px_rgba(0,0,0,0.55)]"
+                    onClick={(event) => event.stopPropagation()}
+                  >
               <div className="flex items-start justify-between border-b border-[var(--line)] px-6 py-5">
                 <div className="max-w-[520px]">
                   <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[var(--ink)]/55">
@@ -269,10 +292,13 @@ export function CookiePreferences() {
                   </button>
                 </div>
               </div>
-            </motion.div>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
+                  </motion.div>
+                </motion.div>
+              ) : null}
+            </AnimatePresence>,
+            document.body,
+          )
+        : null}
     </>
   );
 }

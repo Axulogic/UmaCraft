@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ChevronDown, HelpCircle } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 import { SiteFooter } from "@/components/layout/site-footer";
 import { HomeSmoothScroll } from "@/components/layout/home-smooth-scroll";
@@ -36,17 +36,22 @@ export default function FAQPage() {
             </div>
 
             <div className="page-enter page-enter-d1 space-y-4">
-              {copy.items.map((faq) => (
-                <Collapsible key={faq.question} className="rounded-lg border border-[var(--line)] bg-[var(--paper)]">
-                  <CollapsibleTrigger className="flex w-full items-center justify-between p-6 text-left transition-colors hover:bg-[var(--mist)]">
+              {copy.items.map((faq, index) => (
+                <Collapsible
+                  key={faq.question}
+                  className="group overflow-hidden rounded-2xl border border-[var(--line)] bg-[var(--paper)] shadow-[0_8px_22px_-18px_rgba(25,25,25,0.35)] transition-all duration-300 hover:border-[var(--brand)]/28 hover:bg-[var(--mist)]/38 data-[state=open]:border-[var(--brand)]/35 data-[state=open]:bg-[var(--mist)]/32 data-[state=open]:shadow-[0_14px_30px_-20px_rgba(25,25,25,0.45)]"
+                >
+                  <CollapsibleTrigger className="flex w-full items-center justify-between px-6 py-5 text-left [&[data-state=open]>svg]:rotate-180">
                     <div className="flex items-center gap-3">
-                      <HelpCircle className="size-5 shrink-0 text-[var(--brand)]" />
+                      <span className="inline-flex h-8 min-w-8 items-center justify-center rounded-full border border-[var(--line)] bg-[var(--paper)] px-2 text-[11px] font-black tabular-nums tracking-[0.08em] text-[var(--brand)] transition-colors duration-300 group-data-[state=open]:border-[var(--brand)]/35 group-data-[state=open]:bg-[var(--brand)]/10">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
                       <h3 className="font-medium">{faq.question}</h3>
                     </div>
-                    <ChevronDown className="size-4 text-[var(--ink)]/60" />
+                    <ChevronDown className="size-4 text-[var(--ink)]/60 transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]" />
                   </CollapsibleTrigger>
-                  <CollapsibleContent className="px-6 pb-6">
-                    <p className="leading-relaxed text-[var(--ink)]/70">{faq.answer}</p>
+                  <CollapsibleContent className="border-t border-[var(--line)]/60 px-6 pb-5 text-sm">
+                    <p className="pt-3 leading-relaxed text-[var(--ink)]/72">{faq.answer}</p>
                   </CollapsibleContent>
                 </Collapsible>
               ))}

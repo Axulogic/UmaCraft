@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "motion/react";
 import {
   ArrowLeft,
@@ -25,11 +26,16 @@ import { useLocale } from "@/lib/use-locale";
 function BotHighlight({ name, imagePath }: { name: string; imagePath: string }) {
   const [showPreview, setShowPreview] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   return (
     <>
       <span
-        className="relative inline-flex items-center cursor-pointer font-bold text-violet-500 hover:text-violet-600 transition-colors"
+        className="relative inline-flex cursor-pointer items-center font-bold text-[var(--brand)] transition-colors hover:text-[var(--brand)]/80"
         onMouseEnter={() => setShowPreview(true)}
         onMouseLeave={() => setShowPreview(false)}
         onClick={() => setShowModal(true)}
@@ -57,39 +63,47 @@ function BotHighlight({ name, imagePath }: { name: string; imagePath: string }) 
         </AnimatePresence>
       </span>
 
-      <AnimatePresence>
-        {showModal && (
-          <div
-            className="fixed inset-0 z-[200] flex items-center justify-center bg-black/50 p-4 backdrop-blur-sm"
-            onClick={() => setShowModal(false)}
-          >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              className="relative max-w-2xl w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-2 shadow-2xl"
-              onClick={(event) => event.stopPropagation()}
-            >
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setShowModal(false)}
-                className="absolute right-4 top-4 z-10 rounded-full bg-black/20 text-white hover:bg-black/40"
-              >
-                <X className="size-5" />
-              </Button>
-              <Image
-                src={imagePath}
-                alt={`${name} full view`}
-                width={800}
-                height={600}
-                className="w-full rounded-xl object-contain bg-[var(--mist)] max-h-[70vh]"
-                unoptimized
-              />
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
+      {isMounted
+        ? createPortal(
+            <AnimatePresence>
+              {showModal && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="fixed inset-0 z-[520] flex items-center justify-center bg-black/45 p-4 backdrop-blur-[3px]"
+                  onClick={() => setShowModal(false)}
+                >
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.92 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.92 }}
+                    className="relative w-full max-w-2xl rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-2 shadow-2xl"
+                    onClick={(event) => event.stopPropagation()}
+                  >
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      onClick={() => setShowModal(false)}
+                      className="absolute right-4 top-4 z-10 rounded-full bg-black/20 text-white hover:bg-black/40"
+                    >
+                      <X className="size-5" />
+                    </Button>
+                    <Image
+                      src={imagePath}
+                      alt={`${name} full view`}
+                      width={800}
+                      height={600}
+                      className="max-h-[70vh] w-full rounded-xl bg-[var(--mist)] object-contain"
+                      unoptimized
+                    />
+                  </motion.div>
+                </motion.div>
+              )}
+            </AnimatePresence>,
+            document.body,
+          )
+        : null}
     </>
   );
 }
@@ -173,7 +187,7 @@ export default function DiscordLinkPage() {
                               return <BotHighlight key={i} name="UmaCraft" imagePath="/assets/tutorial/linking/umacraft-bot.png" />;
                             }
                             if (part === "Agnes Tachyon") {
-                              return <span key={i} className="font-bold text-amber-500">Agnes Tachyon</span>;
+                              return <span key={i} className="font-bold text-[var(--ink)]/86">Agnes Tachyon</span>;
                             }
                             return part;
                           })}
@@ -202,10 +216,10 @@ export default function DiscordLinkPage() {
                         href={req.url}
                         target="_blank"
                         rel="noreferrer"
-                        className="flex items-center gap-2 rounded-xl border border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-sm font-semibold text-[#5865F2] hover:bg-[#5865F2]/5 hover:border-[#5865F2]/20 transition-all"
+                        className="flex items-center gap-2 rounded-xl border border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-sm font-semibold text-[var(--ink)]/82 transition-all hover:border-[var(--brand)]/30 hover:bg-[var(--mist)]/55"
                       >
                         {req.text}
-                        <ExternalLink className="size-4" />
+                        <ExternalLink className="size-4 text-[var(--brand)]" />
                       </a>
                     ))}
                   </div>
@@ -214,7 +228,7 @@ export default function DiscordLinkPage() {
               </article>
 
               <aside className="space-y-4 lg:sticky lg:top-28 lg:self-start">
-                <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-5">
+                <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-5 shadow-[0_12px_30px_-24px_rgba(25,25,25,0.5)]">
                   <p className="text-[11px] font-bold tracking-[0.1em] text-[var(--ink)]/56 uppercase">
                     Security Warning
                   </p>
@@ -224,7 +238,7 @@ export default function DiscordLinkPage() {
                   </p>
                 </div>
 
-                <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-5">
+                <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-5 shadow-[0_12px_30px_-24px_rgba(25,25,25,0.5)]">
                   <p className="flex items-start gap-2.5 text-sm text-[var(--ink)]/75">
                     <MessageSquareText className="mt-0.5 size-4 shrink-0 text-[var(--brand)]" />
                     Need manual support? Open a Discord ticket and mention your Minecraft username.
@@ -234,9 +248,9 @@ export default function DiscordLinkPage() {
                 <Button
                   asChild
                   variant="outline"
-                  className="w-full rounded-2xl border-[var(--line)] bg-[var(--paper)] py-6"
+                  className="w-full rounded-2xl border-[var(--line)] bg-[var(--paper)] py-6 shadow-[0_12px_30px_-24px_rgba(25,25,25,0.5)] hover:bg-[var(--mist)]/55"
                 >
-                  <Link href="/" className="inline-flex items-center gap-2 font-bold hover:bg-[var(--mist)]">
+                  <Link href="/" className="inline-flex items-center gap-2 font-bold">
                     <ArrowLeft className="size-4" />
                     {dsLoc.backHome}
                   </Link>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Server, Users, Heart, Star } from "lucide-react";
+import { Compass, Hammer, ShieldCheck, UsersRound } from "lucide-react";
 
 import { SiteFooter } from "@/components/layout/site-footer";
 import { HomeSmoothScroll } from "@/components/layout/home-smooth-scroll";
@@ -19,7 +19,7 @@ export default function AboutPage() {
   const locale = getLocale();
   const copy = locale.pages.about;
 
-  const iconByIndex = [Users, Server, Heart] as const;
+  const iconByIndex = [Hammer, ShieldCheck, UsersRound] as const;
 
   return (
     <div className="min-h-screen bg-[var(--mist)] text-[var(--ink)]">
@@ -38,20 +38,20 @@ export default function AboutPage() {
 
           <section className="page-enter page-enter-d1 mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {copy.cards.map((card, index) => {
-              const Icon = iconByIndex[index] ?? Users;
+              const Icon = iconByIndex[index] ?? UsersRound;
               const iconClassByIndex = [
-                "bg-[var(--brand)]/10 text-[var(--brand)]",
-                "bg-[#fffc00]/10 text-[#d4d100]",
-                "bg-[#fc00ff]/10 text-[#fc00ff]",
+                "bg-[var(--brand)]/12 text-[var(--brand)]",
+                "bg-[var(--brand)]/12 text-[var(--brand)]",
+                "bg-[var(--brand)]/12 text-[var(--brand)]",
               ] as const;
 
               return (
                 <article
                   key={card.title}
-                  className="group relative overflow-hidden rounded-[1.5rem] border border-[var(--line)] bg-[var(--paper)] p-6 shadow-[0_10px_40px_-20px_rgba(25,25,25,0.3)] transition-all hover:-translate-y-1 hover:shadow-[0_20px_50px_-20px_rgba(25,25,25,0.4)]"
+                  className="relative overflow-hidden rounded-[1.5rem] border border-[var(--line)] bg-[var(--paper)] p-6 shadow-[0_10px_40px_-20px_rgba(25,25,25,0.3)]"
                 >
                   <div
-                    className={`mb-4 inline-flex size-12 items-center justify-center rounded-2xl transition-transform group-hover:scale-110 ${
+                    className={`mb-4 inline-flex size-12 items-center justify-center rounded-2xl ${
                       iconClassByIndex[index] ?? iconClassByIndex[0]
                     }`}
                   >
@@ -67,7 +67,7 @@ export default function AboutPage() {
           <section className="page-enter page-enter-d2 relative mt-12 overflow-hidden rounded-[2rem] border border-[var(--line)] bg-[var(--paper)] p-8 text-center shadow-[0_20px_60px_-40px_rgba(25,25,25,0.55)] md:p-12">
             <div className="relative z-10 mx-auto max-w-2xl">
               <div className="mx-auto mb-6 inline-flex size-16 items-center justify-center rounded-[1.5rem] border border-[var(--line)] bg-[var(--mist)] shadow-sm">
-                <Star className="size-8 fill-[var(--brand)]/20 text-[var(--brand)]" />
+                <Compass className="size-8 text-[var(--brand)]" />
               </div>
               <h2 className="heading-font text-3xl font-semibold text-[var(--ink)] sm:text-4xl">{copy.missionTitle}</h2>
               <p className="mt-6 text-base leading-relaxed text-[var(--ink)]/75 md:text-lg">
@@ -85,7 +85,7 @@ export default function AboutPage() {
             </div>
 
             <div className="pointer-events-none absolute top-0 right-0 -m-20 size-64 rounded-full bg-[var(--brand)]/5 blur-3xl" />
-            <div className="pointer-events-none absolute bottom-0 left-0 -m-20 size-64 rounded-full bg-[#fffc00]/5 blur-3xl" />
+            <div className="pointer-events-none absolute bottom-0 left-0 -m-20 size-64 rounded-full bg-[var(--ink)]/4 blur-3xl" />
           </section>
           </div>
         </main>

@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { createPortal } from "react-dom";
 import {
   Sparkles,
   Users,
@@ -73,6 +74,7 @@ export function HeroSection() {
   const heroSectionRef = useRef<HTMLElement | null>(null);
   const locale = useLocale();
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const [runnerStarted, setRunnerStarted] = useState(false);
   const [guideEnabled, setGuideEnabled] = useState(false);
   const [activePopupIndex, setActivePopupIndex] = useState(0);
@@ -147,12 +149,21 @@ export function HeroSection() {
   }
 
   useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
     if (!isPopupOpen && !isGuidePopupOpen && !isPlayPopupOpen) {
       return;
     }
 
-    const previousOverflow = document.body.style.overflow;
+    const previousBodyOverflow = document.body.style.overflow;
+    const previousHtmlOverflow = document.documentElement.style.overflow;
+    const previousBodyTouchAction = document.body.style.touchAction;
+
     document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.touchAction = "none";
 
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -195,7 +206,9 @@ export function HeroSection() {
 
     window.addEventListener("keydown", handleEscape);
     return () => {
-      document.body.style.overflow = previousOverflow;
+      document.body.style.overflow = previousBodyOverflow;
+      document.documentElement.style.overflow = previousHtmlOverflow;
+      document.body.style.touchAction = previousBodyTouchAction;
       window.removeEventListener("keydown", handleEscape);
     };
   }, [
@@ -441,14 +454,16 @@ export function HeroSection() {
         />
       </div>
 
-      <AnimatePresence>
-        {isPlayPopupOpen && (
+      {isMounted
+        ? createPortal(
+            <AnimatePresence>
+              {isPlayPopupOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="fixed inset-0 z-[160]"
+            className="fixed inset-0 z-[520]"
           >
             <motion.button
               type="button"
@@ -457,7 +472,7 @@ export function HeroSection() {
                 setIsPlayPopupOpen(false);
                 setSelectedPlayPlatform(null);
               }}
-              className="absolute inset-0 bg-[color:rgba(25,25,25,0.58)] backdrop-blur-lg"
+              className="absolute inset-0 bg-[color:rgba(25,25,25,0.58)] backdrop-blur-[3px]"
             />
 
             <div
@@ -667,7 +682,7 @@ export function HeroSection() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.28, ease: "easeOut" }}
-            className="fixed inset-0 z-[155]"
+            className="fixed inset-0 z-[520]"
           >
             <motion.button
               type="button"
@@ -677,7 +692,7 @@ export function HeroSection() {
                 setGuideImageZoom(1);
                 setIsGuidePopupOpen(false);
               }}
-              className="absolute inset-0 bg-[color:rgba(25,25,25,0.56)] backdrop-blur-lg"
+              className="absolute inset-0 bg-[color:rgba(25,25,25,0.56)] backdrop-blur-[3px]"
             />
             <div
               className="relative z-10 flex h-full items-center justify-center px-4 py-8 md:px-8"
@@ -913,13 +928,13 @@ export function HeroSection() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.28, ease: "easeOut" }}
-            className="fixed inset-0 z-[150]"
+            className="fixed inset-0 z-[520]"
           >
             <motion.button
               type="button"
               aria-label={heroCopy.popupCloseAriaLabel}
               onClick={() => setIsPopupOpen(false)}
-              className="absolute inset-0 bg-[color:rgba(25,25,25,0.52)] backdrop-blur-lg"
+              className="absolute inset-0 bg-[color:rgba(25,25,25,0.52)] backdrop-blur-[3px]"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -1228,8 +1243,11 @@ export function HeroSection() {
               </motion.div>
             </div>
           </motion.div>
-        )}
-      </AnimatePresence>
+              )}
+            </AnimatePresence>,
+            document.body,
+          )
+        : null}
     </section>
   );
 }

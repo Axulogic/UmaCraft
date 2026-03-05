@@ -24,27 +24,12 @@ export default function DownloadPage() {
     <div className="min-h-screen bg-[var(--mist)] text-[var(--ink)]">
       <Topbar />
       <HomeSmoothScroll>
-        <main className="relative overflow-hidden pt-28 pb-20">
-          <div className="pointer-events-none absolute inset-0 z-30 bg-[linear-gradient(180deg,rgba(244,240,235,0.82)_0%,rgba(244,240,235,0.82)_100%)] backdrop-blur-[22px]" />
-          <div className="pointer-events-none absolute top-28 left-1/2 z-40 w-full max-w-5xl -translate-x-1/2 px-6">
-          <div className="mb-8 rounded-[1.35rem] border border-[#f08b36]/45 bg-gradient-to-r from-[#fff8f1] via-[var(--paper)] to-[#fff8f1] px-5 py-4 shadow-[0_20px_44px_-30px_rgba(25,25,25,0.65)] sm:px-7 sm:py-5">
-            <div className="flex items-start gap-3">
-              <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#e2762a]/12 text-[#e2762a]">
-                <AlertTriangle className="size-4" />
-              </span>
-              <div className="min-w-0">
-                <p className="text-[11px] font-black uppercase tracking-[0.14em] text-[#cf6621] sm:text-xs">
-                  {copy.warningTitle}
-                </p>
-                <p className="mt-1 text-sm font-medium leading-relaxed text-[var(--ink)]/78 sm:text-[15px]">
-                  {copy.warningDescription}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-          <div className="relative z-20 mx-auto w-full max-w-5xl px-6 pt-24">
+        <main className="relative overflow-hidden pt-20 pb-8">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 z-30 bg-[linear-gradient(180deg,rgba(244,240,235,0.82)_0%,rgba(244,240,235,0.82)_100%)] backdrop-blur-[22px]"
+          />
+          <div className="relative z-20 mx-auto w-full max-w-5xl px-6">
           <Link
             href="/"
             className="inline-flex items-center gap-2 text-sm font-medium text-[var(--ink)]/60 transition-colors hover:text-[var(--ink)]"
@@ -53,22 +38,23 @@ export default function DownloadPage() {
             {copy.backHome}
           </Link>
 
-          <section className="page-enter mt-8 space-y-4">
+          <section className="page-enter mt-4 space-y-3">
             <div className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[var(--ink)]/70 shadow-sm">
               <Download className="size-4 text-[var(--brand)]" />
               {copy.chipLabel}
             </div>
 
-            <div className="rounded-[2rem] border border-[var(--line)] bg-[var(--paper)] p-6 shadow-[0_20px_60px_-40px_rgba(25,25,25,0.55)] sm:p-10">
-              <h1 className="heading-font text-4xl font-semibold leading-tight text-[var(--ink)] sm:text-5xl">{copy.title}</h1>
-              <p className="mt-4 max-w-3xl text-lg leading-relaxed text-[var(--ink)]/75">{copy.intro}</p>
+            <div className="rounded-[1.6rem] border border-[var(--line)] bg-[var(--paper)] p-5 shadow-[0_16px_40px_-34px_rgba(25,25,25,0.6)] sm:p-7">
+              <h1 className="heading-font text-3xl font-semibold leading-tight text-[var(--ink)] sm:text-4xl">{copy.title}</h1>
+              <p className="mt-3 max-w-3xl text-base leading-relaxed text-[var(--ink)]/75">{copy.intro}</p>
             </div>
           </section>
 
-          <section className="page-enter page-enter-d1 mt-8 grid gap-6 lg:grid-cols-[1fr_340px]">
-            <div className="space-y-6">
-              <div className="rounded-[1.5rem] border border-[var(--line)] bg-[var(--paper)] p-6 shadow-sm">
-                <div className="mb-5 flex items-center gap-3 border-b border-[var(--line)] pb-4">
+          <section className="page-enter page-enter-d1 mt-5">
+            <div className="grid gap-4 lg:grid-cols-[1fr_320px]">
+            <div className="space-y-4">
+              <div className="rounded-[1.4rem] border border-[var(--line)] bg-[var(--paper)] p-5 shadow-sm">
+                <div className="mb-4 flex items-center gap-3 border-b border-[var(--line)] pb-3">
                   <div className="flex size-10 items-center justify-center rounded-xl bg-[var(--brand)]/10 text-[var(--brand)]">
                     <Download className="size-5" />
                   </div>
@@ -78,11 +64,11 @@ export default function DownloadPage() {
                   </div>
                 </div>
 
-                <div className="grid gap-4">
+                <div className="grid gap-3">
                   {copy.channels.map((entry) => (
                     <article
                       key={`${entry.version}-${entry.type}`}
-                      className="group flex flex-col justify-between gap-4 rounded-xl border border-[var(--line)] bg-[var(--mist)]/40 p-4 transition-colors hover:border-[var(--brand)]/50 hover:bg-[var(--mist)] sm:flex-row sm:items-center"
+                      className="group flex flex-col justify-between gap-3 rounded-xl border border-[var(--line)] bg-[var(--mist)]/40 p-3.5 transition-colors hover:border-[var(--brand)]/50 hover:bg-[var(--mist)] sm:flex-row sm:items-center"
                     >
                       <div>
                         <div className="flex items-center gap-2">
@@ -103,8 +89,8 @@ export default function DownloadPage() {
                 </div>
               </div>
 
-              <div className="rounded-[1.5rem] border border-[var(--line)] bg-[var(--paper)] p-6 shadow-sm">
-                <div className="mb-5 flex items-center gap-3 border-b border-[var(--line)] pb-4">
+              <div className="rounded-[1.4rem] border border-[var(--line)] bg-[var(--paper)] p-5 shadow-sm">
+                <div className="mb-4 flex items-center gap-3 border-b border-[var(--line)] pb-3">
                   <div className="flex size-10 items-center justify-center rounded-xl bg-[#fc00ff]/10 text-[#fc00ff]">
                     <MonitorPlay className="size-5" />
                   </div>
@@ -114,10 +100,10 @@ export default function DownloadPage() {
                   </div>
                 </div>
 
-                <div className="space-y-6">
+                <div className="space-y-4">
                   <div className="relative pl-6 before:absolute before:inset-y-0 before:left-[11px] before:w-0.5 before:bg-[var(--line)]">
                     {copy.installSteps.map((step, index) => (
-                      <div key={step.title} className={`${index < copy.installSteps.length - 1 ? "mb-6" : ""} relative`}>
+                      <div key={step.title} className={`${index < copy.installSteps.length - 1 ? "mb-4" : ""} relative`}>
                         <div className="absolute -left-[30px] top-0.5 flex size-6 items-center justify-center rounded-full border-[3px] border-[var(--paper)] bg-[var(--brand)] text-[10px] font-bold text-white shadow-sm">
                           {index + 1}
                         </div>
@@ -130,11 +116,11 @@ export default function DownloadPage() {
               </div>
             </div>
 
-            <aside className="space-y-6">
-              <div className="rounded-[1.5rem] border border-[var(--line)] bg-[var(--paper)] p-6 shadow-sm">
-                <h3 className="heading-font mb-4 text-lg font-semibold text-[var(--ink)]">{copy.requirementsTitle}</h3>
+            <aside className="space-y-4">
+              <div className="rounded-[1.4rem] border border-[var(--line)] bg-[var(--paper)] p-5 shadow-sm">
+                <h3 className="heading-font mb-3 text-lg font-semibold text-[var(--ink)]">{copy.requirementsTitle}</h3>
 
-                <div className="space-y-6">
+                <div className="space-y-4">
                   {copy.requirements.map((req, index) => {
                     const Icon = requirementIcons[index] ?? requirementIcons[0];
                     return (
@@ -157,18 +143,37 @@ export default function DownloadPage() {
                 </div>
               </div>
 
-              <div className="rounded-[1.5rem] border border-[var(--brand)]/30 bg-gradient-to-br from-[var(--brand)]/10 to-[var(--paper)] p-6 shadow-sm">
+              <div className="rounded-[1.4rem] border border-[var(--brand)]/30 bg-gradient-to-br from-[var(--brand)]/10 to-[var(--paper)] p-5 shadow-sm">
                 <h3 className="heading-font mb-2 flex items-center gap-2 text-lg font-semibold text-[var(--ink)]">
                   <Coffee className="size-5 text-[var(--brand)]" />
                   {copy.helpTitle}
                 </h3>
-                <p className="mb-5 text-sm leading-relaxed text-[var(--ink)]/75">{copy.helpDescription}</p>
+                <p className="mb-4 text-sm leading-relaxed text-[var(--ink)]/75">{copy.helpDescription}</p>
                 <Button className="w-full rounded-full shadow-md" asChild>
                   <Link href="/discord-link">{copy.helpCta}</Link>
                 </Button>
               </div>
             </aside>
+            </div>
           </section>
+          </div>
+
+          <div className="pointer-events-none absolute left-1/2 top-[18.5rem] z-40 w-full max-w-3xl -translate-x-1/2 px-6">
+            <div className="rounded-[1rem] border border-[var(--brand)]/45 bg-[linear-gradient(90deg,rgba(241,80,37,0.16),rgba(255,255,255,0.98),rgba(241,80,37,0.16))] px-4 py-3 shadow-[0_14px_26px_-22px_rgba(25,25,25,0.55)] sm:px-5">
+              <div className="flex items-start gap-3">
+                <span className="mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[var(--brand)]/14 text-[var(--brand)]">
+                  <AlertTriangle className="size-4" />
+                </span>
+                <div className="min-w-0">
+                  <p className="text-[11px] font-black uppercase tracking-[0.13em] text-[var(--brand)] sm:text-xs">
+                    {copy.warningTitle}
+                  </p>
+                  <p className="mt-0.5 text-sm font-medium leading-relaxed text-[var(--ink)]/78">
+                    {copy.warningDescription}
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </main>
         <SiteFooter />

@@ -636,56 +636,57 @@ export const ptBRLocale: LocaleSchema = {
     },
     faq: {
       title: "Perguntas frequentes",
-      intro: "Respostas atualizadas para o escopo real do projeto.",
+      intro: "As respostas abaixo refletem o ambiente oficial em produção e o fluxo atual de suporte.",
       items: [
         {
           question: "O que é o UmaCraft hoje?",
           answer:
-            "O UmaCraft é um servidor temático de Minecraft inspirado em Umamusume, com foco em comunidade, progressão e sistemas de spawn com NPCs personalizados.",
+            "O UmaCraft é um servidor temático de Minecraft inspirado em Umamusume, com foco em progressão de longo prazo, eventos de comunidade e recursos de qualidade de vida. Hoje, o ambiente oficial em produção é Vanilla+Plugins.",
         },
         {
           question: "Preciso instalar modpack para jogar?",
           answer:
-            "Não. No escopo atual, a entrada principal não exige modpack obrigatório para acessar o servidor.",
+            "Não para o servidor principal atual. Você pode entrar sem modpack obrigatório. Quando houver pacote opcional/oficial, ele será publicado na página de Download com instruções completas.",
         },
         {
           question: "Java e Bedrock podem jogar juntos?",
           answer:
-            "Sim. O servidor é configurado para crossplay entre Java e Bedrock.",
+            "Sim. O servidor está configurado para crossplay entre Java e Bedrock no mesmo ambiente público. Algumas diferenças visuais de interface podem existir por plataforma, mas a base do gameplay é compartilhada.",
         },
         {
           question: "Qual versão é recomendada?",
           answer:
-            "Para Java, recomendamos Minecraft 1.21.4 ou superior. Para Bedrock, use a versão mais recente disponível.",
+            "Para Java, recomendamos 1.21.4 ou superior (faixa 1.21.4 até 1.21.8 está mais estável no momento). Para Bedrock, mantenha sua versão na mais recente disponível.",
         },
         {
           question: "Minecraft original e não-original podem entrar?",
           answer:
-            "Sim. Jogadores com launcher original e não-original conseguem acessar normalmente, respeitando as regras do servidor.",
+            "Sim. Ambos conseguem acessar normalmente, desde que respeitem as regras, validações e requisitos de segurança da plataforma. Tentativas de abuso, impersonação ou bypass podem gerar ação de moderação.",
         },
         {
           question: "Como entro no servidor rapidamente?",
           answer:
-            "Clique em Play e escolha sua plataforma. O IP é play.umacraft.xyz. No Bedrock, use também a porta 19132.",
+            "Use o fluxo de Play na página inicial, escolha sua plataforma e adicione o servidor com IP `play.umacraft.xyz`. No Bedrock, inclua também a porta `19132`.",
         },
         {
           question: "Os downloads já estão liberados?",
           answer:
-            "Ainda não. A área de download está em construção e os pacotes oficiais serão publicados quando a validação final for concluída.",
+            "Ainda não totalmente. A área de Download pode aparecer em estado de preparação enquanto os pacotes passam por validação final de estabilidade, integridade e compatibilidade.",
         },
         {
           question: "Existe algum mod exclusivo de jukebox ativo agora?",
           answer:
-            "Não no escopo atual de produção. Hoje o foco oficial está no servidor e nas features publicadas no site.",
+            "Não no escopo atual de produção. A prioridade oficial no momento é manter o servidor estável e consolidar o fluxo completo de site/documentação. Novos conteúdos exclusivos serão anunciados pelos canais oficiais.",
         },
         {
           question: "Onde posso pedir suporte?",
           answer:
-            "O canal principal é o Discord da comunidade. Se encontrar bug, envie contexto e passos para reproduzir.",
+            "O canal principal é o Discord oficial. Para acelerar o atendimento, envie seu usuário, plataforma/versão, o que aconteceu e passos para reproduzir (com print, se possível).",
         },
       ],
       stillNeedHelpTitle: "Ainda ficou alguma dúvida?",
-      stillNeedHelpDescription: "Nossa equipe e comunidade respondem rapidamente no Discord oficial.",
+      stillNeedHelpDescription:
+        "Nossa equipe e a comunidade atendem pelo Discord oficial. Abra seu pedido com contexto claro para receber suporte mais rápido.",
       discordCta: "Entrar no Discord",
       aboutCta: "Sobre o projeto",
     },

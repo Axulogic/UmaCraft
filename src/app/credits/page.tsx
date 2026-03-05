@@ -108,7 +108,7 @@ export default function CreditsPage() {
                               href={reference.href}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="inline-flex items-center gap-1 rounded-full border border-[#f08b36]/35 bg-[#f08b36]/10 px-2.5 py-1 text-[10px] font-semibold text-[#e2762a] transition-colors hover:bg-[#f08b36]/16 hover:text-[#cc5f17]"
+                              className="inline-flex items-center gap-1 rounded-full border border-[var(--line)] bg-[var(--paper)] px-2.5 py-1 text-[10px] font-semibold text-[var(--ink)]/72 transition-colors hover:bg-[var(--mist)] hover:text-[var(--ink)]"
                             >
                               {reference.label}
                               <ArrowUpRight className="size-3" />
@@ -123,7 +123,7 @@ export default function CreditsPage() {
             </div>
 
             <aside className="page-enter page-enter-d3 space-y-6 lg:sticky lg:top-36 lg:self-start">
-              <div className="relative overflow-hidden rounded-[2rem] border border-[var(--brand)]/20 bg-gradient-to-br from-[var(--paper)] to-[var(--brand)]/5 p-6 shadow-[0_10px_40px_-20px_rgba(252,0,255,0.4)]">
+              <div className="relative overflow-hidden rounded-[2rem] border border-[var(--line)] bg-gradient-to-br from-[var(--paper)] to-[var(--mist)]/45 p-6 shadow-[0_10px_40px_-20px_rgba(25,25,25,0.3)]">
                 <div className="pointer-events-none absolute top-0 right-0 -m-8 size-24 rounded-full bg-[var(--brand)]/10 blur-xl" />
 
                 <div className="mb-4 flex size-12 items-center justify-center rounded-[1.2rem] bg-[var(--brand)] text-[white] shadow-md">
@@ -135,7 +135,7 @@ export default function CreditsPage() {
 
                 <Button
                   asChild
-                  className="w-full rounded-full text-white shadow-[0_4px_14px_rgba(252,0,255,0.39)] hover:shadow-[0_6px_20px_rgba(252,0,255,0.5)]"
+                  className="w-full rounded-full text-white shadow-[0_8px_20px_-14px_rgba(241,80,37,0.7)] hover:shadow-[0_10px_24px_-12px_rgba(241,80,37,0.78)]"
                 >
                   <Link href="https://discord.gg/QyTvmTaC9G">
                     <Link2 className="mr-1.5 size-4" />
