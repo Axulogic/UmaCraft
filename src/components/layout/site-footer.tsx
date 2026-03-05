@@ -2,7 +2,17 @@
 
 import Link from "next/link";
 import { motion } from "motion/react";
-import { Cloud, Copyright, FileText, Server } from "lucide-react";
+import {
+  Cloud,
+  Copyright,
+  Copy,
+  Info,
+  Handshake,
+  Scale,
+  ShieldCheck,
+  CircleHelp,
+  History,
+} from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { CookiePreferences } from "@/components/privacy/cookie-preferences";
@@ -86,7 +96,7 @@ export function SiteFooter() {
               void handleCopyAddress();
             }}
           >
-            <Server className="size-4" />
+            <Copy className="size-4" />
             {locale.footer.copyCta}
           </Button>
         </motion.div>
@@ -96,42 +106,42 @@ export function SiteFooter() {
             href="/about"
             className="inline-flex items-center gap-1.5 text-[var(--paper)]/80 transition-colors hover:text-[var(--paper)]"
           >
-            <FileText className="size-3.5" />
+            <Info className="size-3.5" />
             {locale.footer.links.about}
           </Link>
           <Link
             href="/credits"
             className="inline-flex items-center gap-1.5 text-[var(--paper)]/80 transition-colors hover:text-[var(--paper)]"
           >
-            <FileText className="size-3.5" />
+            <Handshake className="size-3.5" />
             {locale.footer.links.credits}
           </Link>
           <Link
             href="/terms"
             className="inline-flex items-center gap-1.5 text-[var(--paper)]/80 transition-colors hover:text-[var(--paper)]"
           >
-            <FileText className="size-3.5" />
+            <Scale className="size-3.5" />
             {locale.footer.links.terms}
           </Link>
           <Link
             href="/privacy"
             className="inline-flex items-center gap-1.5 text-[var(--paper)]/80 transition-colors hover:text-[var(--paper)]"
           >
-            <FileText className="size-3.5" />
+            <ShieldCheck className="size-3.5" />
             {locale.footer.links.privacy}
           </Link>
           <Link
             href="/faq"
             className="inline-flex items-center gap-1.5 text-[var(--paper)]/80 transition-colors hover:text-[var(--paper)]"
           >
-            <FileText className="size-3.5" />
+            <CircleHelp className="size-3.5" />
             {locale.footer.links.faq}
           </Link>
           <Link
             href="/changelog"
             className="inline-flex items-center gap-1.5 text-[var(--paper)]/80 transition-colors hover:text-[var(--paper)]"
           >
-            <FileText className="size-3.5" />
+            <History className="size-3.5" />
             {locale.footer.links.changelog}
           </Link>
           <CookiePreferences />

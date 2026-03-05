@@ -1,6 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Globe, Gamepad2, Sparkles, Pickaxe, Map, Crown, Hammer, Rocket } from "lucide-react";
+import {
+  Globe2,
+  Cable,
+  Trophy,
+  Coins,
+  TrendingUp,
+  Swords,
+  Wrench,
+  Rocket,
+} from "lucide-react";
 
 import { SiteFooter } from "@/components/layout/site-footer";
 import { HomeSmoothScroll } from "@/components/layout/home-smooth-scroll";
@@ -15,10 +24,8 @@ export const metadata: Metadata = {
     "Veja todos os recursos do UmaCraft: servidor Minecraft temático de Umamusume Pretty Derby com sistemas exclusivos para fãs.",
 };
 
-const MAIN_ICON_MAP = [Globe, Gamepad2, Sparkles] as const;
-const MAIN_COLOR_MAP = ["#ffb703", "#4facfe", "#2a9d8f"] as const;
-const SECTION_ICON_MAP = [Crown, Pickaxe, Map, Hammer] as const;
-const SECTION_COLOR_MAP = ["var(--brand)", "#ffb703", "#2a9d8f", "#4facfe"] as const;
+const MAIN_ICON_MAP = [Globe2, Cable, Trophy] as const;
+const SECTION_ICON_MAP = [Coins, TrendingUp, Swords, Wrench] as const;
 
 export default function FeaturesPage() {
   const locale = getLocale();
@@ -42,7 +49,6 @@ export default function FeaturesPage() {
           <section className="page-enter page-enter-d1 grid gap-6 md:grid-cols-3">
             {copy.mainFeatures.map((feature, index) => {
               const Icon = MAIN_ICON_MAP[index] ?? MAIN_ICON_MAP[0];
-              const color = MAIN_COLOR_MAP[index] ?? MAIN_COLOR_MAP[0];
               return (
                 <div
                   key={feature.title}
@@ -51,7 +57,11 @@ export default function FeaturesPage() {
                   <div className="relative mb-5 flex items-center justify-between">
                     <div
                       className="flex size-14 items-center justify-center rounded-[1.2rem] shadow-sm backdrop-blur-sm"
-                      style={{ background: `${color}15`, color, border: `1px solid ${color}30` }}
+                      style={{
+                        background: "color-mix(in srgb, var(--brand) 14%, transparent)",
+                        color: "var(--brand)",
+                        border: "1px solid color-mix(in srgb, var(--brand) 32%, transparent)",
+                      }}
                     >
                       <Icon className="size-7" />
                     </div>
@@ -76,14 +86,19 @@ export default function FeaturesPage() {
             <div className="grid gap-8 lg:grid-cols-2">
               {copy.systemSections.map((section, index) => {
                 const Icon = SECTION_ICON_MAP[index] ?? SECTION_ICON_MAP[0];
-                const color = SECTION_COLOR_MAP[index] ?? SECTION_COLOR_MAP[0];
                 return (
                   <article
                     key={section.category}
                     className="rounded-[1.5rem] border border-[var(--line)] bg-[var(--paper)] p-6 shadow-sm sm:p-8"
                   >
                     <div className="mb-6 flex items-center gap-3 border-b border-[var(--line)] pb-4">
-                      <div className="flex size-10 items-center justify-center rounded-xl" style={{ background: `${color}15`, color }}>
+                      <div
+                        className="flex size-10 items-center justify-center rounded-xl"
+                        style={{
+                          background: "color-mix(in srgb, var(--brand) 14%, transparent)",
+                          color: "var(--brand)",
+                        }}
+                      >
                         <Icon className="size-5" />
                       </div>
                       <h3 className="heading-font text-2xl font-semibold text-[var(--ink)]">{section.category}</h3>

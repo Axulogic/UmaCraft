@@ -7,10 +7,10 @@ import {
   Sparkles,
   Users,
   ArrowRight,
-  Package,
+  Boxes,
   Star,
   Play,
-  FlaskConical,
+  Link2,
   Rocket,
   RefreshCw,
   Clock3,
@@ -40,8 +40,8 @@ const COMMUNITY_AVATARS = [
 ];
 
 const FEATURE_ICONS = {
-  jukebox: Package,
-  mascots: FlaskConical,
+  jukebox: Boxes,
+  mascots: Link2,
   modes: Rocket,
 };
 
