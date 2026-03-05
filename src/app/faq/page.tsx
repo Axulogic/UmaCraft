@@ -1,5 +1,4 @@
-"use client";
-
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ChevronDown, HelpCircle } from "lucide-react";
 
@@ -11,10 +10,16 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import { useLocale } from "@/lib/use-locale";
+import { getLocale } from "@/lib/locale";
+
+export const metadata: Metadata = {
+  title: "FAQ | UmaCraft - Servidor Minecraft de Umamusume Pretty Derby",
+  description:
+    "Perguntas frequentes sobre o UmaCraft, servidor Minecraft temático de Umamusume. Saiba como jogar, recursos e comunidade do Minecraft server.",
+};
 
 export default function FAQPage() {
-  const locale = useLocale();
+  const locale = getLocale();
   const copy = locale.pages.faq;
 
   return (

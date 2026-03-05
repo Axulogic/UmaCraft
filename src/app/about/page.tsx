@@ -1,5 +1,4 @@
-"use client";
-
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Server, Users, Heart, Star } from "lucide-react";
 
@@ -7,10 +6,16 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { PlayNowButton } from "@/components/play/play-now-button";
 import { Topbar } from "@/components/layout/topbar";
 import { Button } from "@/components/ui/button";
-import { useLocale } from "@/lib/use-locale";
+import { getLocale } from "@/lib/locale";
+
+export const metadata: Metadata = {
+  title: "Sobre o UmaCraft | Servidor Minecraft de Umamusume",
+  description:
+    "Conheça o UmaCraft, servidor Minecraft temático de Umamusume Pretty Derby. Comunidade brasileira de fãs de Umamusume no Minecraft.",
+};
 
 export default function AboutPage() {
-  const locale = useLocale();
+  const locale = getLocale();
   const copy = locale.pages.about;
 
   const iconByIndex = [Users, Server, Heart] as const;

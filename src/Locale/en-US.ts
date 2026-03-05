@@ -65,7 +65,7 @@ export const enUSLocale: LocaleSchema = {
         id: "modes",
         title: "Modded warming up",
         description:
-          "Vanilla+Plugins is already open to everyone. The Modded version comes later with stronger Uma Musume focus.",
+          "Vanilla+Plugins is already open to everyone. The Modded version comes later with stronger Umamusume focus.",
       },
     ],
     socialProofLabel: "New server, new people, new chaos.",
@@ -82,7 +82,7 @@ export const enUSLocale: LocaleSchema = {
     syncPanelStatus: "Online and stable",
     scrollIndicatorLabel: "Scroll for official links",
     featureChips: [
-      "First public Uma Musume server",
+      "First public Umamusume server",
       "Java + Bedrock crossplay",
       "1.21.x+ (1.21.4 recommended)",
     ],
@@ -152,7 +152,7 @@ export const enUSLocale: LocaleSchema = {
       {
         title: "Tracks coming soon",
         description:
-          "Current focus is Vanilla+Plugins for broad accessibility. Modded comes next with stronger Uma Musume focus.",
+          "Current focus is Vanilla+Plugins for broad accessibility. Modded comes next with stronger Umamusume focus.",
         insight: "Play vanilla now and follow the evolution toward modded later.",
         highlights: [
           "Vanilla+Plugins remains the main entry point",
@@ -168,7 +168,7 @@ export const enUSLocale: LocaleSchema = {
         highlights: [
           "100% English server with multilingual community",
           "Java + Bedrock crossplay in the same environment",
-          "First public server open to the Uma Musume community",
+          "First public server open to the Umamusume community",
         ],
       },
     ],
@@ -475,7 +475,7 @@ export const enUSLocale: LocaleSchema = {
       partners: [
         {
           slug: "umabr",
-          name: "Uma Musume BR!",
+          name: "Umamusume BR!",
           serverId: "1425906852612538511",
           summary:
             "Official partner for community outreach, with collaborative events and coordinated growth.",
@@ -493,7 +493,7 @@ export const enUSLocale: LocaleSchema = {
             "Umamusume Pretty Derby universe, characters and official assets belong to Cygames, Inc.",
           references: [
             { label: "Cygames, Inc", href: "https://www.cygames.co.jp/en/" },
-            { label: "Uma Musume Pretty Derby", href: "https://umamusume.jp/" },
+            { label: "Umamusume Pretty Derby", href: "https://umamusume.jp/" },
           ],
         },
         {
@@ -532,7 +532,7 @@ export const enUSLocale: LocaleSchema = {
         {
           title: "UmaViewer (katboi01)",
           description:
-            "Reference project used for Uma Musume asset access and inspection during visual mapping.",
+            "Reference project used for Umamusume asset access and inspection during visual mapping.",
           references: [
             { label: "UmaViewer repository", href: "https://github.com/katboi01/UmaViewer" },
             { label: "katboi01", href: "https://github.com/katboi01" },
@@ -784,7 +784,7 @@ export const enUSLocale: LocaleSchema = {
         url: "https://discord.gg/QyTvmTaC9G"
       },
       {
-        text: "Uma Musume Br! (Partner)",
+        text: "Umamusume Br! (Partner)",
         url: "https://discord.gg/u6ddFNgQY3"
       }
     ],

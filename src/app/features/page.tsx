@@ -1,5 +1,4 @@
-"use client";
-
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Globe, Gamepad2, Sparkles, Pickaxe, Map, Crown, Hammer, Rocket } from "lucide-react";
 
@@ -7,7 +6,13 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { PlayNowButton } from "@/components/play/play-now-button";
 import { Topbar } from "@/components/layout/topbar";
 import { Button } from "@/components/ui/button";
-import { useLocale } from "@/lib/use-locale";
+import { getLocale } from "@/lib/locale";
+
+export const metadata: Metadata = {
+  title: "Recursos | UmaCraft — Minecraft Umamusume Server",
+  description:
+    "Veja todos os recursos do UmaCraft: servidor Minecraft temático de Umamusume Pretty Derby com sistemas exclusivos para fãs.",
+};
 
 const MAIN_ICON_MAP = [Globe, Gamepad2, Sparkles] as const;
 const MAIN_COLOR_MAP = ["#fffc00", "#4facfe", "#fc00ff"] as const;
@@ -15,7 +20,7 @@ const SECTION_ICON_MAP = [Crown, Pickaxe, Map, Hammer] as const;
 const SECTION_COLOR_MAP = ["var(--brand)", "#fffc00", "#fc00ff", "#4facfe"] as const;
 
 export default function FeaturesPage() {
-  const locale = useLocale();
+  const locale = getLocale();
   const copy = locale.pages.features;
 
   return (

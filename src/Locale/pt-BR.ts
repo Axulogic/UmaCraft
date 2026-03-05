@@ -72,7 +72,7 @@ export const ptBRLocale: LocaleSchema = {
         id: "modes",
         title: "Modded em aquecimento",
         description:
-          "O Vanilla+Plugins já está aberto para todos. A versão Modded será lançada depois, com foco maior em Uma Musume.",
+          "O Vanilla+Plugins já está aberto para todos. A versão Modded será lançada depois, com foco maior em Umamusume.",
       },
     ],
     socialProofLabel: "Server novo, galera nova, problemas novos.",
@@ -89,7 +89,7 @@ export const ptBRLocale: LocaleSchema = {
     syncPanelStatus: "Online e estável",
     scrollIndicatorLabel: "Role para links oficiais",
     featureChips: [
-      "Primeiro servidor público Uma Musume",
+      "Primeiro servidor público Umamusume",
       "Crossplay Java + Bedrock",
       "1.21.x+ (1.21.4 recomendado)",
     ],
@@ -161,7 +161,7 @@ export const ptBRLocale: LocaleSchema = {
       {
         title: "Pistas em Breve",
         description:
-          "Hoje o foco esta no Vanilla+Plugins para atender qualquer jogador. A versao Modded vira na sequencia com foco maior em Uma Musume.",
+          "Hoje o foco esta no Vanilla+Plugins para atender qualquer jogador. A versao Modded vira na sequencia com foco maior em Umamusume.",
         insight: "Voce entra no vanilla agora e acompanha a evolucao para o modded depois.",
         highlights: [
           "Vanilla+Plugins segue como entrada principal",
@@ -177,7 +177,7 @@ export const ptBRLocale: LocaleSchema = {
         highlights: [
           "Servidor 100% em ingles com comunidade multilingual",
           "Crossplay Java + Bedrock no mesmo ambiente",
-          "Primeiro servidor publico aberto para a comunidade Uma Musume",
+          "Primeiro servidor publico aberto para a comunidade Umamusume",
         ],
       },
     ],
@@ -567,7 +567,7 @@ export const ptBRLocale: LocaleSchema = {
       partners: [
         {
           slug: "umabr",
-          name: "Uma Musume BR!",
+          name: "Umamusume BR!",
           serverId: "1425906852612538511",
           summary:
             "Parceira oficial para divulgação com a comunidade brasileira, com planejamento de eventos e crescimento conjunto.",
@@ -585,7 +585,7 @@ export const ptBRLocale: LocaleSchema = {
             "Universo, personagens e materiais oficiais de Umamusume Pretty Derby pertencem a Cygames, Inc.",
           references: [
             { label: "Cygames, Inc", href: "https://www.cygames.co.jp/en/" },
-            { label: "Uma Musume Pretty Derby", href: "https://umamusume.jp/" },
+            { label: "Umamusume Pretty Derby", href: "https://umamusume.jp/" },
           ],
         },
         {
@@ -890,7 +890,7 @@ export const ptBRLocale: LocaleSchema = {
         url: "https://discord.gg/QyTvmTaC9G"
       },
       {
-        text: "Uma Musume Br! (Parceiro)",
+        text: "Umamusume Br! (Parceiro)",
         url: "https://discord.gg/u6ddFNgQY3"
       }
     ],
