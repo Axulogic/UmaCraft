@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft, CalendarClock, FileText, Scale, ShieldCheck } from "lucide-react";
 
+import { HomeSmoothScroll } from "@/components/layout/home-smooth-scroll";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { Topbar } from "@/components/layout/topbar";
 import { Button } from "@/components/ui/button";
@@ -14,18 +15,18 @@ export function LegalShell({ section }: { section: LegalSection }) {
   return (
     <div className="min-h-screen bg-[var(--mist)] text-[var(--ink)]">
       <Topbar />
-
-      <main className="relative mx-auto w-full max-w-6xl px-6 pt-32 pb-16">
-        <div
+      <HomeSmoothScroll>
+        <main className="relative mx-auto w-full max-w-6xl px-6 pt-32 pb-16">
+          <div
           aria-hidden
           className="pointer-events-none absolute top-22 right-8 h-36 w-36 rounded-[2rem] bg-[var(--brand)]/12 blur-2xl"
         />
-        <div
+          <div
           aria-hidden
           className="pointer-events-none absolute bottom-10 left-4 h-28 w-28 rounded-[1.6rem] border border-[var(--line)] bg-[var(--paper)]/55"
         />
 
-        <section className="relative overflow-hidden rounded-[2rem] border border-[var(--line)] bg-[var(--paper)] p-6 shadow-[0_14px_60px_rgba(25,25,25,0.08)] sm:p-8 lg:p-10">
+          <section className="relative overflow-hidden rounded-[2rem] border border-[var(--line)] bg-[var(--paper)] p-6 shadow-[0_14px_60px_rgba(25,25,25,0.08)] sm:p-8 lg:p-10">
           <div
             aria-hidden
             className="absolute top-0 right-0 left-0 h-1 bg-gradient-to-r from-[var(--brand)] via-[var(--brand)]/65 to-transparent"
@@ -142,10 +143,10 @@ export function LegalShell({ section }: { section: LegalSection }) {
               </Link>
             </Button>
           </footer>
-        </section>
-      </main>
-
-      <SiteFooter />
+          </section>
+        </main>
+        <SiteFooter />
+      </HomeSmoothScroll>
     </div>
   );
 }

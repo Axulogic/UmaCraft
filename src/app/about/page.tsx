@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Server, Users, Heart, Star } from "lucide-react";
 
 import { SiteFooter } from "@/components/layout/site-footer";
+import { HomeSmoothScroll } from "@/components/layout/home-smooth-scroll";
 import { PlayNowButton } from "@/components/play/play-now-button";
 import { Topbar } from "@/components/layout/topbar";
 import { Button } from "@/components/ui/button";
@@ -23,9 +24,9 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-[var(--mist)] text-[var(--ink)]">
       <Topbar />
-
-      <main className="relative overflow-hidden pt-28 pb-20">
-        <div className="relative mx-auto w-full max-w-5xl px-6">
+      <HomeSmoothScroll>
+        <main className="relative overflow-hidden pt-28 pb-20">
+          <div className="relative mx-auto w-full max-w-5xl px-6">
           <section className="mt-8 space-y-6">
             <div className="rounded-[2rem] border border-[var(--line)] bg-[var(--paper)] p-6 shadow-[0_20px_60px_-40px_rgba(25,25,25,0.55)] sm:p-10">
               <h1 className="heading-font text-4xl font-semibold leading-tight text-[var(--ink)] sm:text-5xl">
@@ -86,10 +87,10 @@ export default function AboutPage() {
             <div className="pointer-events-none absolute top-0 right-0 -m-20 size-64 rounded-full bg-[var(--brand)]/5 blur-3xl" />
             <div className="pointer-events-none absolute bottom-0 left-0 -m-20 size-64 rounded-full bg-[#fffc00]/5 blur-3xl" />
           </section>
-        </div>
-      </main>
-
-      <SiteFooter />
+          </div>
+        </main>
+        <SiteFooter />
+      </HomeSmoothScroll>
     </div>
   );
 }

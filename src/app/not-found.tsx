@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Home, Search } from "lucide-react";
 
 import { SiteFooter } from "@/components/layout/site-footer";
+import { HomeSmoothScroll } from "@/components/layout/home-smooth-scroll";
 import { Topbar } from "@/components/layout/topbar";
 import { Button } from "@/components/ui/button";
 import { useLocale } from "@/lib/use-locale";
@@ -15,9 +16,9 @@ export default function NotFound() {
   return (
     <div className="min-h-screen bg-[var(--mist)] text-[var(--ink)]">
       <Topbar />
-
-      <main className="pt-28 pb-16">
-        <div className="mx-auto w-full max-w-2xl px-6 text-center">
+      <HomeSmoothScroll>
+        <main className="pt-28 pb-16">
+          <div className="mx-auto w-full max-w-2xl px-6 text-center">
           <div className="space-y-6">
             <div>
               <h1 className="text-6xl font-bold text-[var(--brand)]">{copy.code}</h1>
@@ -52,10 +53,10 @@ export default function NotFound() {
               </p>
             </div>
           </div>
-        </div>
-      </main>
-
-      <SiteFooter />
+          </div>
+        </main>
+        <SiteFooter />
+      </HomeSmoothScroll>
     </div>
   );
 }

@@ -7,6 +7,7 @@ import { Righteous } from "next/font/google";
 import { Volume2 } from "lucide-react";
 
 import { SiteFooter } from "@/components/layout/site-footer";
+import { HomeSmoothScroll } from "@/components/layout/home-smooth-scroll";
 import { Topbar } from "@/components/layout/topbar";
 import { PlayNowButton } from "@/components/play/play-now-button";
 import { Button } from "@/components/ui/button";
@@ -476,9 +477,9 @@ export default function HubPage() {
   return (
     <div className="min-h-screen bg-[var(--mist)] text-[var(--ink)]">
       <Topbar />
-
-      <main className="relative overflow-hidden pb-20 pt-24">
-        <div className="relative mx-auto w-full max-w-7xl px-6">
+      <HomeSmoothScroll>
+        <main className="relative overflow-hidden pb-20 pt-24">
+          <div className="relative mx-auto w-full max-w-7xl px-6">
           <section className="mt-4 space-y-4">
 
             <div className="rounded-[1.5rem] border border-[var(--line)] bg-[var(--paper)] p-5 shadow-[0_20px_60px_-40px_rgba(25,25,25,0.55)] sm:p-6">
@@ -715,10 +716,10 @@ export default function HubPage() {
               </Button>
             </div>
           </section>
-        </div>
-      </main>
-
-      <SiteFooter />
+          </div>
+        </main>
+        <SiteFooter />
+      </HomeSmoothScroll>
     </div>
   );
 }

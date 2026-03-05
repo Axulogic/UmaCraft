@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowLeft, Download, Zap, MonitorPlay, CircleDot, Coffee, AlertTriangle } from "lucide-react";
 
 import { SiteFooter } from "@/components/layout/site-footer";
+import { HomeSmoothScroll } from "@/components/layout/home-smooth-scroll";
 import { Topbar } from "@/components/layout/topbar";
 import { Button } from "@/components/ui/button";
 import { getLocale } from "@/lib/locale";
@@ -22,10 +23,10 @@ export default function DownloadPage() {
   return (
     <div className="min-h-screen bg-[var(--mist)] text-[var(--ink)]">
       <Topbar />
-
-      <main className="relative overflow-hidden pt-28 pb-20">
-        <div className="pointer-events-none absolute inset-0 z-30 bg-[linear-gradient(180deg,rgba(244,240,235,0.82)_0%,rgba(244,240,235,0.82)_100%)] backdrop-blur-[22px]" />
-        <div className="pointer-events-none absolute top-28 left-1/2 z-40 w-full max-w-5xl -translate-x-1/2 px-6">
+      <HomeSmoothScroll>
+        <main className="relative overflow-hidden pt-28 pb-20">
+          <div className="pointer-events-none absolute inset-0 z-30 bg-[linear-gradient(180deg,rgba(244,240,235,0.82)_0%,rgba(244,240,235,0.82)_100%)] backdrop-blur-[22px]" />
+          <div className="pointer-events-none absolute top-28 left-1/2 z-40 w-full max-w-5xl -translate-x-1/2 px-6">
           <div className="mb-8 rounded-[1.35rem] border border-[#f08b36]/45 bg-gradient-to-r from-[#fff8f1] via-[var(--paper)] to-[#fff8f1] px-5 py-4 shadow-[0_20px_44px_-30px_rgba(25,25,25,0.65)] sm:px-7 sm:py-5">
             <div className="flex items-start gap-3">
               <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#e2762a]/12 text-[#e2762a]">
@@ -43,7 +44,7 @@ export default function DownloadPage() {
           </div>
         </div>
 
-        <div className="relative z-20 mx-auto w-full max-w-5xl px-6 pt-24">
+          <div className="relative z-20 mx-auto w-full max-w-5xl px-6 pt-24">
           <Link
             href="/"
             className="inline-flex items-center gap-2 text-sm font-medium text-[var(--ink)]/60 transition-colors hover:text-[var(--ink)]"
@@ -168,10 +169,10 @@ export default function DownloadPage() {
               </div>
             </aside>
           </section>
-        </div>
-      </main>
-
-      <SiteFooter />
+          </div>
+        </main>
+        <SiteFooter />
+      </HomeSmoothScroll>
     </div>
   );
 }

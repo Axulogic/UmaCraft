@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ChevronDown, HelpCircle } from "lucide-react";
 
 import { SiteFooter } from "@/components/layout/site-footer";
+import { HomeSmoothScroll } from "@/components/layout/home-smooth-scroll";
 import { Topbar } from "@/components/layout/topbar";
 import { Button } from "@/components/ui/button";
 import {
@@ -25,9 +26,9 @@ export default function FAQPage() {
   return (
     <div className="min-h-screen bg-[var(--mist)] text-[var(--ink)]">
       <Topbar />
-
-      <main className="pt-28 pb-16">
-        <div className="mx-auto w-full max-w-4xl px-6">
+      <HomeSmoothScroll>
+        <main className="pt-28 pb-16">
+          <div className="mx-auto w-full max-w-4xl px-6">
           <div className="mt-8 space-y-8">
             <div className="text-center">
               <h1 className="text-3xl font-bold tracking-tight">{copy.title}</h1>
@@ -64,10 +65,10 @@ export default function FAQPage() {
               </div>
             </div>
           </div>
-        </div>
-      </main>
-
-      <SiteFooter />
+          </div>
+        </main>
+        <SiteFooter />
+      </HomeSmoothScroll>
     </div>
   );
 }

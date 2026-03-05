@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Clock3, Construction, Sparkles } from "lucide-react";
 
 import { SiteFooter } from "@/components/layout/site-footer";
+import { HomeSmoothScroll } from "@/components/layout/home-smooth-scroll";
 import { Topbar } from "@/components/layout/topbar";
 import { Button } from "@/components/ui/button";
 import { getLocale } from "@/lib/locale";
@@ -20,9 +21,9 @@ export default function ChangelogPage() {
   return (
     <div className="min-h-screen bg-[var(--mist)] text-[var(--ink)]">
       <Topbar />
-
-      <main className="pt-28 pb-16">
-        <div className="mx-auto w-full max-w-4xl px-6">
+      <HomeSmoothScroll>
+        <main className="pt-28 pb-16">
+          <div className="mx-auto w-full max-w-4xl px-6">
           <div className="mt-8">
             <section className="relative overflow-hidden rounded-[2rem] border border-[var(--line)] bg-[var(--paper)] p-8 text-center shadow-[0_20px_55px_-35px_rgba(25,25,25,0.55)] sm:p-10">
               <div className="pointer-events-none absolute -top-16 right-0 h-48 w-48 rounded-full bg-[var(--brand)]/14 blur-3xl" />
@@ -67,10 +68,10 @@ export default function ChangelogPage() {
               </div>
             </section>
           </div>
-        </div>
-      </main>
-
-      <SiteFooter />
+          </div>
+        </main>
+        <SiteFooter />
+      </HomeSmoothScroll>
     </div>
   );
 }

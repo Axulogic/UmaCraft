@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Globe, Gamepad2, Sparkles, Pickaxe, Map, Crown, Hammer, Rocket } from "lucide-react";
 
 import { SiteFooter } from "@/components/layout/site-footer";
+import { HomeSmoothScroll } from "@/components/layout/home-smooth-scroll";
 import { PlayNowButton } from "@/components/play/play-now-button";
 import { Topbar } from "@/components/layout/topbar";
 import { Button } from "@/components/ui/button";
@@ -26,9 +27,9 @@ export default function FeaturesPage() {
   return (
     <div className="min-h-screen bg-[var(--mist)] text-[var(--ink)]">
       <Topbar />
-
-      <main className="relative overflow-hidden pt-28 pb-20">
-        <div className="relative mx-auto w-full max-w-6xl px-6">
+      <HomeSmoothScroll>
+        <main className="relative overflow-hidden pt-28 pb-20">
+          <div className="relative mx-auto w-full max-w-6xl px-6">
           <section className="mt-8 mb-16 space-y-4 text-center">
             <h1 className="heading-font mx-auto max-w-4xl text-4xl font-semibold leading-tight text-[var(--ink)] sm:text-5xl">
               {copy.titleLineOne}
@@ -150,10 +151,10 @@ export default function FeaturesPage() {
               </div>
             </div>
           </section>
-        </div>
-      </main>
-
-      <SiteFooter />
+          </div>
+        </main>
+        <SiteFooter />
+      </HomeSmoothScroll>
     </div>
   );
 }

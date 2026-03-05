@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowUpRight, BadgeCheck, Handshake, Library, Link2, Music4, Users } from "lucide-react";
 
 import { SiteFooter } from "@/components/layout/site-footer";
+import { HomeSmoothScroll } from "@/components/layout/home-smooth-scroll";
 import { Topbar } from "@/components/layout/topbar";
 import { Button } from "@/components/ui/button";
 import { getLocale } from "@/lib/locale";
@@ -22,9 +23,9 @@ export default function CreditsPage() {
   return (
     <div className="min-h-screen bg-[var(--mist)] text-[var(--ink)]">
       <Topbar />
-
-      <main className="relative overflow-hidden pt-28 pb-20">
-        <div className="relative mx-auto w-full max-w-6xl px-6">
+      <HomeSmoothScroll>
+        <main className="relative overflow-hidden pt-28 pb-20">
+          <div className="relative mx-auto w-full max-w-6xl px-6">
           <header className="mt-8 mb-12 flex flex-col items-center text-center">
             <h1 className="heading-font mt-5 max-w-3xl text-4xl font-semibold leading-tight text-[var(--ink)] sm:text-5xl">
               {copy.title}
@@ -155,10 +156,10 @@ export default function CreditsPage() {
               </div>
             </aside>
           </div>
-        </div>
-      </main>
-
-      <SiteFooter />
+          </div>
+        </main>
+        <SiteFooter />
+      </HomeSmoothScroll>
     </div>
   );
 }

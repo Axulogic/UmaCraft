@@ -100,6 +100,7 @@
     -webkit-font-smoothing: antialiased;
   }
 
+
   body * {
     -webkit-user-select: none;
     user-select: none;
@@ -124,8 +125,7 @@
 
   * {
     scrollbar-width: thin;
-    scrollbar-color: color-mix(in srgb, var(--brand) 78%, var(--ink) 22%)
-      transparent;
+    scrollbar-color: color-mix(in srgb, var(--brand) 78%, var(--ink) 22%) transparent;
   }
 
   *::-webkit-scrollbar {
@@ -141,21 +141,17 @@
     min-height: 56px;
     border: 3px solid transparent;
     border-radius: 999px;
-    background: linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--brand) 86%, white 14%) 0%,
-      color-mix(in srgb, var(--brand) 82%, var(--ink) 18%) 100%
-    );
+    background: linear-gradient(180deg,
+        color-mix(in srgb, var(--brand) 86%, white 14%) 0%,
+        color-mix(in srgb, var(--brand) 82%, var(--ink) 18%) 100%);
     background-clip: padding-box;
     box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ink) 14%, transparent);
   }
 
   *::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--brand) 92%, white 8%) 0%,
-      color-mix(in srgb, var(--brand) 84%, var(--ink) 16%) 100%
-    );
+    background: linear-gradient(180deg,
+        color-mix(in srgb, var(--brand) 92%, white 8%) 0%,
+        color-mix(in srgb, var(--brand) 84%, var(--ink) 16%) 100%);
   }
 }
 
@@ -186,6 +182,7 @@
     transform: scaleX(1);
     opacity: 0.75;
   }
+
   100% {
     transform: scaleX(0);
     opacity: 0.3;
@@ -196,6 +193,7 @@
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -205,6 +203,7 @@
   0% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }
@@ -247,11 +246,9 @@
   z-index: 2;
   pointer-events: none;
   transform-origin: left center;
-  background: linear-gradient(
-    90deg,
-    color-mix(in srgb, var(--brand) 88%, white 12%) 0%,
-    color-mix(in srgb, var(--brand) 65%, var(--line) 35%) 100%
-  );
+  background: linear-gradient(90deg,
+      color-mix(in srgb, var(--brand) 88%, white 12%) 0%,
+      color-mix(in srgb, var(--brand) 65%, var(--line) 35%) 100%);
   opacity: 0.85;
   animation: umacraft-toast-expire var(--toast-expire-duration, 4200ms) linear forwards;
   transition: opacity 200ms ease;
@@ -362,6 +359,7 @@
 
 
 @media (prefers-reduced-motion: reduce) {
+
   .umacraft-toaster [data-sonner-toast].umacraft-toast,
   .umacraft-toaster [data-sonner-toast].umacraft-toast[data-mounted="true"],
   .umacraft-toaster [data-sonner-toast].umacraft-toast[data-removed="true"] {
