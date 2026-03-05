@@ -1,11 +1,8 @@
 import type { MetadataRoute } from "next";
 
-import { getLocale } from "@/lib/locale";
+import { SITE_HOST, SITE_URL } from "@/lib/site-url";
 
 export const dynamic = "force-static";
-
-const locale = getLocale();
-const baseUrl = `https://${locale.brand.websiteDomain}`;
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -15,7 +12,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: `${baseUrl}/sitemap.xml`,
-    host: baseUrl,
+    sitemap: `${SITE_URL}/sitemap.xml`,
+    host: SITE_HOST,
   };
 }

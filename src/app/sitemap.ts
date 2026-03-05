@@ -1,11 +1,9 @@
 import type { MetadataRoute } from "next";
 
-import { getLocale } from "@/lib/locale";
+import { SITE_URL } from "@/lib/site-url";
 
 export const dynamic = "force-static";
 
-const locale = getLocale();
-const baseUrl = `https://${locale.brand.websiteDomain}`;
 const STATIC_ROUTES = [
   "",
   "/about",
@@ -23,7 +21,7 @@ const STATIC_ROUTES = [
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
   return STATIC_ROUTES.map((route) => ({
-    url: `${baseUrl}${route}`,
+    url: `${SITE_URL}${route}`,
     lastModified,
   }));
 }

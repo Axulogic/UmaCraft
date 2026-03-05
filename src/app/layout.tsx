@@ -3,6 +3,7 @@ import { Bebas_Neue, Manrope, Syne } from "next/font/google";
 
 import { SiteProviders } from "@/components/providers/site-providers";
 import { getLocale } from "@/lib/locale";
+import { SITE_URL } from "@/lib/site-url";
 
 import "./globals.css";
 
@@ -28,7 +29,7 @@ const locale = getLocale();
 const socialImagePath = "/assets/icons/logo_and_watermarks/Umacraft_Logo_Orange.png";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(`https://${locale.brand.websiteDomain}`),
+  metadataBase: new URL(SITE_URL),
   title: locale.meta.title,
   description: locale.meta.description,
   keywords: locale.meta.keywords,
@@ -46,7 +47,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: locale.meta.openGraphTitle,
     description: locale.meta.openGraphDescription,
-    url: `https://${locale.brand.websiteDomain}`,
+    url: SITE_URL,
     siteName: locale.brand.projectName,
     locale: "en_US",
     type: "website",

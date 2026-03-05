@@ -1,17 +1,22 @@
-"use client";
-
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, Download, Zap, MonitorPlay, CircleDot, Coffee, AlertTriangle } from "lucide-react";
 
 import { SiteFooter } from "@/components/layout/site-footer";
 import { Topbar } from "@/components/layout/topbar";
 import { Button } from "@/components/ui/button";
-import { useLocale } from "@/lib/use-locale";
+import { getLocale } from "@/lib/locale";
+
+export const metadata: Metadata = {
+  title: "Download | UmaCraft - Umamusume Minecraft Server",
+  description:
+    "Baixe os arquivos e versões do UmaCraft, servidor Minecraft inspirado em Umamusume Pretty Derby para jogar com a comunidade.",
+};
 
 const requirementIcons = [CircleDot, Zap] as const;
 
 export default function DownloadPage() {
-  const locale = useLocale();
+  const locale = getLocale();
   const copy = locale.pages.download;
 
   return (

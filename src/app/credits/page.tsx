@@ -1,17 +1,22 @@
-"use client";
-
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight, BadgeCheck, Handshake, Library, Link2, Music4, Users } from "lucide-react";
 
 import { SiteFooter } from "@/components/layout/site-footer";
 import { Topbar } from "@/components/layout/topbar";
 import { Button } from "@/components/ui/button";
-import { useLocale } from "@/lib/use-locale";
+import { getLocale } from "@/lib/locale";
+
+export const metadata: Metadata = {
+  title: "Créditos | UmaCraft Umamusume Minecraft Server",
+  description:
+    "Veja créditos, parceiros e referências do UmaCraft, servidor Minecraft temático de Umamusume Pretty Derby.",
+};
 
 const thirdPartyIcons = [BadgeCheck, Library, Music4, Link2, Link2] as const;
 
 export default function CreditsPage() {
-  const locale = useLocale();
+  const locale = getLocale();
   const copy = locale.pages.credits;
 
   return (

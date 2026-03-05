@@ -1,15 +1,20 @@
-"use client";
-
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Clock3, Construction, Sparkles } from "lucide-react";
 
 import { SiteFooter } from "@/components/layout/site-footer";
 import { Topbar } from "@/components/layout/topbar";
 import { Button } from "@/components/ui/button";
-import { useLocale } from "@/lib/use-locale";
+import { getLocale } from "@/lib/locale";
+
+export const metadata: Metadata = {
+  title: "Changelog | UmaCraft Umamusume Minecraft Server",
+  description:
+    "Acompanhe atualizações do UmaCraft, servidor Minecraft temático de Umamusume Pretty Derby com melhorias e novos recursos.",
+};
 
 export default function ChangelogPage() {
-  const locale = useLocale();
+  const locale = getLocale();
   const copy = locale.pages.changelog;
 
   return (
