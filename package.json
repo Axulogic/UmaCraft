@@ -6,8 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "deploy:cf": "wrangler pages deploy out --project-name UmaCraft",
-    "deploy:cf:preview": "wrangler pages deploy out --project-name UmaCraft --branch preview",
+    "deploy:cf": "wrangler pages deploy out --project-name UmaCraft --functions functions",
+    "deploy:cf:preview": "wrangler pages deploy out --project-name UmaCraft --branch preview --functions functions",
     "lint": "eslint",
     "test": "jest",
     "test:watch": "jest --watch"

@@ -6,15 +6,19 @@ directory = "./out"
 
 [observability]
 enabled = true
-head_sampling_rate = 1
+head_sampling_rate = 0.2
 
 [observability.logs]
 enabled = true
-head_sampling_rate = 1
+head_sampling_rate = 0.2
 persist = true
 invocation_logs = true
 
 [observability.traces]
 enabled = true
 persist = true
-head_sampling_rate = 1
+head_sampling_rate = 0.2
+
+[vars]
+# Runtime kill switch for telemetry function. Set to "false" to disable.
+OBSERVABILITY_API_ENABLED = "false"

@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Bebas_Neue, Manrope, Syne } from "next/font/google";
 
 import { SiteProviders } from "@/components/providers/site-providers";
+import { CloudflareTelemetry } from "@/components/analytics/cloudflare-telemetry";
 import { getLocale } from "@/lib/locale";
 import { SITE_URL } from "@/lib/site-url";
 
@@ -80,6 +81,7 @@ export default function RootLayout({
       <body
         className={`${headingFont.variable} ${bodyFont.variable} ${brandFont.variable} antialiased`}
       >
+        <CloudflareTelemetry />
         <SiteProviders>{children}</SiteProviders>
       </body>
     </html>
