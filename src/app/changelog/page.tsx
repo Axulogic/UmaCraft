@@ -25,7 +25,7 @@ export default function ChangelogPage() {
         <main className="pt-28 pb-16">
           <div className="mx-auto w-full max-w-4xl px-6">
           <div className="mt-8">
-            <section className="relative overflow-hidden rounded-[2rem] border border-[var(--line)] bg-[var(--paper)] p-8 text-center shadow-[0_20px_55px_-35px_rgba(25,25,25,0.55)] sm:p-10">
+            <section className="page-enter relative overflow-hidden rounded-[2rem] border border-[var(--line)] bg-[var(--paper)] p-8 text-center shadow-[0_20px_55px_-35px_rgba(25,25,25,0.55)] sm:p-10">
               <div className="pointer-events-none absolute -top-16 right-0 h-48 w-48 rounded-full bg-[var(--brand)]/14 blur-3xl" />
               <div className="pointer-events-none absolute -bottom-16 left-0 h-44 w-44 rounded-full bg-[#f08b36]/16 blur-3xl" />
 

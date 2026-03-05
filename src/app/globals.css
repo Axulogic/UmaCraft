@@ -95,7 +95,8 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    background: var(--mist);
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
   }
@@ -174,6 +175,35 @@
 
   .surface-card {
     @apply border-[var(--line)] bg-[var(--paper)];
+  }
+
+  @keyframes umacraft-page-enter {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 14px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .page-enter {
+    opacity: 0;
+    animation: umacraft-page-enter 420ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    will-change: transform, opacity;
+  }
+
+  .page-enter-d1 {
+    animation-delay: 70ms;
+  }
+
+  .page-enter-d2 {
+    animation-delay: 120ms;
+  }
+
+  .page-enter-d3 {
+    animation-delay: 170ms;
   }
 }
 
@@ -359,6 +389,15 @@
 
 
 @media (prefers-reduced-motion: reduce) {
+
+  .page-enter,
+  .page-enter-d1,
+  .page-enter-d2,
+  .page-enter-d3 {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
 
   .umacraft-toaster [data-sonner-toast].umacraft-toast,
   .umacraft-toaster [data-sonner-toast].umacraft-toast[data-mounted="true"],

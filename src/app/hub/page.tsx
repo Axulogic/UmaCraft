@@ -480,7 +480,7 @@ export default function HubPage() {
       <HomeSmoothScroll>
         <main className="relative overflow-hidden pb-20 pt-24">
           <div className="relative mx-auto w-full max-w-7xl px-6">
-          <section className="mt-4 space-y-4">
+          <section className="page-enter mt-4 space-y-4">
 
             <div className="rounded-[1.5rem] border border-[var(--line)] bg-[var(--paper)] p-5 shadow-[0_20px_60px_-40px_rgba(25,25,25,0.55)] sm:p-6">
               <h1 className="heading-font text-3xl font-semibold leading-tight sm:text-4xl">
@@ -492,7 +492,7 @@ export default function HubPage() {
             </div>
           </section>
 
-          <section className="mt-10 grid gap-8 sm:grid-cols-2 xl:grid-cols-3">
+          <section className="page-enter page-enter-d1 mt-10 grid gap-8 sm:grid-cols-2 xl:grid-cols-3">
             {orderedSpawnNpcs.map((npc) => {
               const coverBackground = npc.accent;
               const auraBackground = `radial-gradient(circle at 18% 18%, ${npc.glow}22 0%, transparent 58%)`;
@@ -703,7 +703,7 @@ export default function HubPage() {
             })}
           </section>
 
-          <section className="mt-12 rounded-[2rem] border border-[var(--line)] bg-[var(--paper)] p-7 text-center shadow-[0_20px_60px_-36px_rgba(25,25,25,0.52)]">
+          <section className="page-enter page-enter-d2 mt-12 rounded-[2rem] border border-[var(--line)] bg-[var(--paper)] p-7 text-center shadow-[0_20px_60px_-36px_rgba(25,25,25,0.52)]">
             <h2 className="heading-font mt-4 text-3xl font-semibold">{copy.summaryTitle}</h2>
             <p className="mx-auto mt-3 max-w-2xl text-[var(--ink)]/75">
               {copy.summaryDescription}

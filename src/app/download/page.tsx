@@ -53,7 +53,7 @@ export default function DownloadPage() {
             {copy.backHome}
           </Link>
 
-          <section className="mt-8 space-y-4">
+          <section className="page-enter mt-8 space-y-4">
             <div className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[var(--ink)]/70 shadow-sm">
               <Download className="size-4 text-[var(--brand)]" />
               {copy.chipLabel}
@@ -65,7 +65,7 @@ export default function DownloadPage() {
             </div>
           </section>
 
-          <section className="mt-8 grid gap-6 lg:grid-cols-[1fr_340px]">
+          <section className="page-enter page-enter-d1 mt-8 grid gap-6 lg:grid-cols-[1fr_340px]">
             <div className="space-y-6">
               <div className="rounded-[1.5rem] border border-[var(--line)] bg-[var(--paper)] p-6 shadow-sm">
                 <div className="mb-5 flex items-center gap-3 border-b border-[var(--line)] pb-4">

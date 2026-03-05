@@ -27,7 +27,7 @@ export default function AboutPage() {
       <HomeSmoothScroll>
         <main className="relative overflow-hidden pt-28 pb-20">
           <div className="relative mx-auto w-full max-w-5xl px-6">
-          <section className="mt-8 space-y-6">
+          <section className="page-enter mt-8 space-y-6">
             <div className="rounded-[2rem] border border-[var(--line)] bg-[var(--paper)] p-6 shadow-[0_20px_60px_-40px_rgba(25,25,25,0.55)] sm:p-10">
               <h1 className="heading-font text-4xl font-semibold leading-tight text-[var(--ink)] sm:text-5xl">
                 {copy.title}
@@ -36,7 +36,7 @@ export default function AboutPage() {
             </div>
           </section>
 
-          <section className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <section className="page-enter page-enter-d1 mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {copy.cards.map((card, index) => {
               const Icon = iconByIndex[index] ?? Users;
               const iconClassByIndex = [
@@ -64,7 +64,7 @@ export default function AboutPage() {
             })}
           </section>
 
-          <section className="relative mt-12 overflow-hidden rounded-[2rem] border border-[var(--line)] bg-[var(--paper)] p-8 text-center shadow-[0_20px_60px_-40px_rgba(25,25,25,0.55)] md:p-12">
+          <section className="page-enter page-enter-d2 relative mt-12 overflow-hidden rounded-[2rem] border border-[var(--line)] bg-[var(--paper)] p-8 text-center shadow-[0_20px_60px_-40px_rgba(25,25,25,0.55)] md:p-12">
             <div className="relative z-10 mx-auto max-w-2xl">
               <div className="mx-auto mb-6 inline-flex size-16 items-center justify-center rounded-[1.5rem] border border-[var(--line)] bg-[var(--mist)] shadow-sm">
                 <Star className="size-8 fill-[var(--brand)]/20 text-[var(--brand)]" />

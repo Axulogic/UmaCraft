@@ -16,6 +16,18 @@ export function HomeSmoothScroll({ children }: HomeSmoothScrollProps) {
 
     let isActive = true;
     let destroy: (() => void) | null = null;
+    let resizeObserver: ResizeObserver | null = null;
+    let refreshFrame = 0;
+    let delayedRefreshTimer = 0;
+    let scrollTriggerRef: { refresh: () => void; config?: (vars: Record<string, unknown>) => void } | null = null;
+
+    const requestRefresh = () => {
+      if (refreshFrame) return;
+      refreshFrame = window.requestAnimationFrame(() => {
+        refreshFrame = 0;
+        scrollTriggerRef?.refresh();
+      });
+    };
 
     void (async () => {
       const { gsap } = await import("gsap");
@@ -25,19 +37,40 @@ export function HomeSmoothScroll({ children }: HomeSmoothScrollProps) {
       if (!isActive) return;
 
       gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+      scrollTriggerRef = ScrollTrigger;
+      ScrollTrigger.config?.({ ignoreMobileResize: true });
+
+      // In App Router transitions, two pages can overlap briefly.
+      // Ensure only one ScrollSmoother instance exists at a time.
+      ScrollSmoother.get()?.kill();
 
       const smoother = ScrollSmoother.create({
         wrapper: wrapperRef.current!,
         content: contentRef.current!,
-        smooth: prefersReducedMotion ? 0.45 : 1.5,
-        smoothTouch: prefersReducedMotion ? 0.05 : 0.6,
-        effects: true,
+        smooth: prefersReducedMotion ? 0.35 : 1.15,
+        smoothTouch: prefersReducedMotion ? 0.01 : 0.08,
+        effects: false,
         normalizeScroll: true,
       });
 
+      resizeObserver = new ResizeObserver(() => {
+        requestRefresh();
+      });
+      resizeObserver.observe(contentRef.current!);
+      window.addEventListener("load", requestRefresh);
+      window.addEventListener("pageshow", requestRefresh);
+      requestRefresh();
+      delayedRefreshTimer = window.setTimeout(requestRefresh, 900);
+
       destroy = () => {
-        smoother.kill();
-        ScrollTrigger.getAll().forEach((t) => t.kill());
+        if (refreshFrame) window.cancelAnimationFrame(refreshFrame);
+        if (delayedRefreshTimer) window.clearTimeout(delayedRefreshTimer);
+        resizeObserver?.disconnect();
+        window.removeEventListener("load", requestRefresh);
+        window.removeEventListener("pageshow", requestRefresh);
+        if (ScrollSmoother.get() === smoother) {
+          smoother.kill();
+        }
       };
     })();
 
@@ -48,8 +81,8 @@ export function HomeSmoothScroll({ children }: HomeSmoothScrollProps) {
   }, []);
 
   return (
-    <div id="smooth-wrapper" ref={wrapperRef}>
-      <div id="smooth-content" ref={contentRef}>
+    <div ref={wrapperRef} className="min-h-full bg-inherit">
+      <div ref={contentRef} className="min-h-full bg-inherit">
         {children}
       </div>
     </div>

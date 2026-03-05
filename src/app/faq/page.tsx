@@ -30,12 +30,12 @@ export default function FAQPage() {
         <main className="pt-28 pb-16">
           <div className="mx-auto w-full max-w-4xl px-6">
           <div className="mt-8 space-y-8">
-            <div className="text-center">
+            <div className="page-enter text-center">
               <h1 className="text-3xl font-bold tracking-tight">{copy.title}</h1>
               <p className="mt-2 text-lg text-[var(--ink)]/78">{copy.intro}</p>
             </div>
 
-            <div className="space-y-4">
+            <div className="page-enter page-enter-d1 space-y-4">
               {copy.items.map((faq) => (
                 <Collapsible key={faq.question} className="rounded-lg border border-[var(--line)] bg-[var(--paper)]">
                   <CollapsibleTrigger className="flex w-full items-center justify-between p-6 text-left transition-colors hover:bg-[var(--mist)]">
@@ -52,7 +52,7 @@ export default function FAQPage() {
               ))}
             </div>
 
-            <div className="border-t border-[var(--line)] pt-8 text-center">
+            <div className="page-enter page-enter-d2 border-t border-[var(--line)] pt-8 text-center">
               <h2 className="mb-4 text-xl font-semibold">{copy.stillNeedHelpTitle}</h2>
               <p className="mx-auto mb-6 max-w-md text-[var(--ink)]/70">{copy.stillNeedHelpDescription}</p>
               <div className="flex justify-center gap-4">

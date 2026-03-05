@@ -108,7 +108,7 @@ export default function DiscordLinkPage() {
           className="pointer-events-none absolute top-24 -right-3 h-44 w-44 rounded-[2rem] bg-[var(--brand)]/10 blur-2xl"
         />
 
-          <section className="relative overflow-hidden rounded-[2rem] border border-[var(--line)] bg-[var(--paper)] p-6 shadow-[0_14px_60px_rgba(25,25,25,0.08)] sm:p-8 lg:p-10">
+          <section className="page-enter relative overflow-hidden rounded-[2rem] border border-[var(--line)] bg-[var(--paper)] p-6 shadow-[0_14px_60px_rgba(25,25,25,0.08)] sm:p-8 lg:p-10">
           <div
             aria-hidden
             className="absolute top-0 right-0 left-0 h-1 bg-gradient-to-r from-[var(--brand)] via-[var(--brand)]/60 to-transparent"
@@ -129,7 +129,7 @@ export default function DiscordLinkPage() {
             </div>
           </header>
 
-          <div className="mt-8 space-y-8">
+            <div className="page-enter page-enter-d1 mt-8 space-y-8">
 
             <div className="grid gap-4 md:grid-cols-2">
               {dsLoc.benefits.map((benefit, idx) => (

@@ -19,7 +19,7 @@ export default function NotFound() {
       <HomeSmoothScroll>
         <main className="pt-28 pb-16">
           <div className="mx-auto w-full max-w-2xl px-6 text-center">
-          <div className="space-y-6">
+          <div className="page-enter space-y-6">
             <div>
               <h1 className="text-6xl font-bold text-[var(--brand)]">{copy.code}</h1>
               <h2 className="text-2xl font-semibold mt-4">{copy.title}</h2>

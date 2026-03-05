@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "motion/react";
 import {
   Copy,
-  Server,
   Volume2,
   VolumeX,
   Languages,
@@ -17,7 +16,6 @@ import {
   ChevronDown,
   Cpu,
   Leaf,
-  Check,
 } from "lucide-react";
 
 import { useSiteAudio } from "@/components/providers/site-audio-provider";
@@ -70,10 +68,20 @@ export function Topbar() {
   const copyFeedbackTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 20);
+    let rafId = 0;
+    const onScroll = () => {
+      if (rafId) return;
+      rafId = window.requestAnimationFrame(() => {
+        rafId = 0;
+        setIsScrolled(window.scrollY > 20);
+      });
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      if (rafId) window.cancelAnimationFrame(rafId);
+      window.removeEventListener("scroll", onScroll);
+    };
   }, []);
 
   useEffect(() => {
@@ -147,6 +155,8 @@ export function Topbar() {
     { href: "/discord-link", label: locale.footer.links.discordLink },
   ];
   const isDownloadRoute = pathname === "/download";
+  const copyLabel = locale.lang === "pt" ? "Copiar" : "Copy";
+  const copiedLabel = locale.lang === "pt" ? "Copiado" : "Copied";
   const downloadOptions = [
     { href: "/download?server=modded", label: locale.topbar.downloadModdedLabel, icon: Cpu },
     { href: "/download?server=vanilla", label: locale.topbar.downloadVanillaLabel, icon: Leaf },
@@ -283,49 +293,38 @@ export function Topbar() {
                     : undefined
                 }
                 transition={{ duration: 0.36, ease: "easeOut" }}
-                className="hidden md:flex items-center gap-2.5 rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3.5 py-2 text-sm font-bold text-[var(--ink)] transition-colors hover:border-[var(--brand)]/40 hover:bg-[var(--mist)]/55"
+                className="hidden md:flex items-center gap-4 rounded-2xl border border-white/40 bg-[color:rgba(255,255,255,0.44)] px-4 py-2.5 text-sm text-[var(--ink)] shadow-[0_10px_30px_-22px_rgba(0,0,0,0.5)] backdrop-blur-xl transition-all hover:border-white/60 hover:bg-[color:rgba(255,255,255,0.62)]"
               >
-                <motion.span
-                  className="relative flex h-7 w-7 items-center justify-center rounded-lg bg-[var(--mist)] text-[var(--brand)]"
-                  animate={
-                    isCopyFeedbackVisible
-                      ? {
-                        rotate: [0, -8, 8, 0],
-                        scale: [1, 1.08, 1],
-                      }
-                      : undefined
-                  }
-                  transition={{ duration: 0.45, ease: "easeOut" }}
-                >
-                  <Server className="size-4" />
-                  <span className="absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full bg-emerald-500 ring-2 ring-[var(--paper)]" />
-                </motion.span>
-                <span className="hidden text-[10px] font-bold uppercase tracking-widest text-[var(--ink)]/45 xl:block">
-                  {locale.topbar.serverChipLabel}
-                </span>
-                <span className="tabular-nums">{locale.brand.serverAddress}</span>
+                <div className="flex min-w-0 flex-col text-left leading-tight">
+                  <span className="text-[9px] font-bold uppercase tracking-[0.14em] text-[var(--ink)]/48">
+                    {locale.topbar.serverChipLabel}
+                  </span>
+                  <span className="truncate text-sm font-semibold tabular-nums text-[var(--ink)]">
+                    {locale.brand.serverAddress}
+                  </span>
+                </div>
                 <AnimatePresence mode="wait" initial={false}>
                   {isCopyFeedbackVisible ? (
                     <motion.span
                       key="copied-state"
-                      initial={{ opacity: 0, scale: 0.7, rotate: -10 }}
-                      animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                      exit={{ opacity: 0, scale: 0.7, rotate: 10 }}
-                      transition={{ duration: 0.18, ease: "easeOut" }}
-                      className="inline-flex text-emerald-600"
+                      initial={{ opacity: 0, y: 4 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -4 }}
+                      transition={{ duration: 0.14, ease: "easeOut" }}
+                      className="inline-flex min-w-[3.6rem] items-center justify-center rounded-full border border-emerald-300/70 bg-emerald-50/70 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.08em] text-emerald-700"
                     >
-                      <Check className="size-3.5" />
+                      {copiedLabel}
                     </motion.span>
                   ) : (
                     <motion.span
                       key="copy-state"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.8 }}
-                      transition={{ duration: 0.16, ease: "easeOut" }}
-                      className="inline-flex"
+                      initial={{ opacity: 0, y: 4 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -4 }}
+                      transition={{ duration: 0.14, ease: "easeOut" }}
+                      className="inline-flex min-w-[3.6rem] items-center justify-center rounded-full border border-white/60 bg-white/60 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.08em] text-[var(--ink)]/68"
                     >
-                      <Copy className="size-3.5 opacity-40" />
+                      {copyLabel}
                     </motion.span>
                   )}
                 </AnimatePresence>

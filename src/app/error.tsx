@@ -41,7 +41,7 @@ export default function GlobalErrorPage({
       <HomeSmoothScroll>
         <main className="pt-28 pb-16">
           <div className="mx-auto w-full max-w-2xl px-6 text-center">
-          <div className="space-y-6">
+          <div className="page-enter space-y-6">
             <div>
               <AlertTriangle className="size-16 text-[var(--brand)] mx-auto mb-4" />
               <h1 className="text-4xl font-bold">{copy.title}</h1>

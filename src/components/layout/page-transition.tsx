@@ -14,17 +14,9 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
             transition: {
                 duration: 0.5,
                 delay: 0.05 * i,
-                ease: [0.76, 0, 0.24, 1],
+                ease: [0.76, 0, 0.24, 1] as const,
             },
         }),
-    };
-
-    const overlayVariants = {
-        initial: { opacity: 0.5 },
-        enter: {
-            opacity: 0,
-            transition: { duration: 0.5, delay: 0.4, ease: "linear" }
-        }
     };
 
     return (
@@ -52,7 +44,7 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
             <motion.div
                 initial={{ y: 20, opacity: 0, scale: 0.98 }}
                 animate={{ y: 0, opacity: 1, scale: 1 }}
-                transition={{ duration: 0.7, delay: 0.2, ease: [0.33, 1, 0.68, 1] }}
+                transition={{ duration: 0.7, delay: 0.2, ease: [0.33, 1, 0.68, 1] as const }}
                 className="relative"
             >
                 {children}

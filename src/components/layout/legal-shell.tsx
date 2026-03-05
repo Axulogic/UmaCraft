@@ -26,7 +26,7 @@ export function LegalShell({ section }: { section: LegalSection }) {
           className="pointer-events-none absolute bottom-10 left-4 h-28 w-28 rounded-[1.6rem] border border-[var(--line)] bg-[var(--paper)]/55"
         />
 
-          <section className="relative overflow-hidden rounded-[2rem] border border-[var(--line)] bg-[var(--paper)] p-6 shadow-[0_14px_60px_rgba(25,25,25,0.08)] sm:p-8 lg:p-10">
+          <section className="page-enter relative overflow-hidden rounded-[2rem] border border-[var(--line)] bg-[var(--paper)] p-6 shadow-[0_14px_60px_rgba(25,25,25,0.08)] sm:p-8 lg:p-10">
           <div
             aria-hidden
             className="absolute top-0 right-0 left-0 h-1 bg-gradient-to-r from-[var(--brand)] via-[var(--brand)]/65 to-transparent"

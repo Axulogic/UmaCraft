@@ -26,7 +26,7 @@ export default function CreditsPage() {
       <HomeSmoothScroll>
         <main className="relative overflow-hidden pt-28 pb-20">
           <div className="relative mx-auto w-full max-w-6xl px-6">
-          <header className="mt-8 mb-12 flex flex-col items-center text-center">
+          <header className="page-enter mt-8 mb-12 flex flex-col items-center text-center">
             <h1 className="heading-font mt-5 max-w-3xl text-4xl font-semibold leading-tight text-[var(--ink)] sm:text-5xl">
               {copy.title}
             </h1>
@@ -35,7 +35,7 @@ export default function CreditsPage() {
 
           <div className="grid gap-8 lg:grid-cols-[1fr_20rem]">
             <div className="space-y-8">
-              <section className="rounded-[2rem] border border-[var(--line)] bg-[var(--paper)] p-6 shadow-sm sm:p-8">
+              <section className="page-enter page-enter-d1 rounded-[2rem] border border-[var(--line)] bg-[var(--paper)] p-6 shadow-sm sm:p-8">
                 <div className="mb-6 flex items-center gap-3">
                   <div className="flex size-10 items-center justify-center rounded-xl bg-[var(--brand)]/10 text-[var(--brand)]">
                     <Handshake className="size-5" />
@@ -80,7 +80,7 @@ export default function CreditsPage() {
                 </div>
               </section>
 
-              <section className="rounded-[2rem] border border-[var(--line)] bg-[var(--paper)] p-6 shadow-sm sm:p-8">
+              <section className="page-enter page-enter-d2 rounded-[2rem] border border-[var(--line)] bg-[var(--paper)] p-6 shadow-sm sm:p-8">
                 <div className="mb-6 flex items-center gap-3">
                   <div className="flex size-10 items-center justify-center rounded-xl bg-[#fffc00]/15 text-[#d4d100]">
                     <Library className="size-5" />
@@ -122,7 +122,7 @@ export default function CreditsPage() {
               </section>
             </div>
 
-            <aside className="space-y-6 lg:sticky lg:top-36 lg:self-start">
+            <aside className="page-enter page-enter-d3 space-y-6 lg:sticky lg:top-36 lg:self-start">
               <div className="relative overflow-hidden rounded-[2rem] border border-[var(--brand)]/20 bg-gradient-to-br from-[var(--paper)] to-[var(--brand)]/5 p-6 shadow-[0_10px_40px_-20px_rgba(252,0,255,0.4)]">
                 <div className="pointer-events-none absolute top-0 right-0 -m-8 size-24 rounded-full bg-[var(--brand)]/10 blur-xl" />
 
