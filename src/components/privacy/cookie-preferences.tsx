@@ -7,49 +7,28 @@ import { Plus, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 
 import { COOKIE_CONSENT_KEY } from "@/lib/storage-keys";
+import {
+  COOKIE_CONSENT_UPDATED_EVENT,
+  DEFAULT_COOKIE_CONSENT,
+  type CookieConsentState,
+  parseCookieConsent,
+} from "@/lib/cookie-consent";
 import { useLocale } from "@/lib/use-locale";
 
 const COOKIE_ICON_DATA_URI =
   "data:image/svg+xml;base64,PHN2ZyBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAzMCAxNCIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgMzAgMTQiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+Cgkuc3Qwe2ZpbGwtcnVsZTpldmVub2RkO2NsaXAtcnVsZTpldmVub2RkO2ZpbGw6I0ZGRkZGRjt9Cgkuc3Qxe2ZpbGwtcnVsZTpldmVub2RkO2NsaXAtcnVsZTpldmVub2RkO2ZpbGw6IzAwNjZGRjt9Cgkuc3Qye2ZpbGw6I0ZGRkZGRjt9Cgkuc3Qze2ZpbGw6IzAwNjZGRjt9Cjwvc3R5bGU+CgkJPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEyNzUgLTIwMCkiPgoJCQk8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMjc1IDIwMCkiPgoJCQkJPHBhdGggY2xhc3M9InN0MCIgZD0ibTcuNCAxMi44aDYuOGwzLjEtMTEuNmgtOS45Yy0zLjIgMC01LjggMi42LTUuOCA1LjhzMi42IDUuOCA1LjggNS44eiIvPgoJCQk8L2c+CgkJPC9nPgoJCTxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMjc1IC0yMDApIj4KCQkJPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTI3NSAyMDApIj4KCQkJCTxwYXRoIGNsYXNzPSJzdDEiIGQ9Im0yMi42IDBoLTE1LjJjLTMuOSAwLTcgMy4xLTcgN3MzLjEgNyA3IDdoMTUuMmMzLjkgMCA3LTMuMSA3LTdzLTMuMi03LTctN3ptLTIxIDdjMC0zLjIgMi42LTUuOCA1LjgtNS44aDkuOWwtMy4xIDExLjZoLTYuOGMtMy4yIDAtNS44LTIuNi01LjgtNS44eiIvPgoJCQkJPHBhdGggY2xhc3M9InN0MiIgZD0ibTI0LjYgNGMwLjIgMC4yIDAuMiAwLjYgMCAwLjhsLTIuMSAyLjIgMi4yIDIuMmMwLjIgMC4yIDAuMiAwLjYgMCAwLjhzLTAuNiAwLjItMC44IDBsLTIuMi0yLjItMi4yIDIuMmMtMC4yIDAuMi0wLjYgMC4yLTAuOCAwcy0wLjItMC42IDAtMC44bDIuMS0yLjItMi4yLTIuMmMtMC4yLTAuMi0wLjItMC42IDAtMC44czAuNi0wLjIgMC44IDBsMi4yIDIuMiAyLjItMi4yYzAuMi0wLjIgMC42LTAuMiAwLjggMHoiLz4KCQkJCTxwYXRoIGNsYXNzPSJzdDMiIGQ9Im0xMi43IDQuMWMwLjIgMC4yIDAuMyAwLjYgMC4xIDAuOGwtNC4yIDQuOWMtMC4xIDAuMS0wLjIgMC4yLTAuMyAwLjItMC4yIDAuMS0wLjUgMC4xLTAuNy0wLjFsLTIuMi0yLjJjLTAuMi0wLjItMC4yLTAuNiAwLTAuOHMwLjYtMC4yIDAuOCAwbDEuOCAxLjcgMy44LTQuNWMwLjItMC4yIDAuNi0wLjIgMC45IDB6Ii8+CgkJCTwvZz4KCQk8L2c+Cjwvc3ZnPg==";
 
-type CookieConsentState = {
-  necessary: true;
-  functional: boolean;
-  performance: boolean;
-  targeting: boolean;
-};
-
-const DEFAULT_CONSENT: CookieConsentState = {
-  necessary: true,
-  functional: true,
-  performance: true,
-  targeting: true,
-};
-
 export function CookiePreferences() {
   const locale = useLocale();
   const copy = locale.cookieConsent;
   const [isOpen, setIsOpen] = useState(false);
-  const [consent, setConsent] = useState<CookieConsentState>(DEFAULT_CONSENT);
+  const [consent, setConsent] = useState<CookieConsentState>(DEFAULT_COOKIE_CONSENT);
   const [expandedKey, setExpandedKey] = useState<keyof CookieConsentState | null>(null);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    const raw = window.localStorage.getItem(COOKIE_CONSENT_KEY);
-    if (!raw) return;
-
-    try {
-      const parsed = JSON.parse(raw) as Partial<CookieConsentState>;
-      setConsent({
-        necessary: true,
-        functional: Boolean(parsed.functional),
-        performance: Boolean(parsed.performance),
-        targeting: Boolean(parsed.targeting),
-      });
-    } catch {
-      setConsent(DEFAULT_CONSENT);
-    }
+    setConsent(parseCookieConsent(window.localStorage.getItem(COOKIE_CONSENT_KEY)));
   }, []);
 
   const rows = useMemo(
@@ -103,6 +82,11 @@ export function CookiePreferences() {
   const saveConsent = (value: CookieConsentState) => {
     if (typeof window !== "undefined") {
       window.localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(value));
+      window.dispatchEvent(
+        new CustomEvent(COOKIE_CONSENT_UPDATED_EVENT, {
+          detail: value,
+        }),
+      );
     }
     setConsent(value);
     setIsOpen(false);
@@ -271,7 +255,7 @@ export function CookiePreferences() {
                 <div className="flex flex-wrap gap-3">
                   <button
                     type="button"
-                    onClick={() => saveConsent(DEFAULT_CONSENT)}
+                    onClick={() => saveConsent(DEFAULT_COOKIE_CONSENT)}
                     className="rounded-xl border border-[var(--brand)]/30 bg-[var(--brand)]/10 px-5 py-2.5 text-sm font-semibold text-[var(--brand)] transition-all hover:bg-[var(--brand)]/20 hover:border-[var(--brand)]/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)] focus-visible:ring-offset-2"
                   >
                     {locale.lang === "pt" ? "Aceitar Todos" : "Accept All"}
