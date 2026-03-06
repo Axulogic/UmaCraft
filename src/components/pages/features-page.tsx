@@ -1,0 +1,181 @@
+"use client";
+
+import Link from "next/link";
+import {
+  Globe2,
+  Cable,
+  Trophy,
+  Coins,
+  TrendingUp,
+  Swords,
+  Wrench,
+  Rocket,
+} from "lucide-react";
+
+import { HomeSmoothScroll } from "@/components/layout/home-smooth-scroll";
+import { SiteFooter } from "@/components/layout/site-footer";
+import { Topbar } from "@/components/layout/topbar";
+import { PlayNowButton } from "@/components/play/play-now-button";
+import { Button } from "@/components/ui/button";
+import { useLocale } from "@/lib/use-locale";
+
+const MAIN_ICON_MAP = [Globe2, Cable, Trophy] as const;
+const SECTION_ICON_MAP = [Coins, TrendingUp, Swords, Wrench] as const;
+
+export function FeaturesPageContent() {
+  const locale = useLocale();
+  const copy = locale.pages.features;
+
+  return (
+    <div className="min-h-screen bg-[var(--mist)] text-[var(--ink)]">
+      <Topbar />
+      <HomeSmoothScroll>
+        <main className="relative overflow-hidden pt-28 pb-20">
+          <div className="relative mx-auto w-full max-w-6xl px-6">
+            <section className="page-enter mt-8 mb-16 space-y-4 text-center">
+              <h1 className="heading-font mx-auto max-w-4xl text-4xl font-semibold leading-tight text-[var(--ink)] sm:text-5xl">
+                {copy.titleLineOne}
+                <br className="hidden sm:block" />
+                <span className="text-[var(--brand)]"> {copy.titleLineAccent}</span>
+              </h1>
+              <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-[var(--ink)]/75">
+                {copy.intro}
+              </p>
+            </section>
+
+            <section className="page-enter page-enter-d1 grid gap-6 md:grid-cols-3">
+              {copy.mainFeatures.map((feature, index) => {
+                const Icon = MAIN_ICON_MAP[index] ?? MAIN_ICON_MAP[0];
+                return (
+                  <div
+                    key={feature.title}
+                    className="relative overflow-hidden rounded-[1.5rem] border border-[var(--line)] bg-[var(--paper)] p-6 shadow-sm"
+                  >
+                    <div className="relative mb-5 flex items-center justify-between">
+                      <div
+                        className="flex size-14 items-center justify-center rounded-[1.2rem] shadow-sm backdrop-blur-sm"
+                        style={{
+                          background: "color-mix(in srgb, var(--brand) 14%, transparent)",
+                          color: "var(--brand)",
+                          border: "1px solid color-mix(in srgb, var(--brand) 32%, transparent)",
+                        }}
+                      >
+                        <Icon className="size-7" />
+                      </div>
+                      <span className="rounded-full border border-[var(--line)] bg-[var(--mist)] px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[var(--ink)]/70">
+                        {feature.highlight}
+                      </span>
+                    </div>
+
+                    <h3 className="heading-font relative text-xl font-semibold text-[var(--ink)]">
+                      {feature.title}
+                    </h3>
+                    <p className="relative mt-3 text-sm leading-relaxed text-[var(--ink)]/70">
+                      {feature.description}
+                    </p>
+                  </div>
+                );
+              })}
+            </section>
+
+            <section className="page-enter page-enter-d2 mt-16 sm:mt-24">
+              <div className="mb-10 flex flex-col items-center text-center">
+                <h2 className="heading-font text-3xl font-semibold text-[var(--ink)] sm:text-4xl">
+                  {copy.systemsTitle}
+                </h2>
+                <p className="mt-3 max-w-2xl leading-relaxed text-[var(--ink)]/70">
+                  {copy.systemsIntro}
+                </p>
+              </div>
+
+              <div className="grid gap-8 lg:grid-cols-2">
+                {copy.systemSections.map((section, index) => {
+                  const Icon = SECTION_ICON_MAP[index] ?? SECTION_ICON_MAP[0];
+                  return (
+                    <article
+                      key={section.category}
+                      className="rounded-[1.5rem] border border-[var(--line)] bg-[var(--paper)] p-6 shadow-sm sm:p-8"
+                    >
+                      <div className="mb-6 flex items-center gap-3 border-b border-[var(--line)] pb-4">
+                        <div
+                          className="flex size-10 items-center justify-center rounded-xl"
+                          style={{
+                            background: "color-mix(in srgb, var(--brand) 14%, transparent)",
+                            color: "var(--brand)",
+                          }}
+                        >
+                          <Icon className="size-5" />
+                        </div>
+                        <h3 className="heading-font text-2xl font-semibold text-[var(--ink)]">
+                          {section.category}
+                        </h3>
+                      </div>
+
+                      <div className="grid gap-6 sm:grid-cols-2">
+                        {section.items.map((item) => (
+                          <div key={item.name} className="group flex flex-col gap-1.5">
+                            <div className="flex items-center gap-2">
+                              <div className="size-1.5 rounded-full bg-[var(--brand)] transition-transform group-hover:scale-150" />
+                              <h4 className="text-sm font-semibold text-[var(--ink)]">{item.name}</h4>
+                            </div>
+                            <p className="pl-3.5 text-xs leading-relaxed text-[var(--ink)]/65">
+                              {item.description.includes("Agnes Tachyon") ? (
+                                <>
+                                  {item.description.split("Agnes Tachyon")[0]}
+                                  <Link
+                                    href="https://agnesbot.xyz"
+                                    target="_blank"
+                                    rel="noreferrer noopener"
+                                    className="font-semibold text-[var(--brand)] underline decoration-[var(--brand)]/45 underline-offset-2 hover:decoration-[var(--brand)]"
+                                  >
+                                    Agnes Tachyon
+                                  </Link>
+                                  {item.description.split("Agnes Tachyon")[1]}
+                                </>
+                              ) : (
+                                item.description
+                              )}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    </article>
+                  );
+                })}
+              </div>
+            </section>
+
+            <section className="page-enter page-enter-d3 relative mt-16 overflow-hidden rounded-[2rem] border border-[var(--line)] bg-[var(--paper)] p-8 shadow-lg sm:mt-24 sm:p-12">
+              <div className="relative z-10 flex flex-col items-center gap-8 text-center lg:flex-row lg:items-center lg:justify-between lg:text-left">
+                <div className="max-w-2xl">
+                  <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[var(--brand)]/30 bg-[var(--brand)]/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[var(--brand)]">
+                    <Rocket className="size-4" />
+                    {copy.roadmapBadge}
+                  </div>
+                  <h3 className="heading-font text-3xl font-semibold text-[var(--ink)] sm:text-4xl">
+                    {copy.roadmapTitle}
+                  </h3>
+                  <p className="mt-4 text-lg leading-relaxed text-[var(--ink)]/75">
+                    {copy.roadmapDescription}
+                  </p>
+                </div>
+
+                <div className="flex w-full shrink-0 flex-col gap-4 sm:w-auto sm:flex-row">
+                  <PlayNowButton
+                    size="lg"
+                    label={copy.primaryCta}
+                    className="h-12 rounded-full px-6 text-base shadow-[0_4px_14px_rgba(42,157,143,0.28)] hover:shadow-[0_6px_20px_rgba(42,157,143,0.4)]"
+                  />
+                  <Button variant="outline" size="lg" className="h-12 rounded-full bg-[var(--paper)] px-6 text-base" asChild>
+                    <Link href="https://discord.gg/QyTvmTaC9G">{copy.communityCta}</Link>
+                  </Button>
+                </div>
+              </div>
+            </section>
+          </div>
+        </main>
+        <SiteFooter />
+      </HomeSmoothScroll>
+    </div>
+  );
+}

@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowLeft, CalendarClock, FileText, Scale, ShieldCheck } from "lucide-react";
 
@@ -5,12 +7,17 @@ import { HomeSmoothScroll } from "@/components/layout/home-smooth-scroll";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { Topbar } from "@/components/layout/topbar";
 import { Button } from "@/components/ui/button";
-import { getLocale } from "@/lib/locale";
-import type { LegalSection } from "@/types/locale";
+import { useLocale } from "@/lib/use-locale";
 
-export function LegalShell({ section }: { section: LegalSection }) {
-  const locale = getLocale();
-  const badgeLabel = section.badge ?? locale.legal.defaultBadge;
+export function LegalShell({
+  sectionKey,
+}: {
+  sectionKey: "credits" | "privacy" | "terms";
+}) {
+  const locale = useLocale();
+  const legalCopy = locale.legal;
+  const section = legalCopy[sectionKey];
+  const badgeLabel = section.badge ?? legalCopy.defaultBadge;
 
   return (
     <div className="min-h-screen bg-[var(--mist)] text-[var(--ink)]">
@@ -48,30 +55,30 @@ export function LegalShell({ section }: { section: LegalSection }) {
             <aside className="space-y-4 lg:sticky lg:top-28 lg:self-start">
               <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
                 <p className="mb-2 text-[11px] tracking-[0.1em] text-[var(--ink)]/56 uppercase">
-                  {locale.legal.metaPanelTitle}
+                  {legalCopy.metaPanelTitle}
                 </p>
                 <div className="space-y-2.5 text-xs text-[var(--ink)]/74">
                   <p className="inline-flex items-center gap-1.5">
                     <FileText className="size-3.5 text-[var(--brand)]" />
-                    {section.items.length} {locale.legal.clausesSuffix}
+                    {section.items.length} {legalCopy.clausesSuffix}
                   </p>
                   <p className="inline-flex items-center gap-1.5">
                     <CalendarClock className="size-3.5 text-[var(--brand)]" />
-                    {locale.legal.updatedLabel}: {section.updatedAt}
+                    {legalCopy.updatedLabel}: {section.updatedAt}
                   </p>
                   <p className="inline-flex items-center gap-1.5">
                     <ShieldCheck className="size-3.5 text-[var(--brand)]" />
-                    {locale.legal.enforcementLabel}
+                    {legalCopy.enforcementLabel}
                   </p>
                 </div>
               </div>
 
               <nav
-                aria-label={locale.legal.contentsTitle}
+                aria-label={legalCopy.contentsTitle}
                 className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4"
               >
                 <p className="mb-2 text-[11px] tracking-[0.1em] text-[var(--ink)]/56 uppercase">
-                  {locale.legal.contentsTitle}
+                  {legalCopy.contentsTitle}
                 </p>
                 <ul className="space-y-2">
                   {section.items.map((item, index) => (
@@ -129,7 +136,7 @@ export function LegalShell({ section }: { section: LegalSection }) {
           <footer className="mt-8 flex flex-col gap-4 border-t border-[var(--line)] pt-6 sm:flex-row sm:items-center sm:justify-between">
             <p className="inline-flex items-center gap-2 text-xs text-[var(--ink)]/68">
               <Scale className="size-3.5 text-[var(--brand)]" />
-              {locale.legal.revisionNotice}
+              {legalCopy.revisionNotice}
             </p>
 
             <Button
@@ -139,7 +146,7 @@ export function LegalShell({ section }: { section: LegalSection }) {
             >
               <Link href="/" className="inline-flex items-center gap-2">
                 <ArrowLeft className="size-4" />
-                {locale.legal.backHome}
+                {legalCopy.backHome}
               </Link>
             </Button>
           </footer>

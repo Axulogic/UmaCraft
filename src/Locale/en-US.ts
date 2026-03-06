@@ -76,7 +76,7 @@ export const enUSLocale: LocaleSchema = {
     syncPanelTitle: "Direct summary for new arrivals",
     syncPanelItems: [
       "100% English server with multilingual community",
-      "Java and Bedrock share the same progress",
+      "Never buy, sell, or accept real-money exchanges",
       "Vanilla+Plugins online now | Modded on roadmap",
     ],
     syncPanelStatus: "Online and stable",
@@ -906,7 +906,7 @@ export const enUSLocale: LocaleSchema = {
       title: "Terms of Service",
       intro:
         "These terms govern the full UmaCraft platform, including the website, Minecraft servers, Discord communities and support channels. The website is an operational extension of the Minecraft service and follows the same governance.",
-      updatedAt: "March 2, 2026",
+      updatedAt: "March 5, 2026",
       badge: "Platform Governance",
       items: [
         {
@@ -942,11 +942,22 @@ export const enUSLocale: LocaleSchema = {
         {
           id: "economy-and-virtual-items",
           heading: "Economy, rewards and virtual items",
-          body: "In-game currency, ranks, cosmetics, tags, rewards and progression items are platform licenses, not real-world property.",
+          body: "In-game currency, ranks, cosmetics, tags, rewards, progression items and fictional theme currencies are platform licenses, not real-world property.",
           points: [
+            "No UmaCraft currency, balance, item or perk has real-world monetary value outside the platform.",
             "Balances and rewards can be adjusted when needed to preserve fairness and technical integrity.",
             "Cross-platform sync features can be paused or recalibrated during incidents, exploits or maintenance.",
             "Refunds or compensation are evaluated case by case under abuse and loss-prevention policy.",
+          ],
+        },
+        {
+          id: "real-money-and-exchanges",
+          heading: "Real money, cash-out and exchanges",
+          body: "You may not buy, sell, trade, broker, advertise or accept any UmaCraft asset, advantage or service in exchange for real money or equivalent value.",
+          points: [
+            "This includes bank transfers, cash, gift cards, platform wallet balances, cryptocurrencies and any other external payment method.",
+            "Offering or accepting cash-out, conversion tables, brokerage, middleman services or exchange rates between fictional project currencies and real-world value is also prohibited.",
+            "RMT attempts, account sales, virtual currency sales or unauthorized monetization can result in asset removal, rollback and permanent bans.",
           ],
         },
         {
@@ -955,6 +966,7 @@ export const enUSLocale: LocaleSchema = {
           body: "UmaCraft may depend on third-party platforms such as Discord, hosting providers and infrastructure tools.",
           points: [
             "Third-party outages or policy changes can impact service behavior without prior notice.",
+            "You may not use the project, its assets or its economy in ways that violate third-party, licensor or rights-holder rules.",
             "External links and partner communities have their own terms and moderation policies.",
             "Use official links published on umacraft.xyz and official Discord only.",
           ],

@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 
 import { useSiteAudio } from "@/components/providers/site-audio-provider";
 import { SPLASH_FINISHED_EVENT } from "@/lib/events";
-import { getLocale } from "@/lib/locale";
+import { useLocale } from "@/lib/use-locale";
 
 type SplashState = "hidden" | "loading" | "blocked" | "playing" | "exiting";
 
@@ -21,7 +21,7 @@ const INTRO_TRACKS = [
 ];
 
 export function SplashGate() {
-  const locale = getLocale();
+  const locale = useLocale();
   const { playBgm } = useSiteAudio();
   const selectedTrack = useMemo(
     () => INTRO_TRACKS[Math.floor(Math.random() * INTRO_TRACKS.length)],

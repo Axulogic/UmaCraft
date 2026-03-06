@@ -2,7 +2,7 @@ import { enUSLocale } from "@/Locale/en-US";
 import { ptBRLocale } from "@/Locale/pt-BR";
 import type { LocaleSchema } from "@/types/locale";
 
-function resolveLocaleFromLang(rawLang: string | null | undefined): LocaleSchema {
+export function resolveLocaleFromLang(rawLang: string | null | undefined): LocaleSchema {
   const normalizedLang = rawLang?.toLowerCase() ?? "en";
   return normalizedLang.startsWith("pt") ? ptBRLocale : enUSLocale;
 }

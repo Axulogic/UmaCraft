@@ -83,7 +83,7 @@ export const ptBRLocale: LocaleSchema = {
     syncPanelTitle: "Resumo direto para quem está chegando agora",
     syncPanelItems: [
       "Servidor 100% em inglês, com comunidade de vários idiomas",
-      "Java e Bedrock jogam juntos no mesmo progresso",
+      "Nunca compre, venda ou aceite câmbio com dinheiro real",
       "Vanilla+Plugins online agora | Modded no roadmap",
     ],
     syncPanelStatus: "Online e estável",
@@ -1005,7 +1005,7 @@ export const ptBRLocale: LocaleSchema = {
       title: "Termos de Serviço",
       intro:
         "Estes termos regulam toda a plataforma UmaCraft, incluindo site, servidores de Minecraft, comunidades Discord e canais de suporte. O site funciona como extensão operacional do serviço no Minecraft e segue a mesma governança.",
-      updatedAt: "2 de março de 2026",
+      updatedAt: "5 de março de 2026",
       badge: "Governança da Plataforma",
       items: [
         {
@@ -1041,11 +1041,22 @@ export const ptBRLocale: LocaleSchema = {
         {
           id: "economia-virtual-e-itens",
           heading: "Economia, recompensas e itens virtuais",
-          body: "Moedas, ranks, cosméticos, tags, recompensas e itens de progressão são licenças virtuais da plataforma e não propriedade real.",
+          body: "Moedas, ranks, cosméticos, tags, recompensas, itens de progressão e moedas ficcionais da ambientação do projeto são licenças virtuais da plataforma e não propriedade real.",
           points: [
+            "Nenhuma moeda, saldo, item ou vantagem do UmaCraft possui valor monetário fora da plataforma.",
             "Saldos e recompensas podem ser ajustados para preservar justiça e integridade técnica.",
             "Recursos de sincronização entre plataformas podem ser pausados ou recalibrados durante incidentes, exploits ou manutenção.",
             "Reembolso ou compensação é analisado caso a caso dentro da política de prevenção de abuso e perda.",
+          ],
+        },
+        {
+          id: "dinheiro-real-e-cambio",
+          heading: "Dinheiro real, cash-out e câmbio",
+          body: "É proibido comprar, vender, trocar, intermediar, anunciar ou aceitar qualquer ativo, vantagem ou serviço do UmaCraft em troca de dinheiro real ou equivalentes.",
+          points: [
+            "Isso inclui Pix, transferência bancária, espécie, gift cards, saldo de plataformas, criptomoedas e qualquer outra forma de pagamento externo.",
+            "Também é proibido oferecer ou aceitar cash-out, tabela de conversão, corretagem, agenciamento ou intermediação entre moedas fictícias do projeto e valores reais.",
+            "Tentativas de RMT, venda de contas, venda de moeda virtual ou monetização não autorizada podem resultar em remoção de ativos, rollback e banimento permanente.",
           ],
         },
         {
@@ -1054,6 +1065,7 @@ export const ptBRLocale: LocaleSchema = {
           body: "O UmaCraft pode depender de plataformas terceiras, como Discord, provedores de hospedagem e ferramentas de infraestrutura.",
           points: [
             "Falhas externas ou mudanças de política de terceiros podem impactar o serviço sem aviso prévio.",
+            "É proibido usar o projeto, seus ativos ou sua economia de forma que viole regras de terceiros, licenciadores ou detentores de direitos.",
             "Links externos e comunidades parceiras possuem seus próprios termos e regras de moderação.",
             "Use apenas links oficiais publicados em umacraft.xyz e no Discord oficial.",
           ],

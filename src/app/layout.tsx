@@ -3,7 +3,7 @@ import { Bebas_Neue, Manrope, Syne } from "next/font/google";
 
 import { SiteProviders } from "@/components/providers/site-providers";
 import { CloudflareTelemetry } from "@/components/analytics/cloudflare-telemetry";
-import { getLocale } from "@/lib/locale";
+import { enUSLocale } from "@/Locale/en-US";
 import { SITE_URL } from "@/lib/site-url";
 
 import "./globals.css";
@@ -26,7 +26,7 @@ const brandFont = Bebas_Neue({
   weight: ["400"],
 });
 
-const locale = getLocale();
+const locale = enUSLocale;
 const socialImagePath = "/assets/icons/logo_and_watermarks/Umacraft_Logo_Orange.png";
 
 export const metadata: Metadata = {
