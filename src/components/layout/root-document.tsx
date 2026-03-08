@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Bebas_Neue, Manrope, Syne } from "next/font/google";
 
 import { CloudflareTelemetry } from "@/components/analytics/cloudflare-telemetry";
+import { GoogleTag } from "@/components/analytics/google-tag";
 import { SiteProviders } from "@/components/providers/site-providers";
 import { getHtmlLang, type AppLocaleCode } from "@/lib/locale";
 import { SITE_URL } from "@/lib/site-url";
@@ -54,6 +55,9 @@ export function RootDocument({
 }>) {
   return (
     <html lang={getHtmlLang(localeCode)}>
+      <head>
+        <GoogleTag />
+      </head>
       <body
         suppressHydrationWarning
         className={`${headingFont.variable} ${bodyFont.variable} ${brandFont.variable} antialiased`}
