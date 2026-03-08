@@ -55,13 +55,11 @@ export function RootDocument({
 }>) {
   return (
     <html lang={getHtmlLang(localeCode)}>
-      <head>
-        <GoogleTag />
-      </head>
       <body
         suppressHydrationWarning
         className={`${headingFont.variable} ${bodyFont.variable} ${brandFont.variable} antialiased`}
       >
+        <GoogleTag />
         <CloudflareTelemetry />
         <SiteProviders localeCode={localeCode}>{children}</SiteProviders>
       </body>

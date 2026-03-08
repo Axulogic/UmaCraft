@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import Script from "next/script";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 const GOOGLE_TAG_ID = process.env.NEXT_PUBLIC_GOOGLE_TAG_ID ?? "G-NFYTPGYVMX";
 
@@ -23,15 +23,13 @@ function trackPageView(url: string) {
 
 export function GoogleTag() {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
 
   useEffect(() => {
     if (!pathname) return;
 
-    const query = searchParams.toString();
-    const url = query ? `${pathname}?${query}` : pathname;
+    const url = `${pathname}${window.location.search}`;
     trackPageView(url);
-  }, [pathname, searchParams]);
+  }, [pathname]);
 
   return (
     <>
