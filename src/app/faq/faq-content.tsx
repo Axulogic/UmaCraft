@@ -6,6 +6,7 @@ import { ChevronDown } from "lucide-react";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { HomeSmoothScroll } from "@/components/layout/home-smooth-scroll";
 import { Topbar } from "@/components/layout/topbar";
+import { LocalizedLink } from "@/components/routing/localized-link";
 import { Button } from "@/components/ui/button";
 import {
   Collapsible,
@@ -62,7 +63,7 @@ export default function FAQContent() {
                     <Link href="https://discord.gg/QyTvmTaC9G">{copy.discordCta}</Link>
                   </Button>
                   <Button variant="outline" asChild>
-                    <Link href="/about">{copy.aboutCta}</Link>
+                    <LocalizedLink href="/about">{copy.aboutCta}</LocalizedLink>
                   </Button>
                 </div>
               </div>

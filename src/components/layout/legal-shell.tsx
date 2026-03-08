@@ -1,11 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import { ArrowLeft, CalendarClock, FileText, Scale, ShieldCheck } from "lucide-react";
 
 import { HomeSmoothScroll } from "@/components/layout/home-smooth-scroll";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { Topbar } from "@/components/layout/topbar";
+import { LocalizedLink } from "@/components/routing/localized-link";
 import { Button } from "@/components/ui/button";
 import { useLocale } from "@/lib/use-locale";
 
@@ -144,10 +144,10 @@ export function LegalShell({
               variant="outline"
               className="rounded-full border-[var(--line)] bg-[var(--paper)]"
             >
-              <Link href="/" className="inline-flex items-center gap-2">
+              <LocalizedLink href="/" className="inline-flex items-center gap-2">
                 <ArrowLeft className="size-4" />
                 {legalCopy.backHome}
-              </Link>
+              </LocalizedLink>
             </Button>
           </footer>
           </section>

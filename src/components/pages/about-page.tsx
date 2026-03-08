@@ -1,12 +1,12 @@
 "use client";
 
-import Link from "next/link";
 import { Compass, Hammer, ShieldCheck, UsersRound } from "lucide-react";
 
 import { HomeSmoothScroll } from "@/components/layout/home-smooth-scroll";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { Topbar } from "@/components/layout/topbar";
 import { PlayNowButton } from "@/components/play/play-now-button";
+import { LocalizedLink } from "@/components/routing/localized-link";
 import { Button } from "@/components/ui/button";
 import { useLocale } from "@/lib/use-locale";
 
@@ -81,7 +81,7 @@ export function AboutPageContent() {
                 <div className="mt-10 flex flex-wrap justify-center gap-4">
                   <PlayNowButton size="lg" label={copy.primaryCta} className="rounded-full shadow-lg" />
                   <Button size="lg" variant="outline" className="rounded-full" asChild>
-                    <Link href="/features">{copy.secondaryCta}</Link>
+                    <LocalizedLink href="/features">{copy.secondaryCta}</LocalizedLink>
                   </Button>
                 </div>
               </div>

@@ -2,8 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "motion/react";
 import {
   Copy,
@@ -21,17 +20,15 @@ import {
 import { useSiteAudio } from "@/components/providers/site-audio-provider";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
+import { LocalizedLink } from "@/components/routing/localized-link";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import {
-  getCurrentClientLocaleLang,
-  setClientLocaleLang,
-} from "@/lib/client-locale";
+import { getAlternateLocaleCode, stripLocalePrefix, switchLocalePath } from "@/lib/locale";
 import { appToast } from "@/lib/toast";
-import { useLocale } from "@/lib/use-locale";
+import { useLocale, useLocaleCode } from "@/lib/use-locale";
 
 const DEFAULT_ACTIVE_VOLUME = 0.35;
 
@@ -59,12 +56,14 @@ async function copyToClipboard(value: string): Promise<void> {
 
 export function Topbar() {
   const locale = useLocale();
+  const localeCode = useLocaleCode();
   const { isMuted, setMuted, volume, setVolume, playBgm } = useSiteAudio();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDownloadMenuOpen, setIsDownloadMenuOpen] = useState(false);
   const [isCopyFeedbackVisible, setIsCopyFeedbackVisible] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
   const copyFeedbackTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
@@ -137,24 +136,27 @@ export function Topbar() {
     }
   }
 
-  const currentLang = getCurrentClientLocaleLang();
-  const nextLang = currentLang === "pt" ? "en" : "pt";
-  const languageBadge = currentLang === "pt" ? "PT-BR" : "EN-US";
+  const normalizedPathname = stripLocalePrefix(pathname ?? "/");
+  const nextLocaleCode = getAlternateLocaleCode(localeCode);
+  const languageBadge = localeCode === "pt-BR" ? "PT-BR" : "EN-US";
   const switchLanguageLabel =
-    nextLang === "pt"
+    nextLocaleCode === "pt-BR"
       ? locale.topbar.switchToPortugueseLabel
       : locale.topbar.switchToEnglishLabel;
 
   function toggleLanguage() {
-    setClientLocaleLang(nextLang);
+    setIsMobileMenuOpen(false);
+    router.push(switchLocalePath(pathname, nextLocaleCode));
   }
 
   const navLinks = [
+    { href: "/about", label: locale.footer.links.about },
     { href: "/features", label: locale.footer.links.features },
+    { href: "/faq", label: locale.footer.links.faq },
     { href: "/hub", label: locale.footer.links.hub },
     { href: "/discord-link", label: locale.footer.links.discordLink },
   ];
-  const isDownloadRoute = pathname === "/download";
+  const isDownloadRoute = normalizedPathname === "/download";
   const copyLabel = locale.lang === "pt" ? "Copiar" : "Copy";
   const copiedLabel = locale.lang === "pt" ? "Copiado" : "Copied";
   const downloadOptions = [
@@ -181,7 +183,7 @@ export function Topbar() {
           >
 
             <div className="flex items-center gap-8">
-              <Link href="/" className="flex items-center gap-2.5">
+              <LocalizedLink href="/" className="flex items-center gap-2.5">
                 <div className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl bg-[var(--brand)] shadow-[0_10px_24px_-16px_rgba(241,80,37,0.95)]">
                   <Image
                     src="/assets/icons/logo_and_watermarks/Umacraft_Logo_Orange.png"
@@ -194,14 +196,14 @@ export function Topbar() {
                 <span className="hidden text-lg font-extrabold tracking-tight text-[var(--ink)] sm:block">
                   UMA<span className="text-[var(--brand)]">CRAFT</span>
                 </span>
-              </Link>
+              </LocalizedLink>
 
 
               <nav className="hidden lg:flex items-center gap-1">
                 {navLinks.map((link) => {
-                  const isActive = pathname === link.href;
+                  const isActive = normalizedPathname === link.href;
                   return (
-                    <Link
+                    <LocalizedLink
                       key={link.href}
                       href={link.href}
                       className={`
@@ -217,7 +219,7 @@ export function Topbar() {
                           transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                         />
                       )}
-                    </Link>
+                    </LocalizedLink>
                   );
                 })}
 
@@ -233,7 +235,7 @@ export function Topbar() {
                     }
                   }}
                 >
-                  <Link
+                  <LocalizedLink
                     href="/download"
                     className={`relative flex items-center gap-1.5 px-4 py-2 text-sm font-semibold transition-all duration-300 ${isDownloadRoute ? "text-[var(--ink)]" : "text-[var(--ink)]/50 hover:text-[var(--ink)]"
                       }`}
@@ -250,7 +252,7 @@ export function Topbar() {
                         transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                       />
                     )}
-                  </Link>
+                  </LocalizedLink>
 
                   <AnimatePresence>
                     {isDownloadMenuOpen && (
@@ -262,7 +264,7 @@ export function Topbar() {
                         className="absolute left-1/2 top-full z-[130] mt-2 w-56 -translate-x-1/2 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-2 shadow-[0_20px_34px_-20px_rgba(25,25,25,0.45)]"
                       >
                         {downloadOptions.map((option) => (
-                          <Link
+                          <LocalizedLink
                             key={option.href}
                             href={option.href}
                             className="mt-1 flex items-center gap-2 rounded-xl px-2.5 py-2 text-sm font-semibold text-[var(--ink)]/78 transition-colors hover:bg-[var(--mist)] hover:text-[var(--ink)]"
@@ -270,7 +272,7 @@ export function Topbar() {
                           >
                             <option.icon className="size-4 text-[var(--brand)]" />
                             {option.label}
-                          </Link>
+                          </LocalizedLink>
                         ))}
                       </motion.div>
                     )}
@@ -433,7 +435,7 @@ export function Topbar() {
 
                 <nav className="flex flex-col gap-2">
                   {navLinks.map((link) => (
-                    <Link
+                    <LocalizedLink
                       key={link.href}
                       href={link.href}
                       onClick={() => setIsMobileMenuOpen(false)}
@@ -441,7 +443,7 @@ export function Topbar() {
                     >
                       {link.label}
                       <ChevronRight className="size-5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-                    </Link>
+                    </LocalizedLink>
                   ))}
                 </nav>
 
@@ -450,18 +452,18 @@ export function Topbar() {
                     {locale.footer.links.download}
                   </p>
                   {downloadOptions.map((option) => (
-                    <Link
+                    <LocalizedLink
                       key={option.href}
                       href={option.href}
                       onClick={() => setIsMobileMenuOpen(false)}
                       className="flex items-center justify-between rounded-xl px-3 py-2.5 text-sm font-semibold text-[var(--ink)] hover:bg-[var(--paper)]"
-                    >
-                      <span className="inline-flex items-center gap-2">
-                        <option.icon className="size-4 text-[var(--brand)]" />
-                        {option.label}
-                      </span>
-                      <ChevronRight className="size-4 text-[var(--ink)]/40" />
-                    </Link>
+                      >
+                        <span className="inline-flex items-center gap-2">
+                          <option.icon className="size-4 text-[var(--brand)]" />
+                          {option.label}
+                        </span>
+                        <ChevronRight className="size-4 text-[var(--ink)]/40" />
+                    </LocalizedLink>
                   ))}
                 </div>
 

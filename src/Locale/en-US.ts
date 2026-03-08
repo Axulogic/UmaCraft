@@ -17,7 +17,7 @@ export const enUSLocale: LocaleSchema = {
     keywords: ["UmaCraft", "Minecraft server", "Paper 1.21+", "play.umacraft.xyz", "umacraft.xyz"],
     openGraphTitle: "UmaCraft | Umamusume Minecraft Server",
     openGraphDescription:
-      "Join the official UmaCraft Paper 1.21+ server at play.umacraft.xyz and start your journey with the community.",
+      "Join the UmaCraft Paper 1.21+ server at play.umacraft.xyz and start your journey with the community.",
   },
   splash: {
     loadingLabel: "Initializing",
@@ -41,13 +41,13 @@ export const enUSLocale: LocaleSchema = {
     serverCopyError: "Copy failed. Please try again.",
   },
   hero: {
-    eyebrow: "Please do not leave floating trees behind.",
+    eyebrow: "Official website and join guide",
     title: "UmaCraft",
-    leadLine: "Players from everywhere, across different platforms, with one shared goal",
+    leadLine: "UmaCraft is a Minecraft server inspired by Umamusume for players joining from Java and Bedrock.",
     subtitle:
-      "You are never alone here. There is always someone online, always conversation in chat, and always something new to explore.",
-    wordmarkSupportLabel: "Community open worldwide",
-    wordmarkSupportValue: "Java + Bedrock crossplay",
+      "Join the live Paper 1.21+ world at play.umacraft.xyz, meet the UmaCraft community, and explore progression, events and systems built around the project universe.",
+    wordmarkSupportLabel: "Minecraft server inspired by Umamusume",
+    wordmarkSupportValue: "play.umacraft.xyz  •  Java + Bedrock",
     featureCards: [
       {
         id: "jukebox",
@@ -73,11 +73,11 @@ export const enUSLocale: LocaleSchema = {
     seasonBadge: "Season 1 in progress",
     seasonStatus: "1.21.x+ (1.21.4 recommended)",
     syncPanelEyebrow: "Quick information",
-    syncPanelTitle: "Direct summary for new arrivals",
+    syncPanelTitle: "What to know before joining play.umacraft.xyz",
     syncPanelItems: [
-      "100% English server with multilingual community",
-      "Never buy, sell, or accept real-money exchanges",
-      "Vanilla+Plugins online now | Modded on roadmap",
+      "UmaCraft server with multilingual community support",
+      "Paper 1.21+ environment with Java and Bedrock crossplay",
+      "Vanilla+Plugins live now, themed Modded plans later",
     ],
     syncPanelStatus: "Online and stable",
     scrollIndicatorLabel: "Scroll for official links",
@@ -172,7 +172,6 @@ export const enUSLocale: LocaleSchema = {
         ],
       },
     ],
-    guideSectionLabel: "Quick start guide",
     guideCloseAriaLabel: "Close guide",
     guideVisualLabel: "Visual demo",
     guideVisualDescription:
@@ -299,60 +298,60 @@ export const enUSLocale: LocaleSchema = {
       unhandledEventPrefix: "Unhandled browser event",
     },
     about: {
-      title: "About UmaCraft",
+      title: "About UmaCraft, the official website for the server project",
       intro:
-        "UmaCraft was born with a clear mission: become the main Minecraft meeting point for the Umamusume community, combining survival roots with themed systems and progression.",
+        "UmaCraft is the official website and public home of a Minecraft server inspired by Umamusume, built to become a long-term meeting point for the community, with survival foundations, themed systems and steady progression.",
       cards: [
         {
-          title: "Built by fans, for fans",
+          title: "Built by fans, for the Umamusume community",
           description:
-            "Crafted with care to deliver a faithful experience, preserving the details the Umamusume community loves.",
+            "Crafted to feel familiar to Umamusume fans while still working as a strong Minecraft server with practical systems, events and clear onboarding.",
         },
         {
           title: "Solid infrastructure",
           description:
-            "Server focused on stability and performance, with secure account flow and room to scale.",
+            "Paper 1.21+ infrastructure focused on stability, account safety, Discord-linked support and room to scale as the server grows.",
         },
         {
           title: "United community",
           description:
-            "It is not only about playing together, but about building connections with players from everywhere.",
+            "It is not only about playing together, but about giving the Umamusume Minecraft community a dedicated place to meet, progress and stay connected.",
         },
       ],
       missionTitle: "Our mission",
-      missionPrefix: "We want to go beyond a simple Minecraft server and provide a ",
-      missionHighlight: "fun, immersive and welcoming refuge",
+      missionPrefix: "We want to go beyond a generic Minecraft server and provide a ",
+      missionHighlight: "recognizable, welcoming and long-term home",
       missionSuffix:
-        ", with balanced economy, cosmetics integration, daily progression and Java/Bedrock crossplay.",
+        " for players who care about Umamusume, balanced economy, daily progression, account support and Java/Bedrock crossplay.",
       primaryCta: "I want to play now",
       secondaryCta: "Explore the systems",
     },
     features: {
-      titleLineOne: "Discover everything you can",
-      titleLineAccent: "do in our world",
+      titleLineOne: "See what makes UmaCraft a",
+      titleLineAccent: "distinct Umamusume Minecraft server",
       intro:
-        "A server that keeps survival charming, now enhanced with practical systems for progression, convenience and style.",
+        "UmaCraft keeps the survival core accessible while adding progression, economy, quality-of-life systems and an Umamusume-inspired identity that gives the server its own context.",
       mainFeatures: [
         {
           title: "Global community",
           description:
-            "A welcoming server for players from many regions and languages, all sharing one race track.",
+            "A welcoming server for players from multiple regions and languages, all sharing the same progression space.",
           highlight: "Diversity",
         },
         {
           title: "Java & Bedrock",
-          description: "Full crossplay support for PC, console and mobile players.",
+          description: "Crossplay support for Java and Bedrock players in the same live public environment.",
           highlight: "Crossplay",
         },
         {
           title: "Pioneering focus",
           description:
-            "A strictly public server focused on Umamusume-inspired identity and community gameplay.",
+            "A public Minecraft server built around Umamusume-inspired identity, community play and long-term world progression.",
           highlight: "Exclusive",
         },
       ],
       systemsTitle: "Gameplay systems",
-      systemsIntro: "Mechanics designed to respect your time while rewarding consistency.",
+      systemsIntro: "Mechanics designed to reward consistency, strengthen server identity and make progression clearer for new and returning players.",
       systemSections: [
         {
           category: "Economy and achievements",
@@ -394,21 +393,21 @@ export const enUSLocale: LocaleSchema = {
       roadmapBadge: "Continuous development",
       roadmapTitle: "The journey has just begun",
       roadmapDescription:
-        "Vanilla+Plugins is already live, and a themed Modded phase is planned for future milestones.",
+        "Vanilla+Plugins is the live environment today, while a stronger themed Modded phase remains planned for future milestones.",
       primaryCta: "Join the server",
       communityCta: "Join community",
     },
     download: {
       warningTitle: "Modded access in preparation",
       warningDescription:
-        "The Modded server is temporarily locked while we complete technical and balance adjustments. Our current priority is building a solid player base in the live environment so Modded can launch with stability and consistent progression from day one. This mods page exists to automate and simplify installing the required files once the official release is announced.",
+        "The Modded server is still locked while technical, balance and setup adjustments are being finalized. Today, this page works as an official status page so players know whether any real package, setup flow or download is already available.",
       backHome: "Back to home",
       chipLabel: "Download & Access",
-      title: "Get ready to play",
+      title: "Download status and setup guidance",
       intro:
-        "Official packages are being finalized to improve your server experience. Distribution is under final review.",
-      filesTitle: "Official files",
-      filesDescription: "Official packages are in final review and will be released soon.",
+        "This page tracks official package availability. If no package is live yet, use the setup notes below and the Discord support flow instead of relying on third-party files.",
+      filesTitle: "Official package status",
+      filesDescription: "No final public package has been released yet. The entries below exist to show current release status.",
       editionSuffix: "Edition",
       channels: [
         {
@@ -425,33 +424,33 @@ export const enUSLocale: LocaleSchema = {
         },
       ],
       installTitle: "How to install",
-      installDescription: "Follow these simple steps to join with everything configured.",
+      installDescription: "Use these steps as setup guidance until an official downloadable package is published.",
       installSteps: [
-        { title: "Install Minecraft", description: "Use Java Edition 1.20 or newer." },
-        { title: "Prepare modloader", description: "Forge is recommended for the best compatibility." },
-        { title: "Move file to folder", description: "Place the downloaded .jar into .minecraft/mods." },
-        { title: "Enjoy", description: "Launch with Forge/Fabric profile, add the IP and play." },
+        { title: "Check current server status", description: "Use this page to confirm whether the live focus is Vanilla+Plugins only or whether any optional package has actually been released." },
+        { title: "Use the live server first", description: "For the current public environment, join through Java 1.21.x+ or Bedrock using play.umacraft.xyz." },
+        { title: "Ignore unofficial files", description: "Do not install third-party packages that claim to be official UmaCraft releases if they are not linked from this page." },
+        { title: "Ask support when in doubt", description: "If you are unsure which setup applies to you, use the official Discord support flow before changing your client." },
       ],
       requirementsTitle: "Requirements",
       requirements: [
         {
-          category: "Minimum requirements",
+          category: "Current live access",
           specs: [
-            "Minecraft Java Edition 1.20+",
-            "Forge 47.1.0+ or Fabric 0.14.21+",
-            "Java 17 or newer",
-            "2GB available RAM",
+            "Minecraft Java Edition 1.21.x+ or latest Bedrock version",
+            "Server IP: play.umacraft.xyz",
+            "Bedrock port: 19132",
             "Stable internet connection",
+            "Official Discord available for support",
           ],
         },
         {
-          category: "Recommended requirements",
+          category: "When official packages release",
           specs: [
-            "Minecraft Java Edition 1.21+",
-            "Forge 49.0.0+ or Fabric 0.15.0+",
-            "Java 21 or newer",
-            "4GB available RAM",
-            "Broadband connection",
+            "Download only packages linked from this page",
+            "Follow the exact loader and version shown in the release entry",
+            "Keep Java updated if a Java-side package is announced",
+            "Reserve enough RAM for the package notes when published",
+            "Review release notes before installation",
           ],
         },
       ],
@@ -490,7 +489,7 @@ export const enUSLocale: LocaleSchema = {
         {
           title: "Cygames, Inc",
           description:
-            "Umamusume Pretty Derby universe, characters and official assets belong to Cygames, Inc.",
+            "Umamusume: Pretty Derby universe, characters and official assets belong to Cygames, Inc.",
           references: [
             { label: "Cygames, Inc", href: "https://www.cygames.co.jp/en/" },
             { label: "Umamusume Pretty Derby", href: "https://umamusume.jp/" },
@@ -541,8 +540,8 @@ export const enUSLocale: LocaleSchema = {
       ],
     },
     faq: {
-      title: "Frequently asked questions",
-      intro: "Everything below reflects the current live environment and official support flow.",
+      title: "UmaCraft FAQ",
+      intro: "Everything below reflects the current official Minecraft server environment, support flow and join requirements for play.umacraft.xyz.",
       items: [
         {
           question: "What is UmaCraft today?",
@@ -609,10 +608,10 @@ export const enUSLocale: LocaleSchema = {
       homeCta: "Back to home",
     },
     hub: {
-      title: "Uma everywhere, but the center of everything is here.",
-      intro: "Something curious may happen if you hover, or even click them. Be careful.",
-      summaryTitle: "All Umamusume in one place",
-      summaryDescription: "Use the cards above to quickly find which NPC handles each server need.",
+      title: "Official UmaCraft hub guide",
+      intro: "The hub is where new and returning players understand the server faster. Hover or click the NPC cards to see which system each character represents.",
+      summaryTitle: "NPCs, systems and the structure behind the server",
+      summaryDescription: "Use the cards above to understand which NPC handles each system inside the official UmaCraft Minecraft server.",
       primaryCta: "Join the server",
       secondaryCta: "View features",
       idChipPrefix: "ID",
@@ -772,8 +771,8 @@ export const enUSLocale: LocaleSchema = {
     },
   },
   discordLink: {
-    title: "Discord Account Linking",
-    intro: "Discord linking is no longer mandatory, but opting in brings strong benefits focused on economy sync and account support.",
+    title: "Official Discord linking guide",
+    intro: "Discord linking is the official account-connection flow for players who want stronger support, better account handling and economy sync between the community environment and the UmaCraft Minecraft server.",
     benefitsTitle: "Why you should link",
     benefits: [
       {
@@ -824,7 +823,7 @@ export const enUSLocale: LocaleSchema = {
     backHome: "Back to home",
   },
   footer: {
-    tagline: "Official UmaCraft website.",
+    tagline: "Official website for the UmaCraft Minecraft server.",
     joinPrompt: "Ready to join?",
     copyCta: "Copy server IP",
     creditsLine: "Community credits and third-party acknowledgements.",
@@ -842,7 +841,7 @@ export const enUSLocale: LocaleSchema = {
       discordLink: "Linking",
     },
     rightsPattern: "{year} Axulogic. All rights reserved.",
-    rightsSecondaryPattern: "Umamusume Pretty Derby and official assets are owned by Cygames, Inc.",
+    rightsSecondaryPattern: "Umamusume: Pretty Derby universe, characters and official assets belong to Cygames, Inc.",
     poweredByLabel: "Powered by",
     infrastructureProvider: "Cloudflare",
   },

@@ -23,7 +23,7 @@ export const ptBRLocale: LocaleSchema = {
     ],
     openGraphTitle: "UmaCraft | Servidor Oficial",
     openGraphDescription:
-      "Entre no servidor oficial Paper 1.21+ do UmaCraft em play.umacraft.xyz e comece sua jornada com a comunidade.",
+      "Entre no servidor Paper 1.21+ do UmaCraft em play.umacraft.xyz e comece sua jornada com a comunidade.",
   },
   splash: {
     loadingLabel: "Inicializando",
@@ -47,14 +47,14 @@ export const ptBRLocale: LocaleSchema = {
     serverCopyError: "Falha ao copiar. Tente novamente.",
   },
   hero: {
-    eyebrow: "Favor, não deixar as arvores flutuando por ai.",
+    eyebrow: "Site oficial e guia de entrada",
     title: "UmaCraft",
     leadLine:
-      "Jogadores de todo lugar, de várias plataforma, com apenas um objetivo em comum",
+      "O UmaCraft é um servidor de Minecraft inspirado em Umamusume para jogadores de Java e Bedrock.",
     subtitle:
-      "Aqui você não joga sozinho. Sempre tem alguém online, sempre tem papo rolando no chat e sempre tem alguma coisa nova pra explorar ou aprontar.",
-    wordmarkSupportLabel: "Comunidade livre globalmente",
-    wordmarkSupportValue: "Java + Bedrock crossplay",
+      "Entre no mundo Paper 1.21+ em play.umacraft.xyz, encontre a comunidade do UmaCraft e explore progressão, eventos e sistemas pensados para o universo do projeto.",
+    wordmarkSupportLabel: "Servidor de Minecraft inspirado em Umamusume",
+    wordmarkSupportValue: "play.umacraft.xyz  •  Java + Bedrock",
     featureCards: [
       {
         id: "jukebox",
@@ -80,11 +80,11 @@ export const ptBRLocale: LocaleSchema = {
     seasonBadge: "Temporada 1 em andamento",
     seasonStatus: "1.21.x+ (1.21.4 recomendado)",
     syncPanelEyebrow: "Informações rápidas",
-    syncPanelTitle: "Resumo direto para quem está chegando agora",
+    syncPanelTitle: "O que saber antes de entrar em play.umacraft.xyz",
     syncPanelItems: [
-      "Servidor 100% em inglês, com comunidade de vários idiomas",
-      "Nunca compre, venda ou aceite câmbio com dinheiro real",
-      "Vanilla+Plugins online agora | Modded no roadmap",
+      "Servidor do UmaCraft com comunidade multilíngue",
+      "Ambiente Paper 1.21+ com crossplay entre Java e Bedrock",
+      "Vanilla+Plugins ao vivo agora, Modded temático depois",
     ],
     syncPanelStatus: "Online e estável",
     scrollIndicatorLabel: "Role para links oficiais",
@@ -181,7 +181,6 @@ export const ptBRLocale: LocaleSchema = {
         ],
       },
     ],
-    guideSectionLabel: "Guia de entrada",
     guideCloseAriaLabel: "Fechar guia",
     guideVisualLabel: "Demonstracao visual",
     guideVisualDescription:
@@ -308,63 +307,63 @@ export const ptBRLocale: LocaleSchema = {
       unhandledEventPrefix: "Evento de navegador não tratado",
     },
     about: {
-      title: "Sobre o projeto UmaCraft",
+      title: "Sobre o UmaCraft, site oficial do projeto do servidor",
       intro:
-        "O UmaCraft nasceu com um propósito claro: criar o primeiro grande ponto de encontro no Minecraft para a comunidade de Umamusume. Combinamos a essência do survival que todos amam com sistemas, cosméticos e dinâmicas inspiradas nas nossas personagens favoritas.",
+        "O UmaCraft é o site oficial e a base pública de um servidor de Minecraft inspirado em Umamusume criado para se tornar um ponto de encontro de longo prazo para a comunidade, combinando survival, sistemas temáticos e progressão consistente.",
       cards: [
         {
-          title: "Feito por Fãs, para Fãs",
+          title: "Feito por fãs, para a comunidade de Umamusume",
           description:
-            "Desenvolvido com carinho para oferecer uma experiência fiel, valorizando os pequenos detalhes que a comunidade de Umamusume mais gosta, sem perder a liberdade de um bom survival.",
+            "Desenvolvido para conversar com quem gosta de Umamusume sem deixar de funcionar como um servidor de Minecraft forte, com onboarding claro, eventos e sistemas úteis.",
         },
         {
           title: "Infraestrutura Robusta",
           description:
-            "Servidor focado em estabilidade e performance. Jogabilidade lisa com Paper 1.21+, sistema seguro de contas via DiscordSRV e um ecossistema pronto para crescer.",
+            "Infraestrutura Paper 1.21+ focada em estabilidade, segurança de conta, suporte conectado ao Discord e espaço para crescer com consistência.",
         },
         {
           title: "Comunidade Unida",
           description:
-            "Não somos apenas sobre jogar juntos; é sobre construir conexões. Temos jogadores de várias partes do mundo, todos conectados pela mesma paixão. Você nunca vai se sentir sozinho.",
+            "Não é só sobre jogar junto; é sobre dar à comunidade de Umamusume um lugar dedicado para se encontrar, evoluir e permanecer conectada no Minecraft.",
         },
       ],
       missionTitle: "Nossa Missão",
       missionPrefix:
-        "Queremos ir além de um simples servidor de Minecraft. Nosso objetivo é proporcionar um ",
-      missionHighlight: "refúgio divertido, imersivo e acolhedor",
+        "Queremos ir além de um servidor genérico de Minecraft. Nosso objetivo é proporcionar um ",
+      missionHighlight: "lar reconhecível, acolhedor e duradouro",
       missionSuffix:
-        ". Com sistemas de economia balanceados, integração de cosméticos, conquistas diárias e suporte crossplay (Java e Bedrock), o UmaCraft é melhorado semanalmente para orgulhar quem joga.",
+        " para quem se importa com Umamusume, economia balanceada, progressão diária, suporte de conta e crossplay entre Java e Bedrock.",
       primaryCta: "Quero jogar agora",
       secondaryCta: "Conhecer os sistemas",
     },
     features: {
-      titleLineOne: "Descubra tudo que você pode",
-      titleLineAccent: "fazer no nosso universo",
+      titleLineOne: "Veja o que faz do UmaCraft um",
+      titleLineAccent: "servidor de Minecraft com temática Umamusume",
       intro:
-        "Um servidor que resgata o encanto do Minecraft Survival focado em exploração, melhorado com plugins sensacionais para quem quer economizar tempo e mostrar estilo.",
+        "O UmaCraft mantém o survival acessível e adiciona progressão, economia, qualidade de vida e uma identidade inspirada em Umamusume que dá contexto real ao servidor.",
       mainFeatures: [
         {
           title: "Comunidade Global",
           description:
-            "Servidor 100% focado em acolher jogadores do mundo todo. Brasileiros, hispanofalantes, americanos... todos correndo na mesma pista.",
+            "Servidor preparado para receber jogadores de várias regiões e idiomas no mesmo espaço de progressão.",
           highlight: "Diversidade",
         },
         {
           title: "Java & Bedrock",
           description:
-            "Jogue de onde estiver. Compatibilidade total para quem joga no PC (Java Edition), no console ou no celular (Bedrock).",
+            "Crossplay entre Java e Bedrock no mesmo ambiente público e oficial do servidor.",
           highlight: "Crossplay",
         },
         {
           title: "Pioneirismo",
           description:
-            "Somos o primeiro servidor estritamente público dedicado para a comunidade de Umamusume, criado por fãs para quem ama a franquia.",
+            "Um servidor público construído em torno da identidade de Umamusume, do convívio da comunidade e de progressão contínua.",
           highlight: "Exclusivo",
         },
       ],
       systemsTitle: "Sistemas de Jogo",
       systemsIntro:
-        "Trazemos mecânicas que respeitam seu tempo e recompensam seu carinho pelo que você constrói.",
+        "Mecânicas pensadas para recompensar consistência, reforçar a identidade do servidor e deixar a progressão mais clara para quem está chegando.",
       systemSections: [
         {
           category: "Economia e Conquistas",
@@ -470,21 +469,21 @@ export const ptBRLocale: LocaleSchema = {
       roadmapBadge: "Desenvolvimento Contínuo",
       roadmapTitle: "A jornada mal começou",
       roadmapDescription:
-        "Estamos só aquecendo. Além do servidor base, um modpack exclusivo inspirado em Umamusume está em desenvolvimento para fases futuras.",
+        "Vanilla+Plugins é o ambiente ao vivo hoje, enquanto uma fase Modded com identidade temática mais forte continua planejada para o futuro.",
       primaryCta: "Entrar no Servidor",
       communityCta: "Juntar-se à Comunidade",
     },
     download: {
       warningTitle: "Acesso Modded em preparação",
       warningDescription:
-        "O servidor Modded ainda está temporariamente bloqueado enquanto concluímos ajustes técnicos e de balanceamento. Nossa prioridade agora é consolidar uma base sólida de jogadores no ambiente atual para abrir o Modded com estabilidade e progressão consistente desde o primeiro dia. Esta página de mods foi criada para automatizar e facilitar a instalação dos arquivos necessários quando a liberação oficial acontecer.",
+        "O servidor Modded continua bloqueado enquanto ajustes técnicos, de balanceamento e de setup são finalizados. Hoje, esta página funciona como um status oficial para informar se já existe pacote, fluxo de setup ou download real disponível.",
       backHome: "Voltar para o início",
       chipLabel: "Download & Acesso",
-      title: "Prepare-se para jogar",
+      title: "Status de download e orientação de setup",
       intro:
-        "Preparamos os pacotes oficiais para aprimorar sua experiência no servidor. A distribuição está em revisão final.",
-      filesTitle: "Arquivos Oficiais",
-      filesDescription: "Os pacotes oficiais estão em revisão final e serão liberados em breve.",
+        "Esta página acompanha a disponibilidade dos pacotes oficiais. Se nenhum pacote estiver liberado ainda, use as orientações abaixo e o suporte no Discord em vez de arquivos de terceiros.",
+      filesTitle: "Status dos pacotes oficiais",
+      filesDescription: "Ainda não existe pacote público final liberado. As entradas abaixo servem para mostrar o estado atual da liberação.",
       editionSuffix: "Edition",
       channels: [
         {
@@ -501,47 +500,47 @@ export const ptBRLocale: LocaleSchema = {
         },
       ],
       installTitle: "Como Instalar?",
-      installDescription: "Siga estes passos simples para entrar no servidor com tudo configurado.",
+      installDescription: "Use estes passos como orientação de setup até existir um pacote oficial para download.",
       installSteps: [
         {
-          title: "Instale o Minecraft",
-          description: "Garanta que você possui a versão Java Edition 1.20 ou superior no launcher.",
+          title: "Verifique o status atual do servidor",
+          description: "Use esta página para confirmar se o foco ao vivo continua em Vanilla+Plugins ou se algum pacote opcional já foi realmente liberado.",
         },
         {
-          title: "Prepare o Modloader",
-          description: "Forge é recomendado para melhor compatibilidade global.",
+          title: "Use o servidor ativo primeiro",
+          description: "No ambiente público atual, entre pelo Java 1.21.x+ ou Bedrock usando play.umacraft.xyz.",
         },
         {
-          title: "Arraste para a pasta",
+          title: "Ignore arquivos não oficiais",
           description:
-            "Coloque o arquivo .jar baixado na pasta .minecraft/mods do seu cliente.",
+            "Não instale pacotes de terceiros que se apresentem como release oficial do UmaCraft se eles não estiverem linkados nesta página.",
         },
         {
-          title: "Divirta-se!",
+          title: "Peça suporte se houver dúvida",
           description:
-            "Abra o jogo com o perfil Forge/Fabric, adicione o IP e entre no servidor.",
+            "Se você não tiver certeza sobre qual setup se aplica ao seu caso, use o suporte oficial no Discord antes de alterar o seu cliente.",
         },
       ],
       requirementsTitle: "Requisitos",
       requirements: [
         {
-          category: "Requisitos Mínimos",
+          category: "Acesso atual ao servidor",
           specs: [
-            "Minecraft Java Edition 1.20+",
-            "Forge 47.1.0+ ou Fabric 0.14.21+",
-            "Java 17 ou superior",
-            "2GB de memória RAM disponível",
+            "Minecraft Java Edition 1.21.x+ ou Bedrock mais recente",
+            "IP do servidor: play.umacraft.xyz",
+            "Porta Bedrock: 19132",
             "Conexão de internet estável",
+            "Discord oficial disponível para suporte",
           ],
         },
         {
-          category: "Requisitos Recomendados",
+          category: "Quando houver pacote oficial",
           specs: [
-            "Minecraft Java Edition 1.21+",
-            "Forge 49.0.0+ ou Fabric 0.15.0+",
-            "Java 21 ou superior",
-            "4GB de memória RAM disponível",
-            "Conexão de banda larga",
+            "Baixe apenas pacotes linkados nesta página",
+            "Siga exatamente o loader e a versão informados na release",
+            "Mantenha o Java atualizado se algum pacote Java for anunciado",
+            "Reserve memória RAM suficiente conforme as notas do pacote",
+            "Leia as notas de release antes de instalar",
           ],
         },
       ],
@@ -635,8 +634,8 @@ export const ptBRLocale: LocaleSchema = {
       ],
     },
     faq: {
-      title: "Perguntas frequentes",
-      intro: "As respostas abaixo refletem o ambiente oficial em produção e o fluxo atual de suporte.",
+      title: "FAQ do UmaCraft",
+      intro: "As respostas abaixo refletem o ambiente oficial do servidor, o fluxo atual de suporte e os requisitos reais para entrar em play.umacraft.xyz.",
       items: [
         {
           question: "O que é o UmaCraft hoje?",
@@ -703,12 +702,12 @@ export const ptBRLocale: LocaleSchema = {
       homeCta: "Voltar para início",
     },
     hub: {
-      title: "Uma's aqui e ali, mas o centro de tudo é aqui.",
+      title: "Guia oficial do hub do UmaCraft",
       intro:
-        "Algo curioso pode acontecer se você aproximar o mouse, ou até clicar nelas. Mas cuidado.",
-      summaryTitle: "Todas as Umamusumes em um só lugar",
+        "O hub é onde jogadores novos e antigos entendem o servidor mais rápido. Passe o mouse ou clique nos NPCs para ver qual sistema cada personagem representa.",
+      summaryTitle: "NPCs, sistemas e a estrutura do servidor",
       summaryDescription:
-        "Use os cards acima para descobrir rapidamente qual NPC atende cada necessidade no servidor.",
+        "Use os cards acima para entender qual NPC cuida de cada sistema dentro do servidor UmaCraft.",
       primaryCta: "Entrar no servidor",
       secondaryCta: "Ver features",
       idChipPrefix: "ID",
@@ -871,8 +870,8 @@ export const ptBRLocale: LocaleSchema = {
     },
   },
   discordLink: {
-    title: "Vinculação de Conta Discord",
-    intro: "A vinculação do Discord deixou de ser obrigatória, mas fazer o link traz benefícios focados em economia e suporte melhorado para a sua conta.",
+    title: "Guia oficial de vinculação com Discord",
+    intro: "A vinculação com Discord é o fluxo oficial de conexão de conta para quem quer suporte mais forte, melhor tratamento de conta e sincronização de economia entre a comunidade e o servidor UmaCraft no Minecraft.",
     benefitsTitle: "Por que vincular?",
     benefits: [
       {
@@ -923,7 +922,7 @@ export const ptBRLocale: LocaleSchema = {
     backHome: "Voltar para o início",
   },
   footer: {
-    tagline: "Site oficial do UmaCraft.",
+    tagline: "Site oficial do servidor UmaCraft no Minecraft.",
     joinPrompt: "Pronto para entrar?",
     copyCta: "Copiar IP do servidor",
     creditsLine: "Créditos comunitários e reconhecimentos de terceiros.",

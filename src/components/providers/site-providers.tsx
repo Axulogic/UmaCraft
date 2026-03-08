@@ -3,12 +3,20 @@
 import { useEffect, type ReactNode } from "react";
 
 import { ScrollProgress } from "@/components/layout/scroll-progress";
+import { LocaleProvider } from "@/components/providers/locale-provider";
 import { SplashGate } from "@/components/splash/splash-gate";
 import { SiteAudioProvider } from "@/components/providers/site-audio-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import type { AppLocaleCode } from "@/lib/locale";
 
-export function SiteProviders({ children }: { children: ReactNode }) {
+export function SiteProviders({
+  children,
+  localeCode,
+}: {
+  children: ReactNode;
+  localeCode: AppLocaleCode;
+}) {
   useEffect(() => {
     const blockImageContextMenu = (event: MouseEvent) => {
       const target = event.target;
@@ -42,13 +50,15 @@ export function SiteProviders({ children }: { children: ReactNode }) {
   }, []);
 
   return (
-    <TooltipProvider delayDuration={160}>
-      <SiteAudioProvider>
-        <ScrollProgress />
-        <SplashGate />
-        {children}
-        <Toaster position="bottom-right" offset={20} />
-      </SiteAudioProvider>
-    </TooltipProvider>
+    <LocaleProvider localeCode={localeCode}>
+      <TooltipProvider delayDuration={160}>
+        <SiteAudioProvider>
+          <ScrollProgress />
+          <SplashGate />
+          {children}
+          <Toaster position="bottom-right" offset={20} />
+        </SiteAudioProvider>
+      </TooltipProvider>
+    </LocaleProvider>
   );
 }

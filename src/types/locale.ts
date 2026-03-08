@@ -140,7 +140,6 @@ export interface LocaleSchema {
     popupCloseAriaLabel: string;
     popupDotAriaPrefix: string;
     popupSlides: HeroPopupSlide[];
-    guideSectionLabel: string;
     guideCloseAriaLabel: string;
     guideVisualLabel: string;
     guideVisualDescription: string;

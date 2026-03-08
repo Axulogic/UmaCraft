@@ -6,6 +6,7 @@ import { Clock3, Construction, Sparkles } from "lucide-react";
 import { HomeSmoothScroll } from "@/components/layout/home-smooth-scroll";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { Topbar } from "@/components/layout/topbar";
+import { LocalizedLink } from "@/components/routing/localized-link";
 import { Button } from "@/components/ui/button";
 import { useLocale } from "@/lib/use-locale";
 
@@ -57,7 +58,7 @@ export function ChangelogPageContent() {
                       <Link href="https://discord.gg/QyTvmTaC9G">{copy.discordCta}</Link>
                     </Button>
                     <Button variant="outline" asChild>
-                      <Link href="/">{copy.homeCta}</Link>
+                      <LocalizedLink href="/">{copy.homeCta}</LocalizedLink>
                     </Button>
                   </div>
                 </div>

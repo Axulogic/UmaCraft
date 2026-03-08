@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "motion/react";
 import {
   Cloud,
@@ -14,6 +13,7 @@ import {
   History,
 } from "lucide-react";
 
+import { LocalizedLink } from "@/components/routing/localized-link";
 import { Button } from "@/components/ui/button";
 import { CookiePreferences } from "@/components/privacy/cookie-preferences";
 import { appToast } from "@/lib/toast";
@@ -102,48 +102,48 @@ export function SiteFooter() {
         </motion.div>
 
         <div className="flex flex-wrap items-center gap-4 text-sm">
-          <Link
+          <LocalizedLink
             href="/about"
             className="inline-flex items-center gap-1.5 text-[var(--paper)]/80 transition-colors hover:text-[var(--paper)]"
           >
             <Info className="size-3.5" />
             {locale.footer.links.about}
-          </Link>
-          <Link
+          </LocalizedLink>
+          <LocalizedLink
             href="/credits"
             className="inline-flex items-center gap-1.5 text-[var(--paper)]/80 transition-colors hover:text-[var(--paper)]"
           >
             <Handshake className="size-3.5" />
             {locale.footer.links.credits}
-          </Link>
-          <Link
+          </LocalizedLink>
+          <LocalizedLink
             href="/terms"
             className="inline-flex items-center gap-1.5 text-[var(--paper)]/80 transition-colors hover:text-[var(--paper)]"
           >
             <Scale className="size-3.5" />
             {locale.footer.links.terms}
-          </Link>
-          <Link
+          </LocalizedLink>
+          <LocalizedLink
             href="/privacy"
             className="inline-flex items-center gap-1.5 text-[var(--paper)]/80 transition-colors hover:text-[var(--paper)]"
           >
             <ShieldCheck className="size-3.5" />
             {locale.footer.links.privacy}
-          </Link>
-          <Link
+          </LocalizedLink>
+          <LocalizedLink
             href="/faq"
             className="inline-flex items-center gap-1.5 text-[var(--paper)]/80 transition-colors hover:text-[var(--paper)]"
           >
             <CircleHelp className="size-3.5" />
             {locale.footer.links.faq}
-          </Link>
-          <Link
+          </LocalizedLink>
+          <LocalizedLink
             href="/changelog"
             className="inline-flex items-center gap-1.5 text-[var(--paper)]/80 transition-colors hover:text-[var(--paper)]"
           >
             <History className="size-3.5" />
             {locale.footer.links.changelog}
-          </Link>
+          </LocalizedLink>
           <CookiePreferences />
         </div>
 

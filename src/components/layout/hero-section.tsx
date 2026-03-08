@@ -30,6 +30,7 @@ import {
 import { AnimatePresence, motion } from "motion/react";
 
 import { Button } from "@/components/ui/button";
+import { LocalizedLink } from "@/components/routing/localized-link";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { useLocale } from "@/lib/use-locale";
 import { HeroPixelRunner } from "@/components/layout/hero-pixel-runner";
@@ -94,6 +95,12 @@ export function HeroSection() {
   const popupSlides = heroCopy.popupSlides;
   const guideSlides = heroCopy.guideSlides;
   const playSlides = playCopy.slides;
+  const quickLinks = [
+    { href: "/about", label: locale.footer.links.about },
+    { href: "/features", label: locale.footer.links.features },
+    { href: "/faq", label: locale.footer.links.faq },
+    { href: "/discord-link", label: locale.footer.links.discordLink },
+  ];
   const activePopup = popupSlides[activePopupIndex] ?? popupSlides[0];
   const activePopupImage =
     POPUP_SLIDE_ASSETS[activePopupIndex] ?? POPUP_SLIDE_ASSETS[0] ?? "";
@@ -377,7 +384,6 @@ export function HeroSection() {
                   </span>
                 </Button>
               </div>
-
 
               <div className="mt-8 flex items-center gap-4 pt-6 border-t border-[var(--line)]">
                 <div className="flex -space-x-2.5">
@@ -740,10 +746,6 @@ export function HeroSection() {
                         exit="exit"
                         transition={{ duration: 0.3, ease: "easeOut" }}
                       >
-                        <p className="inline-flex items-center gap-2 rounded-full border border-[var(--line)]/70 bg-[var(--paper)]/65 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-[var(--ink)]/58">
-                          <BookOpen className="size-3.5 text-[var(--brand)]" />
-                          {heroCopy.guideSectionLabel}
-                        </p>
                         <p className="mt-4 text-xs font-black uppercase tracking-[0.14em] text-[var(--brand)]">
                           {activeGuide.step}
                         </p>

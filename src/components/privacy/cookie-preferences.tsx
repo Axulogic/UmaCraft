@@ -1,12 +1,12 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import { Plus, X } from "lucide-react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "motion/react";
 
+import { LocalizedLink } from "@/components/routing/localized-link";
 import { COOKIE_CONSENT_KEY } from "@/lib/storage-keys";
 import {
   COOKIE_CONSENT_UPDATED_EVENT,
@@ -154,12 +154,12 @@ export function CookiePreferences() {
                   </p>
                   <h2 className="mt-1 text-2xl font-semibold leading-tight">{copy.title}</h2>
                   <p className="mt-3 text-sm leading-relaxed text-[var(--ink)]/72">{copy.description}</p>
-                  <Link
+                  <LocalizedLink
                     href={copy.policyHref}
                     className="mt-2 inline-block text-sm font-medium text-[var(--brand)] underline decoration-[var(--brand)]/45 underline-offset-2"
                   >
                     {copy.policyCta}
-                  </Link>
+                  </LocalizedLink>
                 </div>
                 <button
                   type="button"

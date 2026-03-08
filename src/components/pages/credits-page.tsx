@@ -6,6 +6,7 @@ import { ArrowUpRight, BadgeCheck, Handshake, Library, Link2, Music4, Users } fr
 import { HomeSmoothScroll } from "@/components/layout/home-smooth-scroll";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { Topbar } from "@/components/layout/topbar";
+import { LocalizedLink } from "@/components/routing/localized-link";
 import { Button } from "@/components/ui/button";
 import { useLocale } from "@/lib/use-locale";
 
@@ -148,7 +149,7 @@ export function CreditsPageContent() {
                     variant="outline"
                     className="h-9 w-full rounded-full border-[var(--line)] bg-[var(--mist)] text-xs text-[var(--ink)] hover:bg-[var(--line)]/50"
                   >
-                    <Link href="/">{copy.footerBackHome}</Link>
+                    <LocalizedLink href="/">{copy.footerBackHome}</LocalizedLink>
                   </Button>
                 </div>
               </aside>

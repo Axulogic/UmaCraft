@@ -1,11 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import { AlertTriangle, ArrowLeft, CircleDot, Coffee, Download, MonitorPlay, Zap } from "lucide-react";
 
 import { HomeSmoothScroll } from "@/components/layout/home-smooth-scroll";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { Topbar } from "@/components/layout/topbar";
+import { LocalizedLink } from "@/components/routing/localized-link";
 import { Button } from "@/components/ui/button";
 import { useLocale } from "@/lib/use-locale";
 
@@ -25,13 +25,13 @@ export function DownloadPageContent() {
             className="pointer-events-none absolute inset-0 z-30 bg-[linear-gradient(180deg,rgba(244,240,235,0.82)_0%,rgba(244,240,235,0.82)_100%)] backdrop-blur-[22px]"
           />
           <div className="relative z-20 mx-auto w-full max-w-5xl px-6">
-            <Link
+            <LocalizedLink
               href="/"
               className="inline-flex items-center gap-2 text-sm font-medium text-[var(--ink)]/60 transition-colors hover:text-[var(--ink)]"
             >
               <ArrowLeft className="size-4" />
               {copy.backHome}
-            </Link>
+            </LocalizedLink>
 
             <section className="page-enter mt-4 space-y-3">
               <div className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[var(--ink)]/70 shadow-sm">
@@ -153,7 +153,7 @@ export function DownloadPageContent() {
                     </h3>
                     <p className="mb-4 text-sm leading-relaxed text-[var(--ink)]/75">{copy.helpDescription}</p>
                     <Button className="w-full rounded-full shadow-md" asChild>
-                      <Link href="/discord-link">{copy.helpCta}</Link>
+                      <LocalizedLink href="/discord-link">{copy.helpCta}</LocalizedLink>
                     </Button>
                   </div>
                 </aside>
